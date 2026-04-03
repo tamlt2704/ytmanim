@@ -2,43 +2,73 @@
   "topics": {
     "git": {
       "file": "git/git_commands_video.py",
-      "scene": "GitCommandsVideo"
+      "scene": "GitCommandsVideo",
+      "title": "Git Commands You Didn't Know Existed 🤯",
+      "description": "Hidden git commands that will 10x your workflow. Most developers don't know these exist!\n\n#git #programming #developer #shorts",
+      "tags": ["git", "programming", "developer", "coding", "software engineering", "shorts"]
     },
     "dns": {
       "file": "dns/how_dns_works.py",
-      "scene": "HowDNSWorks"
+      "scene": "HowDNSWorks",
+      "title": "How DNS Works in 60 Seconds 🌐",
+      "description": "What actually happens when you type a URL? DNS explained with animations.\n\n#dns #networking #webdev #shorts",
+      "tags": ["dns", "networking", "web development", "internet", "how it works", "shorts"]
     },
     "docker": {
       "file": "docker/docker_vs_vm.py",
-      "scene": "DockerVsVM"
+      "scene": "DockerVsVM",
+      "title": "Docker vs VM — The Difference Explained 🐳",
+      "description": "Docker containers vs Virtual Machines — which one should you use and why?\n\n#docker #devops #vm #shorts",
+      "tags": ["docker", "virtual machine", "devops", "containers", "cloud", "shorts"]
     },
     "https": {
       "file": "https/https_handshake.py",
-      "scene": "HTTPSHandshake"
+      "scene": "HTTPSHandshake",
+      "title": "HTTPS Handshake Explained in 60 Seconds 🔒",
+      "description": "How does HTTPS keep your data safe? TLS handshake animated step by step.\n\n#https #security #tls #shorts",
+      "tags": ["https", "tls", "security", "encryption", "web", "shorts"]
     },
     "bigo": {
       "file": "bigo/big_o_notation.py",
-      "scene": "BigONotation"
+      "scene": "BigONotation",
+      "title": "Big O Notation — Every Developer Must Know This 📈",
+      "description": "O(1) vs O(n) vs O(n²) — see the difference visually. Big O explained with animations.\n\n#bigo #algorithms #coding #shorts",
+      "tags": ["big o", "algorithms", "data structures", "coding interview", "computer science", "shorts"]
     },
     "jwt": {
       "file": "jwt/how_jwt_works.py",
-      "scene": "HowJWTWorks"
+      "scene": "HowJWTWorks",
+      "title": "JWT Tokens Explained — Stop Using Them Wrong 🔑",
+      "description": "Header, Payload, Signature — how JWT tokens actually work under the hood.\n\n#jwt #authentication #webdev #shorts",
+      "tags": ["jwt", "authentication", "tokens", "web security", "api", "shorts"]
     },
     "css": {
       "file": "css/flexbox_vs_grid.py",
-      "scene": "FlexboxVsGrid"
+      "scene": "FlexboxVsGrid",
+      "title": "Flexbox vs Grid — When to Use Which? 🎨",
+      "description": "CSS Flexbox vs CSS Grid explained visually. Know when to use each one.\n\n#css #flexbox #grid #shorts",
+      "tags": ["css", "flexbox", "grid", "web design", "frontend", "shorts"]
     },
     "git_branching": {
       "file": "git_branching/git_branching.py",
-      "scene": "GitBranching"
+      "scene": "GitBranching",
+      "title": "Git Branching Visualized — Merge vs Rebase 🌳",
+      "description": "See how git branches, merges, and rebases work with visual animations.\n\n#git #branching #programming #shorts",
+      "tags": ["git", "branching", "merge", "rebase", "version control", "shorts"]
     },
     "rest_graphql": {
       "file": "rest_graphql/rest_vs_graphql.py",
-      "scene": "RESTvsGraphQL"
+      "scene": "RESTvsGraphQL",
+      "title": "REST vs GraphQL — Which One Wins? ⚡",
+      "description": "REST makes 3 requests, GraphQL makes 1. See the difference animated.\n\n#rest #graphql #api #shorts",
+      "tags": ["rest", "graphql", "api", "backend", "web development", "shorts"]
     },
     "load_balancer": {
       "file": "load_balancer/load_balancer.py",
-      "scene": "HowLoadBalancersWork"
+      "scene": "HowLoadBalancersWork",
+      "title": "Load Balancers Explained in 60 Seconds ⚖️",
+      "description": "How does a load balancer distribute traffic? Round robin, least connections, and more.\n\n#loadbalancer #backend #devops #shorts",
+      "tags": ["load balancer", "backend", "devops", "scaling", "infrastructure", "shorts"]
     }
   },
   "render": ["git"]
