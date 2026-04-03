@@ -1,0 +1,45 @@
+{
+  "topics": {
+    "git": {
+      "file": "git/git_commands_video.py",
+      "scene": "GitCommandsVideo"
+    },
+    "dns": {
+      "file": "dns/how_dns_works.py",
+      "scene": "HowDNSWorks"
+    },
+    "docker": {
+      "file": "docker/docker_vs_vm.py",
+      "scene": "DockerVsVM"
+    },
+    "https": {
+      "file": "https/https_handshake.py",
+      "scene": "HTTPSHandshake"
+    },
+    "bigo": {
+      "file": "bigo/big_o_notation.py",
+      "scene": "BigONotation"
+    },
+    "jwt": {
+      "file": "jwt/how_jwt_works.py",
+      "scene": "HowJWTWorks"
+    },
+    "css": {
+      "file": "css/flexbox_vs_grid.py",
+      "scene": "FlexboxVsGrid"
+    },
+    "git_branching": {
+      "file": "git_branching/git_branching.py",
+      "scene": "GitBranching"
+    },
+    "rest_graphql": {
+      "file": "rest_graphql/rest_vs_graphql.py",
+      "scene": "RESTvsGraphQL"
+    },
+    "load_balancer": {
+      "file": "load_balancer/load_balancer.py",
+      "scene": "HowLoadBalancersWork"
+    }
+  },
+  "render": ["git"]
+}
