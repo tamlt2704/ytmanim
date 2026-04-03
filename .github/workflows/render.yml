@@ -1,6 +1,8 @@
 name: Render Video
 
 on:
+  push:
+    branches: [main]
   workflow_dispatch:
 
 jobs:
@@ -16,7 +18,15 @@ jobs:
       - name: Install system dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y libcairo2-dev libpango1.0-dev ffmpeg
+          sudo apt-get install -y \
+            libcairo2-dev \
+            libpango1.0-dev \
+            ffmpeg \
+            texlive \
+            texlive-latex-extra \
+            texlive-fonts-extra \
+            texlive-latex-recommended \
+            texlive-science
 
       - name: Install Python dependencies
         run: pip install manim
