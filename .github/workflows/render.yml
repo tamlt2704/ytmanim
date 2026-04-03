@@ -42,15 +42,7 @@ jobs:
 
       - uses: actions/upload-artifact@v4
         with:
-          name: rendered-videos
-          path: media/videos/**/*.mp4
-
-      - uses: actions/upload-artifact@v4
-        with:
-          name: thumbnails
-          path: media/thumbnails/*.png
-
-      - uses: actions/upload-artifact@v4
-        with:
-          name: youtube-metadata
-          path: media/youtube_metadata.txt
+          name: render-output
+          path: |
+            media/videos/**/*.mp4
+            media/thumbnails/*.png
