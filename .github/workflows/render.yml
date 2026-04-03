@@ -8,6 +8,7 @@ on:
 jobs:
   render:
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v4
 
@@ -40,9 +41,24 @@ jobs:
       - name: Export YouTube metadata
         run: python scripts/export_metadata.py > media/youtube_metadata.txt
 
+      - name: Collect final videos
+        run: |
+          mkdir -p output/videos output/thumbnails
+          find media/videos -name "*.mp4" -exec cp {} output/videos/ \;
+          cp media/thumbnails/*.png output/thumbnails/
+          cp media/youtube_metadata.txt output/
+
       - uses: actions/upload-artifact@v4
         with:
-          name: render-output
-          path: |
-            media/videos/**/*.mp4
-            media/thumbnails/*.png
+          name: videos
+          path: output/videos/
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: thumbnails
+          path: output/thumbnails/
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: youtube-metadata
+          path: output/youtube_metadata.txt
