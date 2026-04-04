@@ -20,27 +20,54 @@
   },
   "music": "music.mp3",
   "output": "output/videos",
-  "topics": {
-    "git": {
-      "title": "Git Commands You Didn't Know Existed 🤯",
-      "description": "Hidden git commands that will 10x your workflow. Most developers don't know these exist!\n\n#git #programming #developer #shorts",
+  "videos": {
+    "git-commands": {
+      "title": "13 Git Commands Every Developer MUST Know 🔥 (Animated)",
+      "description": "Stop memorizing — START understanding.\n\nEvery git command you actually need, explained with animations in 60 seconds.\n\n⏱️ Timestamps:\n00:00 git init\n00:05 git clone\n00:10 git add & commit\n00:15 git push & pull\n00:20 git branch\n00:25 git merge\n00:30 git status & log\n00:35 git stash\n00:40 git bisect\n00:45 git reflog\n00:50 git cherry-pick\n00:55 git blame\n01:00 git worktree\n\n💡 Most devs only use 5 of these. The rest will save you HOURS.\n\n👉 Follow for more animated dev tutorials!\n\n#git #programming #developer #coding #softwareengineer #webdev #devops #gitcommands #learntocode #tech #shorts",
       "tags": [
-        "git",
+        "git commands",
+        "git tutorial",
+        "git for beginners",
+        "git init",
+        "git clone",
+        "git commit",
+        "git push",
+        "git pull",
+        "git branch",
+        "git merge",
+        "git stash",
+        "git bisect",
+        "git reflog",
+        "git cherry-pick",
+        "git blame",
+        "git worktree",
+        "git animated",
+        "learn git",
         "programming",
-        "developer",
-        "coding",
+        "software engineering",
+        "developer tools",
+        "coding tips",
+        "web development",
+        "devops",
         "shorts"
-      ]
-    },
-    "git_branching": {
-      "title": "Git Branching Visualized — Merge vs Rebase 🌳",
-      "description": "See how git branches, merges, and rebases work with visual animations.\n\n#git #branching #programming #shorts",
-      "tags": [
-        "git",
-        "branching",
-        "merge",
-        "rebase",
-        "shorts"
+      ],
+      "category": "Science & Technology",
+      "visibility": "public",
+      "language": "en",
+      "scenes": [
+        "git-init",
+        "git-clone",
+        "git-add-commit",
+        "git-push-pull",
+        "git-branch",
+        "git-merge",
+        "git-status-log",
+        "git-stash",
+        "git-bisect",
+        "git-reflog",
+        "git-cherry-pick",
+        "git-blame",
+        "git-worktree"
       ]
     }
   }
