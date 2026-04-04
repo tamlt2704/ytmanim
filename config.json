@@ -786,6 +786,6 @@
     }
   },
   "render": [
-    "linked_list"
+    "binary_search"
   ]
 }
