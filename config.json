@@ -786,6 +786,6 @@
     }
   },
   "render": [
-    "race_condition"
+    "deadlock"
   ]
 }
