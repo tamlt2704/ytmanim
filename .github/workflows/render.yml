@@ -25,7 +25,7 @@ jobs:
 
       - name: Render animation
         working-directory: motioncanvas/my-animation
-        run: npx motion-canvas render
+        run: npm run build
 
       - name: Combine video with background music
         run: |
