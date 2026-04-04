@@ -786,6 +786,6 @@
     }
   },
   "render": [
-    "proxy_reverse"
+    "osi_model"
   ]
 }
