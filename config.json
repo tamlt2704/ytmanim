@@ -786,6 +786,6 @@
     }
   },
   "render": [
-    "encryption"
+    "hashing"
   ]
 }
