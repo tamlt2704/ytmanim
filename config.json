@@ -786,6 +786,6 @@
     }
   },
   "render": [
-    "load_balancer"
+    "tcp_udp"
   ]
 }
