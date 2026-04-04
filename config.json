@@ -786,6 +786,6 @@
     }
   },
   "render": [
-    "rate_limiting"
+    "pagination"
   ]
 }
