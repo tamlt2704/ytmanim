@@ -786,6 +786,6 @@
     }
   },
   "render": [
-    "microservices"
+    "sql_nosql"
   ]
 }
