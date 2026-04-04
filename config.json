@@ -786,6 +786,6 @@
     }
   },
   "render": [
-    "http_methods"
+    "sql_joins"
   ]
 }
