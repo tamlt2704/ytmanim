@@ -786,6 +786,6 @@
     }
   },
   "render": [
-    "promises"
+    "async_await"
   ]
 }
