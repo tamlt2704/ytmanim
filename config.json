@@ -1,8 +1,22 @@
 {
+  "motioncanvas": {
+    "project": "motioncanvas/my-animation",
+    "scenes": [
+      "git-init",
+      "git-clone",
+      "git-add-commit",
+      "git-push-pull",
+      "git-branch",
+      "git-merge",
+      "git-status-log",
+      "git-stash",
+      "thumbnails"
+    ]
+  },
+  "music": "music.mp3",
+  "output": "output/videos",
   "topics": {
     "git": {
-      "file": "shorts/git/git_commands_video.py",
-      "scene": "GitCommandsVideo",
       "title": "Git Commands You Didn't Know Existed 🤯",
       "description": "Hidden git commands that will 10x your workflow. Most developers don't know these exist!\n\n#git #programming #developer #shorts",
       "tags": [
@@ -14,8 +28,6 @@
       ]
     },
     "dns": {
-      "file": "shorts/dns/how_dns_works.py",
-      "scene": "HowDNSWorks",
       "title": "How DNS Works in 60 Seconds 🌐",
       "description": "What actually happens when you type a URL? DNS explained with animations.\n\n#dns #networking #webdev #shorts",
       "tags": [
@@ -26,8 +38,6 @@
       ]
     },
     "docker": {
-      "file": "shorts/docker/docker_vs_vm.py",
-      "scene": "DockerVsVM",
       "title": "Docker vs VM — The Difference Explained 🐳",
       "description": "Docker containers vs Virtual Machines — which one should you use and why?\n\n#docker #devops #vm #shorts",
       "tags": [
@@ -39,8 +49,6 @@
       ]
     },
     "https": {
-      "file": "shorts/https/https_handshake.py",
-      "scene": "HTTPSHandshake",
       "title": "HTTPS Handshake Explained in 60 Seconds 🔒",
       "description": "How does HTTPS keep your data safe? TLS handshake animated step by step.\n\n#https #security #tls #shorts",
       "tags": [
@@ -52,8 +60,6 @@
       ]
     },
     "bigo": {
-      "file": "shorts/bigo/big_o_notation.py",
-      "scene": "BigONotation",
       "title": "Big O Notation — Every Developer Must Know This 📈",
       "description": "O(1) vs O(n) vs O(n²) — see the difference visually.\n\n#bigo #algorithms #coding #shorts",
       "tags": [
@@ -65,8 +71,6 @@
       ]
     },
     "jwt": {
-      "file": "shorts/jwt/how_jwt_works.py",
-      "scene": "HowJWTWorks",
       "title": "JWT Tokens Explained — Stop Using Them Wrong 🔑",
       "description": "Header, Payload, Signature — how JWT tokens actually work under the hood.\n\n#jwt #authentication #webdev #shorts",
       "tags": [
@@ -78,8 +82,6 @@
       ]
     },
     "css": {
-      "file": "shorts/css/flexbox_vs_grid.py",
-      "scene": "FlexboxVsGrid",
       "title": "Flexbox vs Grid — When to Use Which? 🎨",
       "description": "CSS Flexbox vs CSS Grid explained visually.\n\n#css #flexbox #grid #shorts",
       "tags": [
@@ -92,8 +94,6 @@
       ]
     },
     "git_branching": {
-      "file": "shorts/git_branching/git_branching.py",
-      "scene": "GitBranching",
       "title": "Git Branching Visualized — Merge vs Rebase 🌳",
       "description": "See how git branches, merges, and rebases work with visual animations.\n\n#git #branching #programming #shorts",
       "tags": [
@@ -105,8 +105,6 @@
       ]
     },
     "rest_graphql": {
-      "file": "shorts/rest_graphql/rest_vs_graphql.py",
-      "scene": "RESTvsGraphQL",
       "title": "REST vs GraphQL — Which One Wins? ⚡",
       "description": "REST makes 3 requests, GraphQL makes 1. See the difference animated.\n\n#rest #graphql #api #shorts",
       "tags": [
@@ -118,8 +116,6 @@
       ]
     },
     "load_balancer": {
-      "file": "shorts/load_balancer/load_balancer.py",
-      "scene": "HowLoadBalancersWork",
       "title": "Load Balancers Explained in 60 Seconds ⚖️",
       "description": "How does a load balancer distribute traffic?\n\n#loadbalancer #backend #devops #shorts",
       "tags": [
@@ -131,8 +127,6 @@
       ]
     },
     "tcp_udp": {
-      "file": "shorts/tcp_udp/tcp_vs_udp.py",
-      "scene": "TCPvsUDP",
       "title": "TCP vs UDP — Know the Difference 🔄",
       "description": "Reliable vs fast — when to use TCP and when to use UDP.\n\n#tcp #udp #networking #shorts",
       "tags": [
@@ -144,8 +138,6 @@
       ]
     },
     "http_methods": {
-      "file": "shorts/http_methods/http_methods.py",
-      "scene": "HTTPMethods",
       "title": "HTTP Methods Explained in 60 Seconds 📡",
       "description": "GET, POST, PUT, PATCH, DELETE — what each HTTP method does.\n\n#http #api #webdev #shorts",
       "tags": [
@@ -157,8 +149,6 @@
       ]
     },
     "sql_joins": {
-      "file": "shorts/sql_joins/sql_joins.py",
-      "scene": "SQLJoins",
       "title": "SQL Joins Visualized — Finally Understand Them 🔗",
       "description": "INNER, LEFT, RIGHT, FULL JOIN — see the difference with Venn diagrams.\n\n#sql #database #joins #shorts",
       "tags": [
@@ -170,8 +160,6 @@
       ]
     },
     "stack_queue": {
-      "file": "shorts/stack_queue/stack_vs_queue.py",
-      "scene": "StackVsQueue",
       "title": "Stack vs Queue — LIFO vs FIFO Explained 📚",
       "description": "The two most fundamental data structures animated.\n\n#datastructures #stack #queue #shorts",
       "tags": [
@@ -183,8 +171,6 @@
       ]
     },
     "linked_list": {
-      "file": "shorts/linked_list/linked_list.py",
-      "scene": "LinkedList",
       "title": "Linked List Explained — Why It Exists 🔗",
       "description": "Nodes, pointers, and insertion — linked list animated.\n\n#linkedlist #datastructures #coding #shorts",
       "tags": [
@@ -196,8 +182,6 @@
       ]
     },
     "binary_search": {
-      "file": "shorts/binary_search/binary_search.py",
-      "scene": "BinarySearch",
       "title": "Binary Search Visualized — O(log n) Magic 🔍",
       "description": "Watch binary search find the target in seconds.\n\n#binarysearch #algorithms #coding #shorts",
       "tags": [
@@ -209,8 +193,6 @@
       ]
     },
     "hash_table": {
-      "file": "shorts/hash_table/hash_table.py",
-      "scene": "HashTable",
       "title": "Hash Tables — The Most Important Data Structure 🗂️",
       "description": "How hash tables store and retrieve data in O(1).\n\n#hashtable #datastructures #coding #shorts",
       "tags": [
@@ -222,8 +204,6 @@
       ]
     },
     "recursion": {
-      "file": "shorts/recursion/recursion.py",
-      "scene": "Recursion",
       "title": "Recursion Explained — Watch the Call Stack 🔄",
       "description": "Factorial with recursion — see the call stack build and unwind.\n\n#recursion #algorithms #coding #shorts",
       "tags": [
@@ -235,8 +215,6 @@
       ]
     },
     "oauth": {
-      "file": "shorts/oauth/oauth_flow.py",
-      "scene": "OAuthFlow",
       "title": "OAuth 2.0 — How Login With Google Works 🔐",
       "description": "The complete OAuth 2.0 flow animated step by step.\n\n#oauth #authentication #security #shorts",
       "tags": [
@@ -248,8 +226,6 @@
       ]
     },
     "cors": {
-      "file": "shorts/cors/cors_explained.py",
-      "scene": "CORSExplained",
       "title": "CORS Error — Why It Happens & How to Fix It 🚫",
       "description": "The most annoying error in web dev explained simply.\n\n#cors #webdev #api #shorts",
       "tags": [
@@ -261,8 +237,6 @@
       ]
     },
     "websockets": {
-      "file": "shorts/websockets/websockets.py",
-      "scene": "WebSockets",
       "title": "WebSockets vs HTTP — Real-Time Explained ⚡",
       "description": "Why WebSockets beat HTTP polling for real-time apps.\n\n#websockets #realtime #webdev #shorts",
       "tags": [
@@ -274,8 +248,6 @@
       ]
     },
     "caching": {
-      "file": "shorts/caching/caching.py",
-      "scene": "Caching",
       "title": "How Caching Works — Cache Hit vs Miss 💨",
       "description": "Cache hit vs cache miss — why caching makes everything faster.\n\n#caching #performance #backend #shorts",
       "tags": [
@@ -287,8 +259,6 @@
       ]
     },
     "cdn": {
-      "file": "shorts/cdn/cdn_explained.py",
-      "scene": "CDNExplained",
       "title": "How CDN Works — Content Delivery Explained 🌍",
       "description": "Edge servers, origin servers — how CDNs speed up the web.\n\n#cdn #performance #web #shorts",
       "tags": [
@@ -300,8 +270,6 @@
       ]
     },
     "cicd": {
-      "file": "shorts/cicd/cicd_pipeline.py",
-      "scene": "CICDPipeline",
       "title": "CI/CD Pipeline Explained in 60 Seconds 🚀",
       "description": "Code → Build → Test → Deploy → Monitor. The CI/CD pipeline animated.\n\n#cicd #devops #automation #shorts",
       "tags": [
@@ -313,8 +281,6 @@
       ]
     },
     "kubernetes": {
-      "file": "shorts/kubernetes/kubernetes.py",
-      "scene": "KubernetesExplained",
       "title": "Kubernetes in 60 Seconds — Pods, Nodes, Clusters ☸️",
       "description": "Kubernetes architecture simplified with animations.\n\n#kubernetes #devops #containers #shorts",
       "tags": [
@@ -326,8 +292,6 @@
       ]
     },
     "microservices": {
-      "file": "shorts/microservices/microservices_vs_monolith.py",
-      "scene": "MicroservicesVsMonolith",
       "title": "Microservices vs Monolith — Which Is Better? 🏗️",
       "description": "Single deploy vs independent services — the architecture debate.\n\n#microservices #monolith #architecture #shorts",
       "tags": [
@@ -339,8 +303,6 @@
       ]
     },
     "sql_nosql": {
-      "file": "shorts/sql_nosql/sql_vs_nosql.py",
-      "scene": "SQLvsNoSQL",
       "title": "SQL vs NoSQL — Which Database to Choose? 🗄️",
       "description": "Tables vs documents — when to use SQL and when to use NoSQL.\n\n#sql #nosql #database #shorts",
       "tags": [
@@ -353,8 +315,6 @@
       ]
     },
     "acid": {
-      "file": "shorts/acid/acid_properties.py",
-      "scene": "ACIDProperties",
       "title": "ACID Properties — Database Transactions Explained 🧪",
       "description": "Atomicity, Consistency, Isolation, Durability — the 4 pillars of transactions.\n\n#acid #database #transactions #shorts",
       "tags": [
@@ -366,8 +326,6 @@
       ]
     },
     "cap_theorem": {
-      "file": "shorts/cap_theorem/cap_theorem.py",
-      "scene": "CAPTheorem",
       "title": "CAP Theorem — You Can Only Pick 2! 🔺",
       "description": "Consistency, Availability, Partition Tolerance — the distributed systems tradeoff.\n\n#cap #distributed #database #shorts",
       "tags": [
@@ -378,8 +336,6 @@
       ]
     },
     "race_condition": {
-      "file": "shorts/race_condition/race_condition.py",
-      "scene": "RaceCondition",
       "title": "Race Condition — The Bug You Can't Reproduce 🏎️",
       "description": "Two threads, one variable, wrong result. Race conditions animated.\n\n#racecondition #concurrency #bugs #shorts",
       "tags": [
@@ -391,8 +347,6 @@
       ]
     },
     "deadlock": {
-      "file": "shorts/deadlock/deadlock.py",
-      "scene": "Deadlock",
       "title": "Deadlock Explained — When Threads Get Stuck 💀",
       "description": "Thread A waits for B, B waits for A — deadlock visualized.\n\n#deadlock #concurrency #threading #shorts",
       "tags": [
@@ -404,8 +358,6 @@
       ]
     },
     "mutex": {
-      "file": "shorts/mutex/mutex.py",
-      "scene": "MutexExplained",
       "title": "Mutex Explained — One Thread at a Time 🔒",
       "description": "How mutexes prevent race conditions with mutual exclusion.\n\n#mutex #concurrency #threading #shorts",
       "tags": [
@@ -417,8 +369,6 @@
       ]
     },
     "pub_sub": {
-      "file": "shorts/pub_sub/pub_sub.py",
-      "scene": "PubSub",
       "title": "Pub/Sub Pattern — Decoupled Communication 📨",
       "description": "Publishers, subscribers, and message brokers animated.\n\n#pubsub #messaging #architecture #shorts",
       "tags": [
@@ -430,8 +380,6 @@
       ]
     },
     "message_queue": {
-      "file": "shorts/message_queue/message_queue.py",
-      "scene": "MessageQueue",
       "title": "Message Queues Explained — Async Processing 📬",
       "description": "Producer, queue, consumer — how message queues decouple systems.\n\n#messagequeue #async #backend #shorts",
       "tags": [
@@ -443,8 +391,6 @@
       ]
     },
     "event_loop": {
-      "file": "shorts/event_loop/event_loop.py",
-      "scene": "EventLoop",
       "title": "Event Loop Explained — How JavaScript Works ♻️",
       "description": "Call stack, web APIs, callback queue — the event loop animated.\n\n#eventloop #javascript #nodejs #shorts",
       "tags": [
@@ -456,8 +402,6 @@
       ]
     },
     "callback_hell": {
-      "file": "shorts/callback_hell/callback_hell.py",
-      "scene": "CallbackHell",
       "title": "Callback Hell — The Pyramid of Doom 😱",
       "description": "Nested callbacks vs async/await — escape the pyramid of doom.\n\n#callbackhell #javascript #async #shorts",
       "tags": [
@@ -469,8 +413,6 @@
       ]
     },
     "promises": {
-      "file": "shorts/promises/promises.py",
-      "scene": "Promises",
       "title": "Promises Explained — Pending, Fulfilled, Rejected ✅",
       "description": "JavaScript Promises and chaining animated.\n\n#promises #javascript #async #shorts",
       "tags": [
@@ -483,8 +425,6 @@
       ]
     },
     "async_await": {
-      "file": "shorts/async_await/async_await.py",
-      "scene": "AsyncAwait",
       "title": "Async/Await — Sync vs Async Explained ⚡",
       "description": "Blocking vs non-blocking — why async/await matters.\n\n#async #await #javascript #shorts",
       "tags": [
@@ -496,8 +436,6 @@
       ]
     },
     "closure": {
-      "file": "shorts/closure/closure.py",
-      "scene": "Closure",
       "title": "Closures Explained — Functions That Remember 🧠",
       "description": "Inner functions that access outer scope — closures animated.\n\n#closure #javascript #functions #shorts",
       "tags": [
@@ -509,8 +447,6 @@
       ]
     },
     "hoisting": {
-      "file": "shorts/hoisting/hoisting.py",
-      "scene": "Hoisting",
       "title": "JavaScript Hoisting — var vs let vs const 🏗️",
       "description": "Why var behaves differently — hoisting explained visually.\n\n#hoisting #javascript #var #let #shorts",
       "tags": [
@@ -523,8 +459,6 @@
       ]
     },
     "prototype": {
-      "file": "shorts/prototype/prototype_chain.py",
-      "scene": "PrototypeChain",
       "title": "Prototype Chain — How JS Inheritance Works 🔗",
       "description": "Property lookup through the prototype chain animated.\n\n#prototype #javascript #inheritance #shorts",
       "tags": [
@@ -536,8 +470,6 @@
       ]
     },
     "virtual_dom": {
-      "file": "shorts/virtual_dom/virtual_dom.py",
-      "scene": "VirtualDOM",
       "title": "Virtual DOM — Why React Is Fast ⚛️",
       "description": "Diffing and patching — how the Virtual DOM minimizes updates.\n\n#virtualdom #react #frontend #shorts",
       "tags": [
@@ -549,8 +481,6 @@
       ]
     },
     "ssr_csr": {
-      "file": "shorts/ssr_csr/ssr_vs_csr.py",
-      "scene": "SSRvsCSR",
       "title": "SSR vs CSR — Server vs Client Rendering 🖥️",
       "description": "Server-side vs client-side rendering — pros and cons animated.\n\n#ssr #csr #nextjs #react #shorts",
       "tags": [
@@ -563,8 +493,6 @@
       ]
     },
     "cookies_sessions": {
-      "file": "shorts/cookies_sessions/cookies_vs_sessions.py",
-      "scene": "CookiesVsSessions",
       "title": "Cookies vs Sessions — What's the Difference? 🍪",
       "description": "Browser storage vs server storage — cookies and sessions explained.\n\n#cookies #sessions #webdev #shorts",
       "tags": [
@@ -576,8 +504,6 @@
       ]
     },
     "xss": {
-      "file": "shorts/xss/xss_attack.py",
-      "scene": "XSSAttack",
       "title": "XSS Attack Explained — Cross-Site Scripting 💉",
       "description": "How attackers inject scripts into websites and how to prevent it.\n\n#xss #security #webdev #shorts",
       "tags": [
@@ -589,8 +515,6 @@
       ]
     },
     "sql_injection": {
-      "file": "shorts/sql_injection/sql_injection.py",
-      "scene": "SQLInjection",
       "title": "SQL Injection — The #1 Web Vulnerability 💀",
       "description": "How SQL injection works and how to prevent it with parameterized queries.\n\n#sqlinjection #security #database #shorts",
       "tags": [
@@ -602,8 +526,6 @@
       ]
     },
     "csrf": {
-      "file": "shorts/csrf/csrf_attack.py",
-      "scene": "CSRFAttack",
       "title": "CSRF Attack — Cross-Site Request Forgery Explained 🎭",
       "description": "How evil sites trick your browser into making requests.\n\n#csrf #security #webdev #shorts",
       "tags": [
@@ -615,8 +537,6 @@
       ]
     },
     "rate_limiting": {
-      "file": "shorts/rate_limiting/rate_limiting.py",
-      "scene": "RateLimiting",
       "title": "Rate Limiting — Protect Your API 🛡️",
       "description": "How rate limiters prevent abuse and DDoS attacks.\n\n#ratelimiting #api #security #shorts",
       "tags": [
@@ -628,8 +548,6 @@
       ]
     },
     "pagination": {
-      "file": "shorts/pagination/pagination.py",
-      "scene": "Pagination",
       "title": "API Pagination — Stop Returning All Data 📄",
       "description": "Offset, cursor, page-based pagination explained.\n\n#pagination #api #backend #shorts",
       "tags": [
@@ -641,8 +559,6 @@
       ]
     },
     "indexing": {
-      "file": "shorts/indexing/indexing.py",
-      "scene": "DatabaseIndexing",
       "title": "Database Indexing — O(n) to O(log n) 🚀",
       "description": "Full table scan vs B-tree index — why indexing matters.\n\n#indexing #database #performance #shorts",
       "tags": [
@@ -654,8 +570,6 @@
       ]
     },
     "sharding": {
-      "file": "shorts/sharding/sharding.py",
-      "scene": "Sharding",
       "title": "Database Sharding — Horizontal Scaling Explained 🔀",
       "description": "Split your data across multiple databases for scale.\n\n#sharding #database #scaling #shorts",
       "tags": [
@@ -667,8 +581,6 @@
       ]
     },
     "replication": {
-      "file": "shorts/replication/replication.py",
-      "scene": "Replication",
       "title": "Database Replication — Primary & Replicas 📋",
       "description": "Write to primary, read from replicas — replication animated.\n\n#replication #database #scaling #shorts",
       "tags": [
@@ -680,8 +592,6 @@
       ]
     },
     "proxy_reverse": {
-      "file": "shorts/proxy_reverse/proxy_vs_reverse.py",
-      "scene": "ProxyVsReverse",
       "title": "Proxy vs Reverse Proxy — What's the Difference? 🔄",
       "description": "Forward proxy hides clients, reverse proxy hides servers.\n\n#proxy #reverseproxy #nginx #shorts",
       "tags": [
@@ -693,8 +603,6 @@
       ]
     },
     "osi_model": {
-      "file": "shorts/osi_model/osi_model.py",
-      "scene": "OSIModel",
       "title": "OSI Model — 7 Layers in 60 Seconds 📶",
       "description": "Application to Physical — all 7 OSI layers animated.\n\n#osi #networking #layers #shorts",
       "tags": [
@@ -706,8 +614,6 @@
       ]
     },
     "tcp_handshake": {
-      "file": "shorts/tcp_handshake/tcp_handshake.py",
-      "scene": "TCPHandshake",
       "title": "TCP 3-Way Handshake — SYN, SYN-ACK, ACK 🤝",
       "description": "How TCP establishes a connection in 3 steps.\n\n#tcp #handshake #networking #shorts",
       "tags": [
@@ -719,8 +625,6 @@
       ]
     },
     "ip_address": {
-      "file": "shorts/ip_address/ip_address.py",
-      "scene": "IPAddress",
       "title": "IP Addresses Explained — IPv4 vs IPv6 🌐",
       "description": "32 bits vs 128 bits — why we need IPv6.\n\n#ip #ipv4 #ipv6 #networking #shorts",
       "tags": [
@@ -732,8 +636,6 @@
       ]
     },
     "subnetting": {
-      "file": "shorts/subnetting/subnetting.py",
-      "scene": "Subnetting",
       "title": "Subnetting Explained — CIDR Notation Made Easy 🧮",
       "description": "Network bits, host bits, and subnet masks animated.\n\n#subnetting #cidr #networking #shorts",
       "tags": [
@@ -745,8 +647,6 @@
       ]
     },
     "encryption": {
-      "file": "shorts/encryption/encryption.py",
-      "scene": "Encryption",
       "title": "Encryption Explained — Symmetric vs Asymmetric 🔐",
       "description": "AES vs RSA — same key vs public/private key pairs.\n\n#encryption #security #cryptography #shorts",
       "tags": [
@@ -758,8 +658,6 @@
       ]
     },
     "hashing": {
-      "file": "shorts/hashing/hashing.py",
-      "scene": "Hashing",
       "title": "Hashing Explained — One-Way Functions 🔢",
       "description": "SHA256, one-way, fixed length — why hashing is everywhere.\n\n#hashing #security #cryptography #shorts",
       "tags": [
@@ -771,8 +669,6 @@
       ]
     },
     "design_patterns": {
-      "file": "shorts/design_patterns/design_patterns.py",
-      "scene": "DesignPatterns",
       "title": "3 Design Patterns Every Dev Needs 🏛️",
       "description": "Singleton, Observer, Factory — the 3 patterns you'll use everywhere.\n\n#designpatterns #oop #coding #shorts",
       "tags": [
@@ -784,8 +680,5 @@
         "shorts"
       ]
     }
-  },
-  "render": [
-    "design_patterns"
-  ]
+  }
 }

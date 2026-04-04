@@ -1,27 +1,41 @@
-"""Render a manim scene and open the resulting video."""
+"""Render Motion Canvas animation, add background music, and open the video."""
 import subprocess
 import sys
 import os
 import glob
 
-SCENE_FILE = "videos/shorts/async_await/async_await.py"
-SCENE_NAME = "AsyncAwait"
+MOTIONCANVAS_DIR = os.path.join("motioncanvas", "my-animation")
+MUSIC_FILE = "music.mp3"
+OUTPUT_DIR = os.path.join("output", "videos")
+
 
 def render():
-    cmd = [sys.executable, "-m", "manim", "render", "-ql", SCENE_FILE, SCENE_NAME]
-    print(f"Running: {' '.join(cmd)}")
-    subprocess.run(cmd, check=True)
+    print("Rendering Motion Canvas animation...")
+    subprocess.run(["npx", "motion-canvas", "render"], cwd=MOTIONCANVAS_DIR, check=True, shell=True)
 
-def find_video():
-    patterns = [
-        f"media/videos/**/{SCENE_NAME}.mp4",
-        f"media/videos/**/*.mp4",
-    ]
-    for pat in patterns:
-        files = glob.glob(pat, recursive=True)
-        if files:
-            return max(files, key=os.path.getmtime)
+
+def find_rendered_video():
+    for f in glob.glob(os.path.join(MOTIONCANVAS_DIR, "output", "**", "*.mp4"), recursive=True):
+        return f
     return None
+
+
+def add_music(video_path, output_path):
+    os.makedirs(OUTPUT_DIR, exist_ok=True)
+    duration = subprocess.check_output([
+        "ffprobe", "-v", "error", "-show_entries", "format=duration",
+        "-of", "csv=p=0", video_path
+    ], text=True).strip()
+    print(f"Animation duration: {duration}s")
+    subprocess.run([
+        "ffmpeg", "-y", "-i", video_path,
+        "-stream_loop", "-1", "-i", MUSIC_FILE,
+        "-t", duration,
+        "-map", "0:v", "-map", "1:a",
+        "-c:v", "copy", "-c:a", "aac", "-shortest",
+        output_path
+    ], check=True)
+
 
 def play(path):
     if sys.platform == "darwin":
@@ -31,12 +45,14 @@ def play(path):
     else:
         subprocess.run(["xdg-open", path])
 
+
 if __name__ == "__main__":
     render()
-    video = find_video()
-    if video:
-        print(f"Playing: {video}")
-        play(video)
-    else:
-        print("No video file found after rendering.")
+    video = find_rendered_video()
+    if not video:
+        print("No video found after rendering.")
         sys.exit(1)
+    output = os.path.join(OUTPUT_DIR, "final.mp4")
+    add_music(video, output)
+    print(f"Playing: {output}")
+    play(output)

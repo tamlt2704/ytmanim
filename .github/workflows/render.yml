@@ -12,53 +12,43 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-node@v4
         with:
-          python-version: "3.13"
+          node-version: "20"
 
       - name: Install system dependencies
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg
+
+      - name: Install Motion Canvas dependencies
+        working-directory: motioncanvas/my-animation
+        run: npm ci
+
+      - name: Render animation
+        working-directory: motioncanvas/my-animation
+        run: npx motion-canvas render
+
+      - name: Combine video with background music
         run: |
-          sudo apt-get update
-          sudo apt-get install -y \
-            libcairo2-dev \
-            libpango1.0-dev \
-            ffmpeg \
-            texlive \
-            texlive-latex-extra \
-            texlive-fonts-extra \
-            texlive-latex-recommended \
-            texlive-science
+          mkdir -p output/videos
 
-      - name: Install Python dependencies
-        run: pip install manim
+          # Find the rendered video
+          VIDEO=$(find motioncanvas/my-animation/output -name "*.mp4" | head -1)
+          if [ -z "$VIDEO" ]; then
+            echo "No rendered video found"
+            exit 1
+          fi
 
-      - name: Render videos
-        run: python scripts/render_video.py
+          # Get video duration
+          DURATION=$(ffprobe -v error -show_entries format=duration -of csv=p=0 "$VIDEO")
 
-      - name: Generate thumbnails
-        run: python scripts/generate_thumbnails.py
-
-      - name: Export YouTube metadata
-        run: python scripts/export_metadata.py > media/youtube_metadata.txt
-
-      - name: Collect final videos
-        run: |
-          mkdir -p output/videos output/thumbnails
-          find media/videos -name "*.mp4" -exec cp {} output/videos/ \;
-          cp media/thumbnails/*.png output/thumbnails/
-          cp media/youtube_metadata.txt output/
+          # Add looping music.mp3 as background, stop when animation ends
+          ffmpeg -i "$VIDEO" -stream_loop -1 -i music.mp3 \
+            -t "$DURATION" \
+            -map 0:v -map 1:a \
+            -c:v copy -c:a aac -shortest \
+            output/videos/final.mp4
 
       - uses: actions/upload-artifact@v4
         with:
           name: videos
           path: output/videos/
-
-      - uses: actions/upload-artifact@v4
-        with:
-          name: thumbnails
-          path: output/thumbnails/
-
-      - uses: actions/upload-artifact@v4
-        with:
-          name: youtube-metadata
-          path: output/youtube_metadata.txt
