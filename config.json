@@ -786,6 +786,6 @@
     }
   },
   "render": [
-    "rest_graphql"
+    "load_balancer"
   ]
 }
