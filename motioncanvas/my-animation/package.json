@@ -6,7 +6,6 @@
     "start": "vite",
     "serve": "vite",
     "build": "tsc && vite build",
-    "render": "npx tsx render.mts",
     "thumbnails": "npx tsx generate-thumbnails.mts"
   },
   "dependencies": {
@@ -19,7 +18,6 @@
     "@motion-canvas/ui": "^3.17.2",
     "@motion-canvas/vite-plugin": "^3.17.2",
     "@types/node": "^25.5.2",
-    "playwright": "^1.59.1",
     "tsx": "^4.21.0",
     "typescript": "^5.2.2",
     "vite": "^4.0.0"

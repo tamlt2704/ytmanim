@@ -1,4 +1,4 @@
-name: Render Video
+name: Build Assets
 
 on:
   push:
@@ -6,9 +6,8 @@ on:
   workflow_dispatch:
 
 jobs:
-  render:
+  build:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
 
     steps:
       - uses: actions/checkout@v4
@@ -17,60 +16,23 @@ jobs:
         with:
           node-version: "20"
 
-      - name: Install system dependencies
-        run: sudo apt-get update && sudo apt-get install -y ffmpeg
-
-      - name: Install project dependencies
+      - name: Install dependencies
         working-directory: motioncanvas/my-animation
         run: npm ci
 
-      - name: Install Playwright browser
-        working-directory: motioncanvas/my-animation
-        run: npx playwright install chromium --with-deps
-
-      - name: Type check
+      - name: Type check scenes
         working-directory: motioncanvas/my-animation
         run: npx tsc --noEmit
 
-      - name: Generate thumbnails
+      - name: Type check scripts
+        working-directory: motioncanvas/my-animation
+        run: npx tsc --project tsconfig.scripts.json --noEmit
+
+      - name: Generate thumbnail
         working-directory: motioncanvas/my-animation
         run: npm run thumbnails
-
-      - name: Render animation
-        working-directory: motioncanvas/my-animation
-        run: npm run render
-
-      - name: Upload debug screenshots
-        if: failure()
-        uses: actions/upload-artifact@v4
-        with:
-          name: debug
-          path: motioncanvas/my-animation/output/debug*.png
-
-      - name: Combine video with background music
-        run: |
-          mkdir -p output/videos
-
-          VIDEO=$(find motioncanvas/my-animation/output -name "*.mp4" -o -name "*.webm" | head -1)
-          if [ -z "$VIDEO" ]; then
-            echo "No rendered video found"
-            exit 1
-          fi
-
-          DURATION=$(ffprobe -v error -show_entries format=duration -of csv=p=0 "$VIDEO")
-
-          ffmpeg -i "$VIDEO" -stream_loop -1 -i music.mp3 \
-            -t "$DURATION" \
-            -map 0:v -map 1:a \
-            -c:v copy -c:a aac -shortest \
-            output/videos/final.mp4
 
       - uses: actions/upload-artifact@v4
         with:
           name: thumbnails
           path: motioncanvas/my-animation/output/thumbnails/
-
-      - uses: actions/upload-artifact@v4
-        with:
-          name: videos
-          path: output/videos/
