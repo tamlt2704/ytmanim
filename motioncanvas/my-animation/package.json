@@ -6,7 +6,8 @@
     "start": "vite",
     "serve": "vite",
     "build": "tsc && vite build",
-    "thumbnails": "npx tsx generate-thumbnails.mts"
+    "thumbnails": "npx tsx generate-thumbnails.mts",
+    "video": "npx tsx finalize-video.mts"
   },
   "dependencies": {
     "@motion-canvas/2d": "^3.17.2",
