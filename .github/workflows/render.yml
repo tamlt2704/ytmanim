@@ -21,27 +21,26 @@ jobs:
 
       - name: Install Motion Canvas dependencies
         working-directory: motioncanvas/my-animation
-        run: npm ci
+        run: |
+          npm ci
+          npx puppeteer browsers install chrome
 
       - name: Render animation
         working-directory: motioncanvas/my-animation
-        run: npm run build
+        run: node render.mjs
 
       - name: Combine video with background music
         run: |
           mkdir -p output/videos
 
-          # Find the rendered video
           VIDEO=$(find motioncanvas/my-animation/output -name "*.mp4" | head -1)
           if [ -z "$VIDEO" ]; then
             echo "No rendered video found"
             exit 1
           fi
 
-          # Get video duration
           DURATION=$(ffprobe -v error -show_entries format=duration -of csv=p=0 "$VIDEO")
 
-          # Add looping music.mp3 as background, stop when animation ends
           ffmpeg -i "$VIDEO" -stream_loop -1 -i music.mp3 \
             -t "$DURATION" \
             -map 0:v -map 1:a \
