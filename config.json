@@ -786,6 +786,6 @@
     }
   },
   "render": [
-    "virtual_dom"
+    "ssr_csr"
   ]
 }
