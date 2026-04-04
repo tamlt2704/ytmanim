@@ -786,6 +786,6 @@
     }
   },
   "render": [
-    "message_queue"
+    "event_loop"
   ]
 }
