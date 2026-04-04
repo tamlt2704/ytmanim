@@ -34,4 +34,41 @@ class CORSExplained(Scene):
 
         allowed = Text("✅ Request Allowed", font_size=24, color=GREEN).shift(DOWN * 2)
         self.play(Write(allowed))
+        self.wait(1)
+        self.play(FadeOut(browser, browser_label, server, server_label,
+                          preflight, pre_label, response, res_label, allowed))
+
+        # Why CORS exists
+        why_title = Text("Why Does CORS Exist?", font_size=28, color=YELLOW).shift(UP * 2.5)
+        self.play(Write(why_title))
+
+        reason = Text("Same-Origin Policy prevents\nmalicious sites from reading your data", font_size=20).shift(UP * 1)
+        self.play(Write(reason), run_time=0.5)
+
+        example = VGroup(
+            Text("evil.com cannot read data from", font_size=16, color=RED),
+            Text("your-bank.com API", font_size=16, color=GREEN),
+        ).arrange(RIGHT, buff=0.2).shift(DOWN * 0.3)
+        self.play(FadeIn(example), run_time=0.5)
+        self.wait(1.5)
+        self.play(FadeOut(why_title, reason, example))
+
+        # CORS Headers
+        hdr_title = Text("Key CORS Headers", font_size=28, color=TEAL).shift(UP * 2.5)
+        self.play(Write(hdr_title))
+
+        headers = [
+            ("Access-Control-Allow-Origin", "Which origins allowed", GREEN),
+            ("Access-Control-Allow-Methods", "GET, POST, PUT, etc.", BLUE),
+            ("Access-Control-Allow-Headers", "Custom headers allowed", ORANGE),
+            ("Access-Control-Max-Age", "Cache preflight (seconds)", YELLOW),
+        ]
+        for i, (header, desc, color) in enumerate(headers):
+            h = Text(header, font_size=14, color=color, font="Monospace").shift(LEFT * 1.5 + UP * (1 - i * 0.8))
+            d = Text(desc, font_size=12, color=GREY).next_to(h, DOWN, buff=0.05)
+            self.play(FadeIn(h, d), run_time=0.4)
+
+        tip = Text("Tip: Never use Allow-Origin: * in production!", font_size=16, color=RED).shift(DOWN * 2.5)
+        self.play(Write(tip))
         self.wait(2)
+        self.play(FadeOut(*self.mobjects))

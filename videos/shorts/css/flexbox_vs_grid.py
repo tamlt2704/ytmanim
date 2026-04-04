@@ -50,9 +50,43 @@ class FlexboxVsGrid(Scene):
         use_grid = Text("Use Grid: page layouts, dashboards", font_size=18, color=GREEN).shift(DOWN * 2.6)
         self.play(Write(use_flex), run_time=0.5)
         self.play(Write(use_grid), run_time=0.5)
-        self.wait(2)
+        self.wait(1)
 
         all_objs = VGroup(flex_title, flex_items, arrow_flex, flex_dir,
                           grid_title, grid_items, arrow_h, arrow_v, grid_dir,
                           use_flex, use_grid)
         self.play(FadeOut(all_objs))
+
+        # Flexbox properties
+        fp_title = Text("Key Flexbox Properties", font_size=28, color=BLUE).shift(UP * 2.5)
+        self.play(Write(fp_title))
+
+        flex_props = [
+            ("justify-content", "Main axis alignment"),
+            ("align-items", "Cross axis alignment"),
+            ("flex-wrap", "Wrap to next line"),
+            ("flex-grow", "Fill remaining space"),
+        ]
+        for i, (prop, desc) in enumerate(flex_props):
+            p = Text(prop, font_size=18, color=BLUE, weight=BOLD).shift(LEFT * 2.5 + UP * (1 - i * 0.7))
+            d = Text(desc, font_size=16).shift(RIGHT * 2 + UP * (1 - i * 0.7))
+            self.play(FadeIn(p, d), run_time=0.4)
+        self.wait(1.5)
+        self.play(FadeOut(fp_title, *self.mobjects))
+
+        # Grid properties
+        gp_title = Text("Key Grid Properties", font_size=28, color=GREEN).shift(UP * 2.5)
+        self.play(Write(gp_title))
+
+        grid_props = [
+            ("grid-template-columns", "Define columns"),
+            ("grid-template-rows", "Define rows"),
+            ("grid-gap", "Spacing between cells"),
+            ("grid-area", "Name & place areas"),
+        ]
+        for i, (prop, desc) in enumerate(grid_props):
+            p = Text(prop, font_size=18, color=GREEN, weight=BOLD).shift(LEFT * 2.5 + UP * (1 - i * 0.7))
+            d = Text(desc, font_size=16).shift(RIGHT * 2 + UP * (1 - i * 0.7))
+            self.play(FadeIn(p, d), run_time=0.4)
+        self.wait(2)
+        self.play(FadeOut(gp_title, *self.mobjects))

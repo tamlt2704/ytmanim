@@ -40,4 +40,41 @@ class ProxyVsReverse(Scene):
         self.play(FadeIn(client2, cl2, rproxy, rpl, servers), GrowArrow(b1), GrowArrow(b2), GrowArrow(b3), run_time=0.6)
         rev_note = Text("Hides server identity", font_size=14, color=GREEN).shift(DOWN * 2.8)
         self.play(Write(rev_note))
+        self.wait(1.5)
+        self.play(FadeOut(*self.mobjects))
+
+        # Forward proxy use cases
+        fwd_title = Text("Forward Proxy Uses", font_size=28, color=BLUE).shift(UP * 2.5)
+        self.play(Write(fwd_title))
+        fwd_uses = [
+            ("Privacy", "Hide your IP address"),
+            ("Access control", "Block certain websites"),
+            ("Caching", "Cache frequently accessed content"),
+            ("Bypass restrictions", "Access geo-blocked content"),
+        ]
+        for i, (use, desc) in enumerate(fwd_uses):
+            u = Text(f"• {use}", font_size=18, color=BLUE).shift(LEFT * 2 + UP * (1 - i * 0.7))
+            d = Text(desc, font_size=14, color=GREY).shift(RIGHT * 2.5 + UP * (1 - i * 0.7))
+            self.play(FadeIn(u, d), run_time=0.35)
+        self.wait(1)
+        self.play(FadeOut(*self.mobjects))
+
+        # Reverse proxy use cases
+        rev_title = Text("Reverse Proxy Uses", font_size=28, color=GREEN).shift(UP * 2.5)
+        self.play(Write(rev_title))
+        rev_uses = [
+            ("Load balancing", "Distribute traffic across servers"),
+            ("SSL termination", "Handle HTTPS at proxy level"),
+            ("Caching", "Cache responses for speed"),
+            ("Security", "Hide backend infrastructure"),
+            ("Compression", "Compress responses"),
+        ]
+        for i, (use, desc) in enumerate(rev_uses):
+            u = Text(f"• {use}", font_size=18, color=GREEN).shift(LEFT * 2 + UP * (1 - i * 0.6))
+            d = Text(desc, font_size=14, color=GREY).shift(RIGHT * 2.5 + UP * (1 - i * 0.6))
+            self.play(FadeIn(u, d), run_time=0.35)
+
+        tools = Text("Tools: Nginx, HAProxy, Traefik, Envoy", font_size=16, color=YELLOW).shift(DOWN * 2.5)
+        self.play(Write(tools))
         self.wait(2)
+        self.play(FadeOut(*self.mobjects))

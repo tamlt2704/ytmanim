@@ -20,6 +20,12 @@ def find_output(topic):
 
 def add_music(video_path):
     output = video_path.with_suffix(".final.mp4")
+    result = subprocess.run(
+        ["ffprobe", "-v", "error", "-show_entries", "format=duration",
+         "-of", "default=noprint_wrappers=1:nokey=1", str(video_path)],
+        capture_output=True, text=True, check=True,
+    )
+    fade_start = max(0, float(result.stdout.strip()) - 2)
     subprocess.run(
         [
             "ffmpeg", "-y",
@@ -29,7 +35,7 @@ def add_music(video_path):
             "-map", "1:a",
             "-c:v", "copy",
             "-shortest",
-            "-af", "afade=t=out:st=-2:d=2",
+            "-af", f"afade=t=out:st={fade_start}:d=2",
             str(output),
         ],
         check=True,

@@ -23,9 +23,12 @@ class GitCommandsVideo(Scene):
         a2 = Arrow(stash_box.get_right(), clean.get_left(), buff=0.1, color=BLUE, stroke_width=3)
         a2_lbl = Text("stash pop", font_size=14, color=BLUE).next_to(a2, UP, buff=0.1)
         self.play(GrowArrow(a2), FadeIn(a2_lbl), run_time=0.4)
-        self.wait(1)
+
+        use_case = Text("Save work without committing", font_size=16, color=GREEN).shift(DOWN * 2)
+        self.play(Write(use_case), run_time=0.4)
+        self.wait(1.5)
         self.play(FadeOut(VGroup(stash_title, working, working_label, stash_box, stash_label,
-                                 clean, clean_label, a1, a1_lbl, a2, a2_lbl)), run_time=0.4)
+                                 clean, clean_label, a1, a1_lbl, a2, a2_lbl, use_case)), run_time=0.4)
 
         # git bisect
         bisect_title = Text("git bisect", font_size=36, color=GREEN).to_edge(UP, buff=0.5)
@@ -40,11 +43,21 @@ class GitCommandsVideo(Scene):
         hl = SurroundingRectangle(commits[3], color=YELLOW, buff=0.15)
         hl_lbl = Text("test here", font_size=14, color=YELLOW).next_to(commits[3], UP, buff=0.2)
         self.play(Create(hl), FadeIn(hl_lbl), run_time=0.4)
+        self.wait(0.5)
+
+        hl1b = SurroundingRectangle(commits[4], color=YELLOW, buff=0.15)
+        hl1b_lbl = Text("narrow down", font_size=14, color=YELLOW).next_to(commits[4], UP, buff=0.2)
+        self.play(ReplacementTransform(hl, hl1b), ReplacementTransform(hl_lbl, hl1b_lbl), run_time=0.4)
+        self.wait(0.5)
+
         hl2 = SurroundingRectangle(commits[5], color=YELLOW, buff=0.15)
         hl2_lbl = Text("found bug!", font_size=14, color=RED).next_to(commits[5], UP, buff=0.2)
-        self.play(ReplacementTransform(hl, hl2), ReplacementTransform(hl_lbl, hl2_lbl), run_time=0.4)
-        self.wait(1)
-        self.play(FadeOut(VGroup(bisect_title, commits, line, good_lbl, bad_lbl, hl2, hl2_lbl)), run_time=0.4)
+        self.play(ReplacementTransform(hl1b, hl2), ReplacementTransform(hl1b_lbl, hl2_lbl), run_time=0.4)
+
+        bisect_note = Text("Binary search through commits — O(log n)", font_size=16, color=GREEN).shift(DOWN * 2)
+        self.play(Write(bisect_note), run_time=0.4)
+        self.wait(1.5)
+        self.play(FadeOut(VGroup(bisect_title, commits, line, good_lbl, bad_lbl, hl2, hl2_lbl, bisect_note)), run_time=0.4)
 
         # git reflog
         reflog_title = Text("git reflog", font_size=36, color=ORANGE).to_edge(UP, buff=0.5)
@@ -63,10 +76,72 @@ class GitCommandsVideo(Scene):
         rescue = SurroundingRectangle(entries[2], color=GREEN, buff=0.1)
         rescue_lbl = Text("← recover this!", font_size=16, color=GREEN).next_to(entries[2], RIGHT, buff=0.3)
         self.play(Create(rescue), FadeIn(rescue_lbl), run_time=0.4)
-        self.wait(1)
-        self.play(FadeOut(VGroup(reflog_title, entries, rescue, rescue_lbl)), run_time=0.4)
+
+        reflog_note = Text("Undo accidental resets & deletes", font_size=16, color=ORANGE).shift(DOWN * 2)
+        self.play(Write(reflog_note), run_time=0.4)
+        self.wait(1.5)
+        self.play(FadeOut(VGroup(reflog_title, entries, rescue, rescue_lbl, reflog_note)), run_time=0.4)
+
+        # git cherry-pick
+        cherry_title = Text("git cherry-pick", font_size=36, color=RED).to_edge(UP, buff=0.5)
+        main_line = Line(LEFT * 5 + UP * 0.5, RIGHT * 3 + UP * 0.5, color=BLUE, stroke_width=3)
+        feat_line = Line(LEFT * 3 + DOWN * 1, RIGHT * 3 + DOWN * 1, color=GREEN, stroke_width=3)
+        main_lbl = Text("main", font_size=14, color=BLUE).next_to(main_line, LEFT, buff=0.1)
+        feat_lbl = Text("feature", font_size=14, color=GREEN).next_to(feat_line, LEFT, buff=0.1)
+        main_dots = VGroup(*[Dot(LEFT * 5 + RIGHT * i * 2 + UP * 0.5, color=BLUE, radius=0.12) for i in range(5)])
+        feat_dots = VGroup(*[Dot(LEFT * 3 + RIGHT * i * 2 + DOWN * 1, color=GREEN, radius=0.12) for i in range(4)])
+        feat_dots[2].set_color(YELLOW)
+
+        self.play(Write(cherry_title), Create(main_line), Create(feat_line),
+                  FadeIn(main_lbl, feat_lbl, main_dots, feat_dots), run_time=0.6)
+
+        pick_arrow = Arrow(feat_dots[2].get_top(), main_dots[4].get_bottom(), buff=0.1, color=YELLOW, stroke_width=3)
+        pick_lbl = Text("cherry-pick", font_size=14, color=YELLOW).next_to(pick_arrow, RIGHT, buff=0.1)
+        self.play(GrowArrow(pick_arrow), FadeIn(pick_lbl), run_time=0.5)
+
+        cherry_note = Text("Pick specific commits from any branch", font_size=16, color=RED).shift(DOWN * 2.5)
+        self.play(Write(cherry_note), run_time=0.4)
+        self.wait(1.5)
+        self.play(FadeOut(VGroup(cherry_title, main_line, feat_line, main_lbl, feat_lbl,
+                                 main_dots, feat_dots, pick_arrow, pick_lbl, cherry_note)), run_time=0.4)
+
+        # git blame
+        blame_title = Text("git blame", font_size=36, color=PURPLE).to_edge(UP, buff=0.5)
+        blame_lines = VGroup()
+        blame_data = [
+            ("a1b2c3d", "Alice", "const x = 1"),
+            ("e4f5g6h", "Bob  ", "const y = 2"),
+            ("i7j8k9l", "Alice", "return x+y"),
+        ]
+        for i, (hash_val, author, code) in enumerate(blame_data):
+            line = Text(f"{hash_val}  {author}  {code}", font_size=16, font="Monospace",
+                       color=PURPLE if i == 1 else WHITE).shift(UP * (0.5 - i * 0.6))
+            blame_lines.add(line)
+
+        self.play(Write(blame_title), run_time=0.4)
+        self.play(FadeIn(blame_lines, lag_ratio=0.3), run_time=0.6)
+        blame_hl = SurroundingRectangle(blame_lines[1], color=YELLOW, buff=0.1)
+        blame_note = Text("Who wrote this line?", font_size=16, color=YELLOW).next_to(blame_hl, RIGHT, buff=0.2)
+        self.play(Create(blame_hl), FadeIn(blame_note), run_time=0.4)
+        self.wait(1.5)
+        self.play(FadeOut(VGroup(blame_title, blame_lines, blame_hl, blame_note)), run_time=0.4)
+
+        # git worktree
+        wt_title = Text("git worktree", font_size=36, color=TEAL).to_edge(UP, buff=0.5)
+        repo = RoundedRectangle(corner_radius=0.15, width=3, height=1.5, color=BLUE, fill_opacity=0.2).shift(LEFT * 3)
+        repo_lbl = Text("main\n(worktree 1)", font_size=14).move_to(repo)
+        wt2 = RoundedRectangle(corner_radius=0.15, width=3, height=1.5, color=GREEN, fill_opacity=0.2).shift(RIGHT * 3)
+        wt2_lbl = Text("feature\n(worktree 2)", font_size=14).move_to(wt2)
+        shared = Text("Same .git — no stashing needed!", font_size=16, color=TEAL).shift(DOWN * 1.5)
+
+        self.play(Write(wt_title), FadeIn(repo, repo_lbl, wt2, wt2_lbl), run_time=0.6)
+        link = DashedLine(repo.get_right(), wt2.get_left(), color=YELLOW, stroke_width=2)
+        self.play(Create(link), run_time=0.3)
+        self.play(Write(shared), run_time=0.4)
+        self.wait(1.5)
+        self.play(FadeOut(VGroup(wt_title, repo, repo_lbl, wt2, wt2_lbl, link, shared)), run_time=0.4)
 
         outro = Text("Now go try them! 🚀", font_size=42, color=YELLOW)
         self.play(Write(outro))
-        self.wait(1)
+        self.wait(2)
         self.play(FadeOut(outro))

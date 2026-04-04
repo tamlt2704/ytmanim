@@ -39,4 +39,45 @@ class OAuthFlow(Scene):
             self.wait(0.3)
             self.play(FadeOut(arrow, label), run_time=0.2)
 
+        self.wait(1)
+        self.play(FadeOut(nodes))
+
+        # Grant types
+        grant_title = Text("OAuth Grant Types", font_size=28, color=YELLOW).shift(UP * 2.5)
+        self.play(Write(grant_title))
+
+        grants = [
+            ("Authorization Code", "Web apps (most secure)", GREEN),
+            ("PKCE", "Mobile/SPA apps", BLUE),
+            ("Client Credentials", "Machine-to-machine", ORANGE),
+            ("Refresh Token", "Get new access token", YELLOW),
+        ]
+        for i, (name, desc, color) in enumerate(grants):
+            n = Text(name, font_size=18, color=color, weight=BOLD).shift(LEFT * 2 + UP * (1 - i * 0.8))
+            d = Text(desc, font_size=14).shift(RIGHT * 2.5 + UP * (1 - i * 0.8))
+            self.play(FadeIn(n, d), run_time=0.4)
+        self.wait(1.5)
+        self.play(FadeOut(*self.mobjects))
+
+        # Token types
+        tok_title = Text("Access Token vs Refresh Token", font_size=28, color=TEAL).shift(UP * 2.5)
+        self.play(Write(tok_title))
+
+        access = VGroup(
+            Text("Access Token", font_size=18, color=GREEN, weight=BOLD),
+            Text("• Short-lived (15 min)", font_size=14),
+            Text("• Used for API calls", font_size=14),
+            Text("• Sent in every request", font_size=14),
+        ).arrange(DOWN, aligned_edge=LEFT).shift(LEFT * 3 + DOWN * 0.2)
+
+        refresh = VGroup(
+            Text("Refresh Token", font_size=18, color=ORANGE, weight=BOLD),
+            Text("• Long-lived (days/weeks)", font_size=14),
+            Text("• Used to get new access token", font_size=14),
+            Text("• Stored securely", font_size=14),
+        ).arrange(DOWN, aligned_edge=LEFT).shift(RIGHT * 3 + DOWN * 0.2)
+
+        self.play(FadeIn(access), run_time=0.5)
+        self.play(FadeIn(refresh), run_time=0.5)
         self.wait(2)
+        self.play(FadeOut(*self.mobjects))

@@ -43,4 +43,51 @@ class WebSockets(Scene):
 
         bi = Text("Full-duplex ✓", font_size=24, color=GREEN).shift(DOWN * 2)
         self.play(Write(bi))
+        self.wait(1)
+        self.play(FadeOut(client, client_label, server, server_label, ws_label, pipe, bi))
+
+        # Comparison
+        comp_title = Text("HTTP vs WebSocket", font_size=28, color=YELLOW).shift(UP * 2.8)
+        self.play(Write(comp_title))
+
+        headers = VGroup(
+            Text("", font_size=14).shift(LEFT * 3.5),
+            Text("HTTP", font_size=16, color=RED, weight=BOLD),
+            Text("WebSocket", font_size=16, color=GREEN, weight=BOLD).shift(RIGHT * 3.5),
+        ).shift(UP * 2)
+        self.play(FadeIn(headers), run_time=0.3)
+
+        rows = [
+            ("Direction", "Request-Response", "Bidirectional"),
+            ("Connection", "New per request", "Persistent"),
+            ("Overhead", "Headers every time", "Minimal after handshake"),
+            ("Latency", "Higher", "Very low"),
+        ]
+        for i, (label, http, ws) in enumerate(rows):
+            row = VGroup(
+                Text(label, font_size=13, weight=BOLD).shift(LEFT * 3.5),
+                Text(http, font_size=13, color=RED),
+                Text(ws, font_size=13, color=GREEN).shift(RIGHT * 3.5),
+            ).shift(UP * (1.2 - i * 0.6))
+            self.play(FadeIn(row), run_time=0.35)
+        self.wait(1.5)
+        self.play(FadeOut(*self.mobjects))
+
+        # Use cases
+        use_title = Text("WebSocket Use Cases", font_size=28, color=TEAL).shift(UP * 2.5)
+        self.play(Write(use_title))
+
+        uses = [
+            ("Chat apps", "Real-time messaging"),
+            ("Live dashboards", "Stock prices, analytics"),
+            ("Online gaming", "Player movements, state sync"),
+            ("Collaborative editing", "Google Docs-style"),
+            ("Notifications", "Push updates instantly"),
+        ]
+        for i, (use, desc) in enumerate(uses):
+            u = Text(f"• {use}", font_size=18, color=GREEN).shift(LEFT * 2 + UP * (1 - i * 0.6))
+            d = Text(desc, font_size=14, color=GREY).shift(RIGHT * 2.5 + UP * (1 - i * 0.6))
+            self.play(FadeIn(u, d), run_time=0.35)
+
         self.wait(2)
+        self.play(FadeOut(*self.mobjects))

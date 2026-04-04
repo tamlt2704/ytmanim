@@ -27,10 +27,57 @@ class EventLoop(Scene):
         l2 = Text("callback", font_size=12, color=GREEN).next_to(a2, RIGHT, buff=0.05)
         self.play(GrowArrow(a2), FadeIn(l2), run_time=0.5)
 
-        # Event loop picks up
         self.play(Rotate(loop, angle=2 * PI), run_time=0.8)
         a3 = Arrow(queue.get_left(), stack.get_right(), buff=0.1, color=YELLOW, stroke_width=2).shift(DOWN * 0.5)
         l3 = Text("push to stack", font_size=12, color=YELLOW).next_to(a3, DOWN, buff=0.05)
         self.play(GrowArrow(a3), FadeIn(l3), run_time=0.5)
 
+        self.wait(1)
+        self.play(FadeOut(stack, stack_label, queue, queue_label, apis, apis_label,
+                          loop, loop_label, a1, l1, a2, l2, a3, l3))
+
+        # Step by step example
+        ex_title = Text("Example: setTimeout", font_size=28, color=YELLOW).shift(UP * 2.8)
+        self.play(Write(ex_title))
+
+        code_lines = [
+            ("console.log('1')", BLUE, "→ Call Stack → prints 1"),
+            ("setTimeout(() => log('2'), 0)", ORANGE, "→ Web API → Queue"),
+            ("console.log('3')", BLUE, "→ Call Stack → prints 3"),
+            ("// stack empty", GREY, "→ Event Loop checks queue"),
+            ("callback: log('2')", GREEN, "→ Call Stack → prints 2"),
+        ]
+
+        for i, (code, color, desc) in enumerate(code_lines):
+            c = Text(code, font_size=14, color=color, font="Monospace").shift(LEFT * 2.5 + UP * (1.5 - i * 0.7))
+            d = Text(desc, font_size=12, color=GREY).next_to(c, RIGHT, buff=0.3)
+            self.play(FadeIn(c, d), run_time=0.4)
+            self.wait(0.3)
+
+        output = Text("Output: 1, 3, 2  (not 1, 2, 3!)", font_size=20, color=YELLOW).shift(DOWN * 2.5)
+        self.play(Write(output))
+        self.wait(1.5)
+        self.play(FadeOut(ex_title, output, *self.mobjects))
+
+        # Microtask vs Macrotask
+        micro_title = Text("Microtasks vs Macrotasks", font_size=28, color=TEAL).shift(UP * 2.5)
+        self.play(Write(micro_title))
+
+        micro = VGroup(
+            Text("Microtasks (higher priority):", font_size=16, color=GREEN, weight=BOLD),
+            Text("• Promises (.then)", font_size=14),
+            Text("• queueMicrotask()", font_size=14),
+            Text("• MutationObserver", font_size=14),
+        ).arrange(DOWN, aligned_edge=LEFT).shift(LEFT * 3 + DOWN * 0.2)
+
+        macro = VGroup(
+            Text("Macrotasks:", font_size=16, color=ORANGE, weight=BOLD),
+            Text("• setTimeout", font_size=14),
+            Text("• setInterval", font_size=14),
+            Text("• I/O, UI rendering", font_size=14),
+        ).arrange(DOWN, aligned_edge=LEFT).shift(RIGHT * 3 + DOWN * 0.2)
+
+        self.play(FadeIn(micro), run_time=0.5)
+        self.play(FadeIn(macro), run_time=0.5)
         self.wait(2)
+        self.play(FadeOut(*self.mobjects))

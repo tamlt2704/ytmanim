@@ -32,4 +32,55 @@ class CookiesVsSessions(Scene):
         sid = Text("Cookie: session_id=abc123", font_size=12, color=YELLOW).next_to(arrow, UP, buff=0.05)
         self.play(GrowArrow(arrow), FadeIn(sid), run_time=0.5)
 
+        self.wait(1.5)
+        self.play(FadeOut(browser, browser_label, server, server_label,
+                          cookie_box, cookie_txt, cookie_label,
+                          session_box, session_txt, session_label, arrow, sid))
+
+        # Comparison table
+        comp_title = Text("Cookies vs Sessions", font_size=28, color=YELLOW).shift(UP * 2.8)
+        self.play(Write(comp_title))
+
+        headers = VGroup(
+            Text("", font_size=14).shift(LEFT * 3.5),
+            Text("Cookies", font_size=16, color=ORANGE, weight=BOLD),
+            Text("Sessions", font_size=16, color=PURPLE, weight=BOLD).shift(RIGHT * 3.5),
+        ).shift(UP * 2)
+        self.play(FadeIn(headers), run_time=0.3)
+
+        rows = [
+            ("Storage", "Browser", "Server"),
+            ("Size limit", "4 KB", "No limit"),
+            ("Security", "Less secure", "More secure"),
+            ("Expiry", "Set by server", "Server-controlled"),
+            ("Scalability", "Stateless", "Needs shared store"),
+        ]
+        for i, (label, cookie, session) in enumerate(rows):
+            row = VGroup(
+                Text(label, font_size=14, weight=BOLD).shift(LEFT * 3.5),
+                Text(cookie, font_size=14, color=ORANGE),
+                Text(session, font_size=14, color=PURPLE).shift(RIGHT * 3.5),
+            ).shift(UP * (1.2 - i * 0.6))
+            self.play(FadeIn(row), run_time=0.35)
+
+        self.wait(1.5)
+        self.play(FadeOut(comp_title, headers, *self.mobjects))
+
+        # Cookie types
+        ct_title = Text("Cookie Types", font_size=28, color=ORANGE).shift(UP * 2.5)
+        self.play(Write(ct_title))
+
+        types = [
+            ("Session Cookie", "Deleted when browser closes", YELLOW),
+            ("Persistent Cookie", "Has expiration date", ORANGE),
+            ("Secure Cookie", "HTTPS only", GREEN),
+            ("HttpOnly Cookie", "No JavaScript access", BLUE),
+            ("SameSite Cookie", "CSRF protection", PURPLE),
+        ]
+        for i, (name, desc, color) in enumerate(types):
+            n = Text(name, font_size=16, color=color, weight=BOLD).shift(LEFT * 2.5 + UP * (1 - i * 0.6))
+            d = Text(desc, font_size=14).shift(RIGHT * 2 + UP * (1 - i * 0.6))
+            self.play(FadeIn(n, d), run_time=0.35)
+
         self.wait(2)
+        self.play(FadeOut(*self.mobjects))

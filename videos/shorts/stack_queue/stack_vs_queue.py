@@ -39,4 +39,56 @@ class StackVsQueue(Scene):
         self.play(GrowArrow(deq_arrow), FadeIn(deq_label), run_time=0.4)
         self.play(FadeOut(queue_items[0], deq_arrow, deq_label), run_time=0.4)
 
+        self.wait(1)
+        self.play(FadeOut(stack_title, stack_items, queue_title, queue_items))
+
+        # Real-world examples
+        ex_title = Text("Real-World Examples", font_size=28, color=YELLOW).shift(UP * 2.5)
+        self.play(Write(ex_title))
+
+        stack_ex = VGroup(
+            Text("Stack:", font_size=18, color=BLUE, weight=BOLD),
+            Text("• Undo/Redo (Ctrl+Z)", font_size=14),
+            Text("• Browser back button", font_size=14),
+            Text("• Function call stack", font_size=14),
+            Text("• Expression evaluation", font_size=14),
+        ).arrange(DOWN, aligned_edge=LEFT).shift(LEFT * 3 + DOWN * 0.2)
+
+        queue_ex = VGroup(
+            Text("Queue:", font_size=18, color=GREEN, weight=BOLD),
+            Text("• Print queue", font_size=14),
+            Text("• Task scheduling", font_size=14),
+            Text("• BFS traversal", font_size=14),
+            Text("• Message queues", font_size=14),
+        ).arrange(DOWN, aligned_edge=LEFT).shift(RIGHT * 3 + DOWN * 0.2)
+
+        self.play(FadeIn(stack_ex), run_time=0.5)
+        self.play(FadeIn(queue_ex), run_time=0.5)
+        self.wait(1.5)
+        self.play(FadeOut(*self.mobjects))
+
+        # Operations & complexity
+        ops_title = Text("Operations", font_size=28, color=TEAL).shift(UP * 2.5)
+        self.play(Write(ops_title))
+
+        stack_ops = VGroup(
+            Text("Stack Operations:", font_size=16, color=BLUE, weight=BOLD),
+            Text("push(item)  — O(1)", font_size=14, font="Monospace"),
+            Text("pop()       — O(1)", font_size=14, font="Monospace"),
+            Text("peek()      — O(1)", font_size=14, font="Monospace"),
+        ).arrange(DOWN, aligned_edge=LEFT).shift(LEFT * 3 + DOWN * 0.2)
+
+        queue_ops = VGroup(
+            Text("Queue Operations:", font_size=16, color=GREEN, weight=BOLD),
+            Text("enqueue(item) — O(1)", font_size=14, font="Monospace"),
+            Text("dequeue()     — O(1)", font_size=14, font="Monospace"),
+            Text("peek()        — O(1)", font_size=14, font="Monospace"),
+        ).arrange(DOWN, aligned_edge=LEFT).shift(RIGHT * 3 + DOWN * 0.2)
+
+        self.play(FadeIn(stack_ops), run_time=0.5)
+        self.play(FadeIn(queue_ops), run_time=0.5)
+
+        note = Text("Both are O(1) for all core operations!", font_size=16, color=YELLOW).shift(DOWN * 2.5)
+        self.play(Write(note))
         self.wait(2)
+        self.play(FadeOut(*self.mobjects))

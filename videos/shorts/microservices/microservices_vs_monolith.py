@@ -9,8 +9,7 @@ class MicroservicesVsMonolith(Scene):
 
         # Monolith
         mono_title = Text("Monolith", font_size=24, color=RED).shift(LEFT * 3 + UP * 2.5)
-        mono = RoundedRectangle(corner_radius=0.2, width=3.5, height=3, color=RED, fill_opacity=0.15)
-        mono.shift(LEFT * 3)
+        mono = RoundedRectangle(corner_radius=0.2, width=3.5, height=3, color=RED, fill_opacity=0.15).shift(LEFT * 3)
         layers = ["UI", "Business Logic", "Data Access", "Database"]
         for i, layer in enumerate(layers):
             txt = Text(layer, font_size=14, color=RED).move_to(mono).shift(UP * (0.9 - i * 0.6))
@@ -38,4 +37,57 @@ class MicroservicesVsMonolith(Scene):
         mono_note = Text("Single deploy", font_size=16, color=RED).shift(LEFT * 3 + DOWN * 2.5)
         micro_note = Text("Independent deploy", font_size=16, color=GREEN).shift(RIGHT * 3 + DOWN * 2.5)
         self.play(Write(mono_note), Write(micro_note))
+        self.wait(1)
+        self.play(FadeOut(mono_title, mono, micro_title, svc_boxes, mono_note, micro_note))
+
+        # Comparison
+        comp_title = Text("Comparison", font_size=28, color=YELLOW).shift(UP * 2.8)
+        self.play(Write(comp_title))
+
+        headers = VGroup(
+            Text("", font_size=14).shift(LEFT * 3.5),
+            Text("Monolith", font_size=16, color=RED, weight=BOLD),
+            Text("Microservices", font_size=16, color=GREEN, weight=BOLD).shift(RIGHT * 3.5),
+        ).shift(UP * 2)
+        self.play(FadeIn(headers), run_time=0.3)
+
+        rows = [
+            ("Complexity", "Simple", "Complex"),
+            ("Scaling", "Scale everything", "Scale per service"),
+            ("Deploy", "All or nothing", "Independent"),
+            ("Tech stack", "Single", "Polyglot"),
+            ("Failure", "Whole app down", "Partial failure"),
+        ]
+        for i, (label, m, ms) in enumerate(rows):
+            row = VGroup(
+                Text(label, font_size=13, weight=BOLD).shift(LEFT * 3.5),
+                Text(m, font_size=13, color=RED),
+                Text(ms, font_size=13, color=GREEN).shift(RIGHT * 3.5),
+            ).shift(UP * (1.2 - i * 0.6))
+            self.play(FadeIn(row), run_time=0.35)
+
+        self.wait(1.5)
+        self.play(FadeOut(*self.mobjects))
+
+        # When to use
+        when_title = Text("When to Choose", font_size=28, color=TEAL).shift(UP * 2.5)
+        self.play(Write(when_title))
+
+        mono_when = VGroup(
+            Text("Monolith when:", font_size=18, color=RED, weight=BOLD),
+            Text("• Small team", font_size=16),
+            Text("• Early stage startup", font_size=16),
+            Text("• Simple domain", font_size=16),
+        ).arrange(DOWN, aligned_edge=LEFT).shift(LEFT * 3 + DOWN * 0.2)
+
+        micro_when = VGroup(
+            Text("Microservices when:", font_size=18, color=GREEN, weight=BOLD),
+            Text("• Large team", font_size=16),
+            Text("• Need independent scaling", font_size=16),
+            Text("• Complex domain", font_size=16),
+        ).arrange(DOWN, aligned_edge=LEFT).shift(RIGHT * 3 + DOWN * 0.2)
+
+        self.play(FadeIn(mono_when), run_time=0.5)
+        self.play(FadeIn(micro_when), run_time=0.5)
         self.wait(2)
+        self.play(FadeOut(*self.mobjects))

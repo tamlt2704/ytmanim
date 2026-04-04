@@ -18,26 +18,62 @@ class Deadlock(Scene):
 
         self.play(FadeIn(t1, t1_label, t2, t2_label, r1, r1_label, r2, r2_label))
 
-        # A holds Lock 1
         a1 = Arrow(t1.get_bottom(), r1.get_top(), buff=0.1, color=BLUE, stroke_width=3)
         a1_label = Text("holds", font_size=12, color=BLUE).next_to(a1, LEFT, buff=0.1)
         self.play(GrowArrow(a1), FadeIn(a1_label), run_time=0.5)
 
-        # B holds Lock 2
         a2 = Arrow(t2.get_bottom(), r2.get_top(), buff=0.1, color=GREEN, stroke_width=3)
         a2_label = Text("holds", font_size=12, color=GREEN).next_to(a2, RIGHT, buff=0.1)
         self.play(GrowArrow(a2), FadeIn(a2_label), run_time=0.5)
 
-        # A wants Lock 2
         a3 = Arrow(t1.get_right(), r2.get_top() + LEFT * 0.5, buff=0.1, color=RED, stroke_width=3)
         a3_label = Text("wants", font_size=12, color=RED).next_to(a3, UP, buff=0.05)
         self.play(GrowArrow(a3), FadeIn(a3_label), run_time=0.5)
 
-        # B wants Lock 1
         a4 = Arrow(t2.get_left(), r1.get_top() + RIGHT * 0.5, buff=0.1, color=RED, stroke_width=3)
         a4_label = Text("wants", font_size=12, color=RED).next_to(a4, UP, buff=0.05)
         self.play(GrowArrow(a4), FadeIn(a4_label), run_time=0.5)
 
         dead = Text("💀 DEADLOCK!", font_size=36, color=RED).shift(DOWN * 3)
         self.play(Write(dead))
+        self.wait(1.5)
+        self.play(FadeOut(t1, t1_label, t2, t2_label, r1, r1_label, r2, r2_label,
+                          a1, a1_label, a2, a2_label, a3, a3_label, a4, a4_label, dead))
+
+        # 4 Conditions for deadlock
+        cond_title = Text("4 Conditions for Deadlock", font_size=28, color=YELLOW).shift(UP * 2.5)
+        self.play(Write(cond_title))
+
+        conditions = [
+            ("Mutual Exclusion", "Only one thread can hold a resource", RED),
+            ("Hold and Wait", "Hold one, wait for another", ORANGE),
+            ("No Preemption", "Can't force release of a lock", YELLOW),
+            ("Circular Wait", "A→B→C→A dependency cycle", PURPLE),
+        ]
+        for i, (name, desc, color) in enumerate(conditions):
+            n = Text(f"{i+1}. {name}", font_size=18, color=color, weight=BOLD).shift(LEFT * 2 + UP * (1 - i * 0.8))
+            d = Text(desc, font_size=14, color=GREY).next_to(n, DOWN, buff=0.05, aligned_edge=LEFT)
+            self.play(FadeIn(n, d), run_time=0.4)
+
+        note = Text("Break ANY one condition → no deadlock!", font_size=16, color=GREEN).shift(DOWN * 2.5)
+        self.play(Write(note))
+        self.wait(1.5)
+        self.play(FadeOut(cond_title, note, *self.mobjects))
+
+        # Prevention
+        prev_title = Text("Prevention Strategies", font_size=28, color=GREEN).shift(UP * 2.5)
+        self.play(Write(prev_title))
+
+        strategies = [
+            ("Lock ordering", "Always acquire locks in same order"),
+            ("Timeout", "Give up after waiting too long"),
+            ("Lock-free algorithms", "Use atomic operations instead"),
+            ("Deadlock detection", "Monitor and break cycles"),
+        ]
+        for i, (strategy, desc) in enumerate(strategies):
+            s = Text(f"✅ {strategy}", font_size=18, color=GREEN).shift(LEFT * 2 + UP * (1 - i * 0.8))
+            d = Text(desc, font_size=14).shift(RIGHT * 2.5 + UP * (1 - i * 0.8))
+            self.play(FadeIn(s, d), run_time=0.4)
+
         self.wait(2)
+        self.play(FadeOut(*self.mobjects))

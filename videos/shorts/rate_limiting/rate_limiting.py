@@ -34,4 +34,40 @@ class RateLimiting(Scene):
 
         result = Text("Prevents abuse & DDoS", font_size=22, color=GREEN).shift(DOWN * 2.5)
         self.play(Write(result))
+        self.wait(1)
+        self.play(FadeOut(*self.mobjects))
+
+        # Algorithms
+        algo_title = Text("Rate Limiting Algorithms", font_size=28, color=YELLOW).shift(UP * 2.5)
+        self.play(Write(algo_title))
+
+        algorithms = [
+            ("Token Bucket", "Tokens refill at fixed rate, each request costs 1 token", BLUE),
+            ("Sliding Window", "Count requests in rolling time window", GREEN),
+            ("Fixed Window", "Reset counter every interval", ORANGE),
+            ("Leaky Bucket", "Process requests at constant rate", PURPLE),
+        ]
+        for i, (name, desc, color) in enumerate(algorithms):
+            n = Text(name, font_size=18, color=color, weight=BOLD).shift(LEFT * 1 + UP * (1 - i * 0.9))
+            d = Text(desc, font_size=12, color=GREY).next_to(n, DOWN, buff=0.05, aligned_edge=LEFT)
+            self.play(FadeIn(n, d), run_time=0.4)
+        self.wait(1.5)
+        self.play(FadeOut(*self.mobjects))
+
+        # HTTP headers
+        hdr_title = Text("Rate Limit Headers", font_size=28, color=TEAL).shift(UP * 2.5)
+        self.play(Write(hdr_title))
+
+        headers = [
+            ("X-RateLimit-Limit: 100", "Max requests per window"),
+            ("X-RateLimit-Remaining: 42", "Requests left"),
+            ("X-RateLimit-Reset: 1625097600", "When limit resets"),
+            ("Retry-After: 30", "Seconds to wait (on 429)"),
+        ]
+        for i, (header, desc) in enumerate(headers):
+            h = Text(header, font_size=14, color=YELLOW, font="Monospace").shift(LEFT * 1 + UP * (1 - i * 0.8))
+            d = Text(desc, font_size=12, color=GREY).next_to(h, DOWN, buff=0.05, aligned_edge=LEFT)
+            self.play(FadeIn(h, d), run_time=0.4)
+
         self.wait(2)
+        self.play(FadeOut(*self.mobjects))

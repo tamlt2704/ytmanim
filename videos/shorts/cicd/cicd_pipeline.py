@@ -35,4 +35,37 @@ class CICDPipeline(Scene):
         cd_label = Text("Continuous Delivery", font_size=16, color=ORANGE).next_to(cd_brace, DOWN, buff=0.1)
 
         self.play(Create(ci_brace), Write(ci_label), Create(cd_brace), Write(cd_label), run_time=0.6)
+        self.wait(1.5)
+        self.play(FadeOut(boxes, arrows, ci_brace, ci_label, cd_brace, cd_label))
+
+        # Each stage detail
+        details = [
+            ("Code", "Developer pushes to Git", BLUE, ["git push", "Pull request", "Code review"]),
+            ("Build", "Compile & package", GREEN, ["Docker build", "npm install", "Compile"]),
+            ("Test", "Automated testing", YELLOW, ["Unit tests", "Integration tests", "E2E tests"]),
+            ("Deploy", "Ship to production", ORANGE, ["Staging → Prod", "Blue/Green", "Canary"]),
+            ("Monitor", "Watch for issues", PURPLE, ["Logs", "Metrics", "Alerts"]),
+        ]
+
+        for name, desc, color, items in details:
+            header = Text(name, font_size=32, color=color, weight=BOLD).shift(UP * 2)
+            subtitle = Text(desc, font_size=18).shift(UP * 1)
+            self.play(Write(header), FadeIn(subtitle), run_time=0.4)
+
+            item_group = VGroup()
+            for i, item in enumerate(items):
+                txt = Text(f"• {item}", font_size=16).shift(UP * (-0.2 + -i * 0.5))
+                item_group.add(txt)
+            self.play(FadeIn(item_group), run_time=0.4)
+            self.wait(0.8)
+            self.play(FadeOut(header, subtitle, item_group), run_time=0.3)
+
+        # Tools
+        tools_title = Text("Popular CI/CD Tools", font_size=28, color=TEAL).shift(UP * 2)
+        self.play(Write(tools_title))
+        tools = ["GitHub Actions", "Jenkins", "GitLab CI", "CircleCI", "AWS CodePipeline"]
+        for i, tool in enumerate(tools):
+            t = Text(f"• {tool}", font_size=18, color=TEAL).shift(UP * (0.8 - i * 0.6))
+            self.play(FadeIn(t), run_time=0.3)
         self.wait(2)
+        self.play(FadeOut(*self.mobjects))

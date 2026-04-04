@@ -31,4 +31,43 @@ class Hashing(Scene):
             Text("✓ Small change = totally different hash", font_size=16, color=YELLOW),
         ).arrange(DOWN, aligned_edge=LEFT).shift(DOWN * 2.5)
         self.play(FadeIn(props), run_time=0.5)
+        self.wait(1.5)
+        self.play(FadeOut(*self.mobjects))
+
+        # Use cases
+        use_title = Text("Where Hashing Is Used", font_size=28, color=TEAL).shift(UP * 2.5)
+        self.play(Write(use_title))
+
+        uses = [
+            ("Password Storage", "Store hash, not plaintext", BLUE),
+            ("Data Integrity", "Verify file downloads", GREEN),
+            ("Digital Signatures", "Sign documents", ORANGE),
+            ("Hash Tables", "O(1) data lookup", YELLOW),
+            ("Blockchain", "Chain blocks together", PURPLE),
+        ]
+        for i, (use, desc, color) in enumerate(uses):
+            u = Text(use, font_size=18, color=color, weight=BOLD).shift(LEFT * 2.5 + UP * (1 - i * 0.7))
+            d = Text(desc, font_size=14).shift(RIGHT * 2 + UP * (1 - i * 0.7))
+            self.play(FadeIn(u, d), run_time=0.35)
+        self.wait(1.5)
+        self.play(FadeOut(*self.mobjects))
+
+        # Hash algorithms comparison
+        algo_title = Text("Hash Algorithms", font_size=28, color=YELLOW).shift(UP * 2.5)
+        self.play(Write(algo_title))
+
+        algos = [
+            ("MD5", "128-bit", "❌ Broken", RED),
+            ("SHA-1", "160-bit", "❌ Broken", RED),
+            ("SHA-256", "256-bit", "✅ Secure", GREEN),
+            ("SHA-3", "256-bit", "✅ Secure", GREEN),
+            ("bcrypt", "Variable", "✅ For passwords", BLUE),
+        ]
+        for i, (name, size, status, color) in enumerate(algos):
+            n = Text(name, font_size=16, weight=BOLD).shift(LEFT * 3.5 + UP * (1 - i * 0.6))
+            s = Text(size, font_size=14).shift(LEFT * 0.5 + UP * (1 - i * 0.6))
+            st = Text(status, font_size=14, color=color).shift(RIGHT * 2.5 + UP * (1 - i * 0.6))
+            self.play(FadeIn(n, s, st), run_time=0.35)
+
         self.wait(2)
+        self.play(FadeOut(*self.mobjects))
