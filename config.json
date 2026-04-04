@@ -786,6 +786,6 @@
     }
   },
   "render": [
-    "hash_table"
+    "recursion"
   ]
 }
