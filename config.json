@@ -786,6 +786,6 @@
     }
   },
   "render": [
-    "replication"
+    "proxy_reverse"
   ]
 }
