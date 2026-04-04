@@ -786,6 +786,6 @@
     }
   },
   "render": [
-    "xss"
+    "sql_injection"
   ]
 }
