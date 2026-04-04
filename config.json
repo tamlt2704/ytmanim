@@ -786,6 +786,6 @@
     }
   },
   "render": [
-    "pub_sub"
+    "message_queue"
   ]
 }
