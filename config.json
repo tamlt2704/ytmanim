@@ -786,6 +786,6 @@
     }
   },
   "render": [
-    "async_await"
+    "closure"
   ]
 }
