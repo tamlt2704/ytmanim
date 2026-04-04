@@ -786,6 +786,6 @@
     }
   },
   "render": [
-    "ssr_csr"
+    "cookies_sessions"
   ]
 }
