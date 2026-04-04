@@ -786,6 +786,6 @@
     }
   },
   "render": [
-    "hoisting"
+    "prototype"
   ]
 }
