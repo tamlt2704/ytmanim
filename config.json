@@ -786,6 +786,6 @@
     }
   },
   "render": [
-    "caching"
+    "cdn"
   ]
 }
