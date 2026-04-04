@@ -786,6 +786,6 @@
     }
   },
   "render": [
-    "binary_search"
+    "hash_table"
   ]
 }
