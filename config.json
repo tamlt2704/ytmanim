@@ -786,6 +786,6 @@
     }
   },
   "render": [
-    "stack_queue"
+    "linked_list"
   ]
 }
