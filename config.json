@@ -786,6 +786,6 @@
     }
   },
   "render": [
-    "tcp_udp"
+    "http_methods"
   ]
 }
