@@ -786,6 +786,6 @@
     }
   },
   "render": [
-    "git_branching"
+    "rest_graphql"
   ]
 }
