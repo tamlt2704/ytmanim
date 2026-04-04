@@ -786,6 +786,6 @@
     }
   },
   "render": [
-    "indexing"
+    "sharding"
   ]
 }
