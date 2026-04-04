@@ -786,6 +786,6 @@
     }
   },
   "render": [
-    "prototype"
+    "virtual_dom"
   ]
 }
