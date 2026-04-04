@@ -786,6 +786,6 @@
     }
   },
   "render": [
-    "cors"
+    "websockets"
   ]
 }
