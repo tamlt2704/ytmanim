@@ -23,8 +23,8 @@ export default makeScene2D(function* (view) {
   yield* all(title().opacity(1, 0.4), title().y(-580, 0.5, easeOutCubic));
   yield* subtitle().opacity(1, 0.4); yield* waitFor(0.2);
   yield* all(terminal().opacity(1, 0.4), terminal().scale(1, 0.5, easeOutCubic));
-  yield* all(lines[0].opacity(1, 0.3), lines[0].text('f'{name=} {price:.2f}'', 0.5));
+  yield* all(lines[0].opacity(1, 0.3), lines[0].text("f'{name=} {price:.2f}'", 0.5));
   yield* waitFor(0.3);
-  yield* all(lines[1].opacity(1, 0.3), lines[1].text('name='Widget' 9.99', 0.4));
+  yield* all(lines[1].opacity(1, 0.3), lines[1].text("name='Widget' 9.99", 0.4));
   yield* tip().opacity(1, 0.5); yield* waitFor(2);
 });
