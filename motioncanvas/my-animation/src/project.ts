@@ -14,22 +14,24 @@ import gitCherryPick from './scenes/git-cherry-pick?scene';
 import gitBlame from './scenes/git-blame?scene';
 import gitWorktree from './scenes/git-worktree?scene';
 import thumbnails from './scenes/thumbnails?scene';
+import tmuxCheatsheet from './scenes/tmux-cheatsheet?scene';
 
 export default makeProject({
   scenes: [
-    gitInit,
-    gitClone,
-    gitAddCommit,
-    gitPushPull,
-    gitBranch,
-    gitMerge,
-    gitStatusLog,
-    gitStash,
-    gitBisect,
-    gitReflog,
-    gitCherryPick,
-    gitBlame,
-    gitWorktree,
-    thumbnails,
+    tmuxCheatsheet,
+    // gitInit,
+    // gitClone,
+    // gitAddCommit,
+    // gitPushPull,
+    // gitBranch,
+    // gitMerge,
+    // gitStatusLog,
+    // gitStash,
+    // gitBisect,
+    // gitReflog,
+    // gitCherryPick,
+    // gitBlame,
+    // gitWorktree,
+    // thumbnails,
   ],
 });
