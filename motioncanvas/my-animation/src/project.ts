@@ -137,6 +137,15 @@ import netCdn from './scenes/net-cdn?scene';
 import netFirewall from './scenes/net-firewall?scene';
 import netCors from './scenes/net-cors?scene';
 
+// LeetCode: Two Pointers
+import tpTwoSum from './scenes/tp-two-sum?scene';
+import tpPalindrome from './scenes/tp-palindrome?scene';
+import tpThreeSum from './scenes/tp-three-sum?scene';
+import tpContainerWater from './scenes/tp-container-water?scene';
+import tpTrappingRain from './scenes/tp-trapping-rain?scene';
+import tpMoveZeroes from './scenes/tp-move-zeroes?scene';
+import tpSortColors from './scenes/tp-sort-colors?scene';
+
 const git = [gitInit, gitClone, gitAddCommit, gitPushPull, gitBranch, gitMerge, gitStatusLog, gitStash, gitBisect, gitReflog, gitCherryPick, gitBlame, gitWorktree];
 const tmux = [tmuxCheatsheet];
 const docker = [dockerRun, dockerBuild, dockerPs, dockerExec, dockerLogs, dockerStop, dockerRm, dockerImages, dockerVolumes, dockerCompose];
@@ -149,6 +158,7 @@ const css = [cssFlexbox, cssGrid, cssClamp, cssHas, cssContainer, cssAspect, css
 const python = [pyListComp, pyDictComp, pyEnumerate, pyZip, pyWalrus, pyUnpacking, pyFstrings, pyDefaultdict, pyCounter, pyAnyAll];
 const aws = [awsEc2, awsS3, awsLambda, awsDynamodb, awsSqs, awsSns, awsCloudfront, awsIam, awsRds, awsEcs];
 const networking = [netIp, netTcpUdp, netDns, netPorts, netHttp, netLatency, netLoadBalancer, netCdn, netFirewall, netCors];
+const twoPointers = [tpTwoSum, tpPalindrome, tpThreeSum, tpContainerWater, tpTrappingRain, tpMoveZeroes, tpSortColors];
 
 export default makeProject({
   // Swap the variable to render a different topic.
