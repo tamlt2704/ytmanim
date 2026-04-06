@@ -296,6 +296,19 @@ const trie = [tiImplement, tiAddSearch, tiWordSearch2];
 const intervals = [ivInsert, ivMerge, ivNonOverlap, ivMeetingRooms, ivMeetingRooms2, ivMinArrows, ivIntersections];
 const bitManip = [bmSingleNum, bmCountBits, bmCountingBits, bmReverseBits, bmMissingNum, bmSumTwo, bmReverseInt];
 
+// Kubernetes
+import k8sPods from './scenes/k8s-pods?scene';
+import k8sDeployments from './scenes/k8s-deployments?scene';
+import k8sServices from './scenes/k8s-services?scene';
+import k8sIngress from './scenes/k8s-ingress?scene';
+import k8sConfigmaps from './scenes/k8s-configmaps?scene';
+import k8sSecrets from './scenes/k8s-secrets?scene';
+import k8sNamespaces from './scenes/k8s-namespaces?scene';
+import k8sVolumes from './scenes/k8s-volumes?scene';
+import k8sHpa from './scenes/k8s-hpa?scene';
+import k8sHelm from './scenes/k8s-helm?scene';
+const kubernetes = [k8sPods, k8sDeployments, k8sServices, k8sIngress, k8sConfigmaps, k8sSecrets, k8sNamespaces, k8sVolumes, k8sHpa, k8sHelm];
+
 export default makeProject({
   // Swap the variable to render a different topic.
   // Append `thumbnails` to generate thumbnail frames, e.g. [...docker, thumbnails]

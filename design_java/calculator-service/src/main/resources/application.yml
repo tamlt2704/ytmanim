@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: calculator-service
+  threads:
+    virtual:
+      enabled: true  # Java 21 virtual threads for 10k+ req/s
+  data:
+    redis:
+      host: localhost
+      port: 6379
+      timeout: 500ms
+      lettuce:
+        pool:
+          max-active: 50
+          max-idle: 20
+          min-idle: 5
+
+server:
+  tomcat:
+    max-connections: 20000
+    accept-count: 500
+    threads:
+      max: 400

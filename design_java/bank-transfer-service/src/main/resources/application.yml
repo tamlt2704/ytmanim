@@ -1,0 +1,44 @@
+spring:
+  application:
+    name: bank-transfer-service
+  threads:
+    virtual:
+      enabled: true
+  datasource:
+    url: jdbc:postgresql://localhost:5432/bankdb
+    username: bank
+    password: bank123
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      maximum-pool-size: 30
+      minimum-idle: 10
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+  kafka:
+    bootstrap-servers: localhost:9092
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+      acks: all
+      retries: 3
+      properties:
+        enable.idempotence: true
+        max.in.flight.requests.per.connection: 5
+    consumer:
+      group-id: bank-transfer-group
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      auto-offset-reset: earliest
+      properties:
+        spring.json.trusted.packages: com.bank.model
+    listener:
+      concurrency: 10
+      ack-mode: manual
+
+transfer:
+  topic: bank-transfers
