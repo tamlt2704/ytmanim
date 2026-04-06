@@ -2,20 +2,29 @@
   "motioncanvas": {
     "project": "motioncanvas/my-animation",
     "scenes": [
-      "git-init",
-      "git-clone",
-      "git-add-commit",
-      "git-push-pull",
-      "git-branch",
-      "git-merge",
-      "git-status-log",
-      "git-stash",
-      "git-bisect",
-      "git-reflog",
-      "git-cherry-pick",
-      "git-blame",
-      "git-worktree",
-      "thumbnails"
+      "git-init", "git-clone", "git-add-commit", "git-push-pull", "git-branch",
+      "git-merge", "git-status-log", "git-stash", "git-bisect", "git-reflog",
+      "git-cherry-pick", "git-blame", "git-worktree", "thumbnails", "tmux-cheatsheet",
+      "docker-run", "docker-build", "docker-ps", "docker-exec", "docker-logs",
+      "docker-stop", "docker-rm", "docker-images", "docker-volumes", "docker-compose",
+      "linux-grep", "linux-find", "linux-awk", "linux-sed", "linux-xargs",
+      "linux-curl", "linux-chmod", "linux-ln", "linux-tar", "linux-ssh",
+      "vim-modes", "vim-save-quit", "vim-search", "vim-dd", "vim-yank-paste",
+      "vim-ciw", "vim-splits", "vim-macros", "vim-substitute", "vim-dot",
+      "sql-select", "sql-where", "sql-join", "sql-group-by", "sql-having",
+      "sql-subquery", "sql-index", "sql-union", "sql-window", "sql-cte",
+      "regex-literals", "regex-char-class", "regex-quantifiers", "regex-anchors", "regex-groups",
+      "regex-alternation", "regex-lookahead", "regex-lookbehind", "regex-greedy", "regex-patterns",
+      "http-200", "http-201", "http-301", "http-400", "http-401",
+      "http-403", "http-404", "http-429", "http-500", "http-503",
+      "css-flexbox", "css-grid", "css-clamp", "css-has", "css-container",
+      "css-aspect", "css-scroll-snap", "css-layer", "css-nesting", "css-view-transitions",
+      "py-list-comp", "py-dict-comp", "py-enumerate", "py-zip", "py-walrus",
+      "py-unpacking", "py-fstrings", "py-defaultdict", "py-counter", "py-any-all",
+      "aws-ec2", "aws-s3", "aws-lambda", "aws-dynamodb", "aws-sqs",
+      "aws-sns", "aws-cloudfront", "aws-iam", "aws-rds", "aws-ecs",
+      "net-ip", "net-tcp-udp", "net-dns", "net-ports", "net-http",
+      "net-latency", "net-load-balancer", "net-cdn", "net-firewall", "net-cors"
     ]
   },
   "music": "music.mp3",
@@ -24,51 +33,101 @@
     "git-commands": {
       "title": "13 Git Commands Every Developer MUST Know 🔥 (Animated)",
       "description": "Stop memorizing — START understanding.\n\nEvery git command you actually need, explained with animations in 60 seconds.\n\n⏱️ Timestamps:\n00:00 git init\n00:05 git clone\n00:10 git add & commit\n00:15 git push & pull\n00:20 git branch\n00:25 git merge\n00:30 git status & log\n00:35 git stash\n00:40 git bisect\n00:45 git reflog\n00:50 git cherry-pick\n00:55 git blame\n01:00 git worktree\n\n💡 Most devs only use 5 of these. The rest will save you HOURS.\n\n👉 Follow for more animated dev tutorials!\n\n#git #programming #developer #coding #softwareengineer #webdev #devops #gitcommands #learntocode #tech #shorts",
-      "tags": [
-        "git commands",
-        "git tutorial",
-        "git for beginners",
-        "git init",
-        "git clone",
-        "git commit",
-        "git push",
-        "git pull",
-        "git branch",
-        "git merge",
-        "git stash",
-        "git bisect",
-        "git reflog",
-        "git cherry-pick",
-        "git blame",
-        "git worktree",
-        "git animated",
-        "learn git",
-        "programming",
-        "software engineering",
-        "developer tools",
-        "coding tips",
-        "web development",
-        "devops",
-        "shorts"
-      ],
+      "tags": ["git commands", "git tutorial", "git for beginners", "git init", "git clone", "git commit", "git push", "git pull", "git branch", "git merge", "git stash", "git bisect", "git reflog", "git cherry-pick", "git blame", "git worktree", "git animated", "learn git", "programming", "software engineering", "developer tools", "coding tips", "web development", "devops", "shorts"],
       "category": "Science & Technology",
       "visibility": "public",
       "language": "en",
-      "scenes": [
-        "git-init",
-        "git-clone",
-        "git-add-commit",
-        "git-push-pull",
-        "git-branch",
-        "git-merge",
-        "git-status-log",
-        "git-stash",
-        "git-bisect",
-        "git-reflog",
-        "git-cherry-pick",
-        "git-blame",
-        "git-worktree"
-      ]
+      "scenes": ["git-init", "git-clone", "git-add-commit", "git-push-pull", "git-branch", "git-merge", "git-status-log", "git-stash", "git-bisect", "git-reflog", "git-cherry-pick", "git-blame", "git-worktree"]
+    },
+    "docker-essentials": {
+      "title": "10 Docker Commands in 60 Seconds 🐳 (Animated)",
+      "description": "Docker explained with animations — no fluff.\n\n⏱️ Timestamps:\n00:00 docker run\n00:06 docker build\n00:12 docker ps\n00:18 docker exec\n00:24 docker logs\n00:30 docker stop\n00:36 docker rm\n00:42 docker images\n00:48 docker volumes\n00:54 docker compose\n\n👉 Follow for more animated dev tutorials!\n\n#docker #containers #devops #programming #coding #shorts",
+      "tags": ["docker", "docker tutorial", "docker commands", "docker run", "docker build", "docker compose", "containers", "devops", "programming", "coding", "shorts"],
+      "category": "Science & Technology",
+      "visibility": "public",
+      "language": "en",
+      "scenes": ["docker-run", "docker-build", "docker-ps", "docker-exec", "docker-logs", "docker-stop", "docker-rm", "docker-images", "docker-volumes", "docker-compose"]
+    },
+    "linux-commands": {
+      "title": "10 Linux Commands Every Dev Needs 🐧 (Animated)",
+      "description": "The Linux commands that will make you 10x faster.\n\n⏱️ Timestamps:\n00:00 grep\n00:06 find\n00:12 awk\n00:18 sed\n00:24 xargs\n00:30 curl\n00:36 chmod\n00:42 ln -s\n00:48 tar\n00:54 ssh\n\n👉 Follow for more animated dev tutorials!\n\n#linux #terminal #bash #programming #coding #shorts",
+      "tags": ["linux", "linux commands", "terminal", "bash", "grep", "find", "awk", "sed", "curl", "ssh", "chmod", "programming", "coding", "shorts"],
+      "category": "Science & Technology",
+      "visibility": "public",
+      "language": "en",
+      "scenes": ["linux-grep", "linux-find", "linux-awk", "linux-sed", "linux-xargs", "linux-curl", "linux-chmod", "linux-ln", "linux-tar", "linux-ssh"]
+    },
+    "vim-survival": {
+      "title": "Vim Survival Guide in 60 Seconds ⌨️ (Animated)",
+      "description": "Everything you need to survive Vim — animated.\n\n⏱️ Timestamps:\n00:00 Modes\n00:06 :w :q\n00:12 /search\n00:18 dd\n00:24 yy/p\n00:30 ciw\n00:36 Splits\n00:42 Macros\n00:48 :s/old/new\n00:54 . repeat\n\n👉 Follow for more animated dev tutorials!\n\n#vim #neovim #editor #programming #coding #shorts",
+      "tags": ["vim", "neovim", "vim tutorial", "vim commands", "text editor", "programming", "coding", "developer tools", "shorts"],
+      "category": "Science & Technology",
+      "visibility": "public",
+      "language": "en",
+      "scenes": ["vim-modes", "vim-save-quit", "vim-search", "vim-dd", "vim-yank-paste", "vim-ciw", "vim-splits", "vim-macros", "vim-substitute", "vim-dot"]
+    },
+    "sql-60-seconds": {
+      "title": "SQL in 60 Seconds 🗃️ (Animated)",
+      "description": "Every SQL concept you need, animated.\n\n⏱️ Timestamps:\n00:00 SELECT\n00:06 WHERE\n00:12 JOIN\n00:18 GROUP BY\n00:24 HAVING\n00:30 Subquery\n00:36 INDEX\n00:42 UNION\n00:48 Window Functions\n00:54 CTE\n\n👉 Follow for more animated dev tutorials!\n\n#sql #database #programming #coding #shorts",
+      "tags": ["sql", "sql tutorial", "database", "select", "join", "group by", "window functions", "cte", "programming", "coding", "shorts"],
+      "category": "Science & Technology",
+      "visibility": "public",
+      "language": "en",
+      "scenes": ["sql-select", "sql-where", "sql-join", "sql-group-by", "sql-having", "sql-subquery", "sql-index", "sql-union", "sql-window", "sql-cte"]
+    },
+    "regex-decoded": {
+      "title": "Regex Decoded in 60 Seconds 🔍 (Animated)",
+      "description": "Regular expressions finally make sense.\n\n⏱️ Timestamps:\n00:00 Literals\n00:06 Character Classes\n00:12 Quantifiers\n00:18 Anchors\n00:24 Groups\n00:30 Alternation\n00:36 Lookahead\n00:42 Lookbehind\n00:48 Greedy vs Lazy\n00:54 Common Patterns\n\n👉 Follow for more animated dev tutorials!\n\n#regex #programming #coding #shorts",
+      "tags": ["regex", "regular expressions", "regex tutorial", "pattern matching", "programming", "coding", "shorts"],
+      "category": "Science & Technology",
+      "visibility": "public",
+      "language": "en",
+      "scenes": ["regex-literals", "regex-char-class", "regex-quantifiers", "regex-anchors", "regex-groups", "regex-alternation", "regex-lookahead", "regex-lookbehind", "regex-greedy", "regex-patterns"]
+    },
+    "http-status-codes": {
+      "title": "HTTP Status Codes Explained 🌐 (Animated)",
+      "description": "Every status code you'll actually encounter.\n\n⏱️ Timestamps:\n00:00 200 OK\n00:06 201 Created\n00:12 301 Moved\n00:18 400 Bad Request\n00:24 401 Unauthorized\n00:30 403 Forbidden\n00:36 404 Not Found\n00:42 429 Rate Limited\n00:48 500 Server Error\n00:54 503 Unavailable\n\n👉 Follow for more animated dev tutorials!\n\n#http #webdev #api #programming #coding #shorts",
+      "tags": ["http", "status codes", "http status", "web development", "api", "rest", "programming", "coding", "shorts"],
+      "category": "Science & Technology",
+      "visibility": "public",
+      "language": "en",
+      "scenes": ["http-200", "http-201", "http-301", "http-400", "http-401", "http-403", "http-404", "http-429", "http-500", "http-503"]
+    },
+    "css-tricks": {
+      "title": "10 CSS Tricks You Wish You Knew 🎨 (Animated)",
+      "description": "Modern CSS features that replace JavaScript.\n\n⏱️ Timestamps:\n00:00 Flexbox\n00:06 Grid\n00:12 clamp()\n00:18 :has()\n00:24 Container Queries\n00:30 aspect-ratio\n00:36 scroll-snap\n00:42 @layer\n00:48 Nesting\n00:54 View Transitions\n\n👉 Follow for more animated dev tutorials!\n\n#css #webdev #frontend #programming #coding #shorts",
+      "tags": ["css", "css tricks", "flexbox", "grid", "modern css", "web development", "frontend", "programming", "coding", "shorts"],
+      "category": "Science & Technology",
+      "visibility": "public",
+      "language": "en",
+      "scenes": ["css-flexbox", "css-grid", "css-clamp", "css-has", "css-container", "css-aspect", "css-scroll-snap", "css-layer", "css-nesting", "css-view-transitions"]
+    },
+    "python-one-liners": {
+      "title": "10 Python One-Liners That Save Hours 🐍 (Animated)",
+      "description": "Write less Python, do more.\n\n⏱️ Timestamps:\n00:00 List Comprehension\n00:06 Dict Comprehension\n00:12 enumerate\n00:18 zip\n00:24 Walrus :=\n00:30 * Unpacking\n00:36 f-strings\n00:42 defaultdict\n00:48 Counter\n00:54 any/all\n\n👉 Follow for more animated dev tutorials!\n\n#python #programming #coding #shorts",
+      "tags": ["python", "python tips", "python tricks", "one liners", "list comprehension", "programming", "coding", "shorts"],
+      "category": "Science & Technology",
+      "visibility": "public",
+      "language": "en",
+      "scenes": ["py-list-comp", "py-dict-comp", "py-enumerate", "py-zip", "py-walrus", "py-unpacking", "py-fstrings", "py-defaultdict", "py-counter", "py-any-all"]
+    },
+    "aws-plain-english": {
+      "title": "10 AWS Services in Plain English ☁️ (Animated)",
+      "description": "AWS services explained like you're 5.\n\n⏱️ Timestamps:\n00:00 EC2\n00:06 S3\n00:12 Lambda\n00:18 DynamoDB\n00:24 SQS\n00:30 SNS\n00:36 CloudFront\n00:42 IAM\n00:48 RDS\n00:54 ECS\n\n👉 Follow for more animated dev tutorials!\n\n#aws #cloud #devops #programming #coding #shorts",
+      "tags": ["aws", "amazon web services", "cloud", "ec2", "s3", "lambda", "dynamodb", "devops", "programming", "coding", "shorts"],
+      "category": "Science & Technology",
+      "visibility": "public",
+      "language": "en",
+      "scenes": ["aws-ec2", "aws-s3", "aws-lambda", "aws-dynamodb", "aws-sqs", "aws-sns", "aws-cloudfront", "aws-iam", "aws-rds", "aws-ecs"]
+    },
+    "networking-for-devs": {
+      "title": "Networking for Devs in 60 Seconds 🌐 (Animated)",
+      "description": "Every networking concept you need as a developer.\n\n⏱️ Timestamps:\n00:00 IP Address\n00:06 TCP vs UDP\n00:12 DNS\n00:18 Ports\n00:24 HTTP/HTTPS\n00:30 Latency\n00:36 Load Balancer\n00:42 CDN\n00:48 Firewall\n00:54 CORS\n\n👉 Follow for more animated dev tutorials!\n\n#networking #webdev #programming #coding #shorts",
+      "tags": ["networking", "tcp", "udp", "dns", "http", "cors", "cdn", "load balancer", "firewall", "programming", "coding", "shorts"],
+      "category": "Science & Technology",
+      "visibility": "public",
+      "language": "en",
+      "scenes": ["net-ip", "net-tcp-udp", "net-dns", "net-ports", "net-http", "net-latency", "net-load-balancer", "net-cdn", "net-firewall", "net-cors"]
     }
   }
 }
