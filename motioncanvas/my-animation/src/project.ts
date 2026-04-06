@@ -164,6 +164,15 @@ import hmTopKFreq from './scenes/hm-top-k-freq?scene';
 import hmLongestConsec from './scenes/hm-longest-consec?scene';
 import hmEncodeDecode from './scenes/hm-encode-decode?scene';
 
+// LeetCode: Binary Search
+import bsSearchSorted from './scenes/bs-search-sorted?scene';
+import bsSearchMatrix from './scenes/bs-search-matrix?scene';
+import bsKokoBananas from './scenes/bs-koko-bananas?scene';
+import bsMinRotated from './scenes/bs-min-rotated?scene';
+import bsSearchRotated from './scenes/bs-search-rotated?scene';
+import bsTimeMap from './scenes/bs-time-map?scene';
+import bsMedianTwo from './scenes/bs-median-two?scene';
+
 const git = [gitInit, gitClone, gitAddCommit, gitPushPull, gitBranch, gitMerge, gitStatusLog, gitStash, gitBisect, gitReflog, gitCherryPick, gitBlame, gitWorktree];
 const tmux = [tmuxCheatsheet];
 const docker = [dockerRun, dockerBuild, dockerPs, dockerExec, dockerLogs, dockerStop, dockerRm, dockerImages, dockerVolumes, dockerCompose];
@@ -179,6 +188,7 @@ const networking = [netIp, netTcpUdp, netDns, netPorts, netHttp, netLatency, net
 const twoPointers = [tpTwoSum, tpPalindrome, tpThreeSum, tpContainerWater, tpTrappingRain, tpMoveZeroes, tpSortColors];
 const slidingWindow = [swBuySell, swLongestSubstr, swCharReplace, swMinWindow, swMaxSumK, swPermutation, swWindowMax];
 const hashMap = [hmTwoSum, hmGroupAnagrams, hmValidAnagram, hmContainsDup, hmTopKFreq, hmLongestConsec, hmEncodeDecode];
+const binarySearch = [bsSearchSorted, bsSearchMatrix, bsKokoBananas, bsMinRotated, bsSearchRotated, bsTimeMap, bsMedianTwo];
 
 export default makeProject({
   // Swap the variable to render a different topic.
