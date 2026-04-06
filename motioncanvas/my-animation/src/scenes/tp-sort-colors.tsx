@@ -120,12 +120,12 @@ export default makeScene2D(function* (view) {
   // Show code
   yield* all(codeBox().opacity(1, 0.4), codeBox().scale(1, 0.5, easeOutCubic));
   yield* all(codeLines[0].opacity(1, 0.12), codeLines[0].text('def sortColors(nums):', 0.25));
-  yield* all(codeLines[1].opacity(1, 0.12), codeLines[1].text('    lo, mid, hi = 0, 0, len(nums)-1', 0.25));
-  yield* all(codeLines[2].opacity(1, 0.12), codeLines[2].text('    while mid <= hi:', 0.25));
-  yield* all(codeLines[3].opacity(1, 0.12), codeLines[3].text('        if nums[mid] == 0:', 0.25));
-  yield* all(codeLines[4].opacity(1, 0.12), codeLines[4].text('            nums[lo],nums[mid]=nums[mid],nums[lo]', 0.2));
-  yield* all(codeLines[5].opacity(1, 0.12), codeLines[5].text('            lo += 1; mid += 1', 0.25));
-  yield* all(codeLines[6].opacity(1, 0.12), codeLines[6].text('        elif nums[mid]==1: mid+=1', 0.25));
+  yield* all(codeLines[1].opacity(1, 0.12), codeLines[1].text('    lo, mid, hi = 0, 0, len(nums)-1', 0.25));
+  yield* all(codeLines[2].opacity(1, 0.12), codeLines[2].text('    while mid <= hi:', 0.25));
+  yield* all(codeLines[3].opacity(1, 0.12), codeLines[3].text('        if nums[mid] == 0:', 0.25));
+  yield* all(codeLines[4].opacity(1, 0.12), codeLines[4].text('            nums[lo],nums[mid]=nums[mid],nums[lo]', 0.2));
+  yield* all(codeLines[5].opacity(1, 0.12), codeLines[5].text('            lo += 1; mid += 1', 0.25));
+  yield* all(codeLines[6].opacity(1, 0.12), codeLines[6].text('        elif nums[mid]==1: mid+=1', 0.25));
 
   yield* tip().opacity(1, 0.5);
   yield* waitFor(2);

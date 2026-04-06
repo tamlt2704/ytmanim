@@ -146,6 +146,15 @@ import tpTrappingRain from './scenes/tp-trapping-rain?scene';
 import tpMoveZeroes from './scenes/tp-move-zeroes?scene';
 import tpSortColors from './scenes/tp-sort-colors?scene';
 
+// LeetCode: Sliding Window
+import swBuySell from './scenes/sw-buy-sell?scene';
+import swLongestSubstr from './scenes/sw-longest-substr?scene';
+import swCharReplace from './scenes/sw-char-replace?scene';
+import swMinWindow from './scenes/sw-min-window?scene';
+import swMaxSumK from './scenes/sw-max-sum-k?scene';
+import swPermutation from './scenes/sw-permutation?scene';
+import swWindowMax from './scenes/sw-window-max?scene';
+
 const git = [gitInit, gitClone, gitAddCommit, gitPushPull, gitBranch, gitMerge, gitStatusLog, gitStash, gitBisect, gitReflog, gitCherryPick, gitBlame, gitWorktree];
 const tmux = [tmuxCheatsheet];
 const docker = [dockerRun, dockerBuild, dockerPs, dockerExec, dockerLogs, dockerStop, dockerRm, dockerImages, dockerVolumes, dockerCompose];
@@ -159,6 +168,7 @@ const python = [pyListComp, pyDictComp, pyEnumerate, pyZip, pyWalrus, pyUnpackin
 const aws = [awsEc2, awsS3, awsLambda, awsDynamodb, awsSqs, awsSns, awsCloudfront, awsIam, awsRds, awsEcs];
 const networking = [netIp, netTcpUdp, netDns, netPorts, netHttp, netLatency, netLoadBalancer, netCdn, netFirewall, netCors];
 const twoPointers = [tpTwoSum, tpPalindrome, tpThreeSum, tpContainerWater, tpTrappingRain, tpMoveZeroes, tpSortColors];
+const slidingWindow = [swBuySell, swLongestSubstr, swCharReplace, swMinWindow, swMaxSumK, swPermutation, swWindowMax];
 
 export default makeProject({
   // Swap the variable to render a different topic.

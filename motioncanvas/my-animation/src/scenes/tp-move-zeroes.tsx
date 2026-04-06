@@ -122,11 +122,11 @@ export default makeScene2D(function* (view) {
   // Show code
   yield* all(codeBox().opacity(1, 0.4), codeBox().scale(1, 0.5, easeOutCubic));
   yield* all(codeLines[0].opacity(1, 0.15), codeLines[0].text('def moveZeroes(nums):', 0.25));
-  yield* all(codeLines[1].opacity(1, 0.15), codeLines[1].text('    slow = 0', 0.25));
-  yield* all(codeLines[2].opacity(1, 0.15), codeLines[2].text('    for fast in range(len(nums)):', 0.25));
-  yield* all(codeLines[3].opacity(1, 0.15), codeLines[3].text('        if nums[fast] != 0:', 0.25));
-  yield* all(codeLines[4].opacity(1, 0.15), codeLines[4].text('            nums[slow],nums[fast]=nums[fast],nums[slow]', 0.2));
-  yield* all(codeLines[5].opacity(1, 0.15), codeLines[5].text('            slow += 1', 0.25));
+  yield* all(codeLines[1].opacity(1, 0.15), codeLines[1].text('    slow = 0', 0.25));
+  yield* all(codeLines[2].opacity(1, 0.15), codeLines[2].text('    for fast in range(len(nums)):', 0.25));
+  yield* all(codeLines[3].opacity(1, 0.15), codeLines[3].text('        if nums[fast] != 0:', 0.25));
+  yield* all(codeLines[4].opacity(1, 0.15), codeLines[4].text('            nums[slow],nums[fast]=nums[fast],nums[slow]', 0.2));
+  yield* all(codeLines[5].opacity(1, 0.15), codeLines[5].text('            slow += 1', 0.25));
 
   yield* tip().opacity(1, 0.5);
   yield* waitFor(2);

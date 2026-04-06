@@ -95,13 +95,13 @@ export default makeScene2D(function* (view) {
   // Show code
   yield* all(codeBox().opacity(1, 0.4), codeBox().scale(1, 0.5, easeOutCubic));
   yield* all(codeLines[0].opacity(1, 0.15), codeLines[0].text('def threeSum(nums):', 0.3));
-  yield* all(codeLines[1].opacity(1, 0.15), codeLines[1].text('    nums.sort(); res = []', 0.3));
-  yield* all(codeLines[2].opacity(1, 0.15), codeLines[2].text('    for i in range(len(nums) - 2):', 0.3));
-  yield* all(codeLines[3].opacity(1, 0.15), codeLines[3].text('        if i > 0 and nums[i]==nums[i-1]: continue', 0.25));
-  yield* all(codeLines[4].opacity(1, 0.15), codeLines[4].text('        l, r = i+1, len(nums)-1', 0.3));
-  yield* all(codeLines[5].opacity(1, 0.15), codeLines[5].text('        while l < r:', 0.3));
-  yield* all(codeLines[6].opacity(1, 0.15), codeLines[6].text('            s = nums[i]+nums[l]+nums[r]', 0.3));
-  yield* all(codeLines[7].opacity(1, 0.15), codeLines[7].text('            # if s==0: add, elif s<0: l++ else r--', 0.25));
+  yield* all(codeLines[1].opacity(1, 0.15), codeLines[1].text('    nums.sort(); res = []', 0.3));
+  yield* all(codeLines[2].opacity(1, 0.15), codeLines[2].text('    for i in range(len(nums) - 2):', 0.3));
+  yield* all(codeLines[3].opacity(1, 0.15), codeLines[3].text('        if i > 0 and nums[i]==nums[i-1]: continue', 0.25));
+  yield* all(codeLines[4].opacity(1, 0.15), codeLines[4].text('        l, r = i+1, len(nums)-1', 0.3));
+  yield* all(codeLines[5].opacity(1, 0.15), codeLines[5].text('        while l < r:', 0.3));
+  yield* all(codeLines[6].opacity(1, 0.15), codeLines[6].text('            s = nums[i]+nums[l]+nums[r]', 0.3));
+  yield* all(codeLines[7].opacity(1, 0.15), codeLines[7].text('            # if s==0: add, elif s<0: l++ else r--', 0.25));
 
   yield* tip().opacity(1, 0.5);
   yield* waitFor(2);

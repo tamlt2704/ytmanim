@@ -98,13 +98,13 @@ export default makeScene2D(function* (view) {
   // Show code
   yield* all(codeBox().opacity(1, 0.4), codeBox().scale(1, 0.5, easeOutCubic));
   yield* all(codeLines[0].opacity(1, 0.12), codeLines[0].text('def trap(height):', 0.25));
-  yield* all(codeLines[1].opacity(1, 0.12), codeLines[1].text('    l, r = 0, len(height) - 1', 0.25));
-  yield* all(codeLines[2].opacity(1, 0.12), codeLines[2].text('    lmax = rmax = res = 0', 0.25));
-  yield* all(codeLines[3].opacity(1, 0.12), codeLines[3].text('    while l < r:', 0.25));
-  yield* all(codeLines[4].opacity(1, 0.12), codeLines[4].text('        if height[l] <= height[r]:', 0.25));
-  yield* all(codeLines[5].opacity(1, 0.12), codeLines[5].text('            lmax = max(lmax, height[l])', 0.25));
-  yield* all(codeLines[6].opacity(1, 0.12), codeLines[6].text('            res += lmax - height[l]; l += 1', 0.25));
-  yield* all(codeLines[7].opacity(1, 0.12), codeLines[7].text('        else: rmax=max(...); res+=...; r-=1', 0.25));
+  yield* all(codeLines[1].opacity(1, 0.12), codeLines[1].text('    l, r = 0, len(height) - 1', 0.25));
+  yield* all(codeLines[2].opacity(1, 0.12), codeLines[2].text('    lmax = rmax = res = 0', 0.25));
+  yield* all(codeLines[3].opacity(1, 0.12), codeLines[3].text('    while l < r:', 0.25));
+  yield* all(codeLines[4].opacity(1, 0.12), codeLines[4].text('        if height[l] <= height[r]:', 0.25));
+  yield* all(codeLines[5].opacity(1, 0.12), codeLines[5].text('            lmax = max(lmax, height[l])', 0.25));
+  yield* all(codeLines[6].opacity(1, 0.12), codeLines[6].text('            res += lmax - height[l]; l += 1', 0.25));
+  yield* all(codeLines[7].opacity(1, 0.12), codeLines[7].text('        else: rmax=max(...); res+=...; r-=1', 0.25));
 
   yield* waitFor(2);
 });

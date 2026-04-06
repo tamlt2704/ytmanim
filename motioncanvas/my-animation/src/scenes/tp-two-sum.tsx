@@ -122,13 +122,13 @@ export default makeScene2D(function* (view) {
   // Show code
   yield* all(codeBox().opacity(1, 0.4), codeBox().scale(1, 0.5, easeOutCubic));
   yield* all(codeLines[0].opacity(1, 0.2), codeLines[0].text('def twoSum(nums, target):', 0.3));
-  yield* all(codeLines[1].opacity(1, 0.2), codeLines[1].text('    l, r = 0, len(nums) - 1', 0.3));
-  yield* all(codeLines[2].opacity(1, 0.2), codeLines[2].text('    while l < r:', 0.3));
-  yield* all(codeLines[3].opacity(1, 0.2), codeLines[3].text('        s = nums[l] + nums[r]', 0.3));
-  yield* all(codeLines[4].opacity(1, 0.2), codeLines[4].text('        if s == target:', 0.3));
-  yield* all(codeLines[5].opacity(1, 0.2), codeLines[5].text('            return [l+1, r+1]', 0.3));
-  yield* all(codeLines[6].opacity(1, 0.2), codeLines[6].text('        elif s < target: l += 1', 0.3));
-  yield* all(codeLines[7].opacity(1, 0.2), codeLines[7].text('        else: r -= 1', 0.3));
+  yield* all(codeLines[1].opacity(1, 0.2), codeLines[1].text('    l, r = 0, len(nums) - 1', 0.3));
+  yield* all(codeLines[2].opacity(1, 0.2), codeLines[2].text('    while l < r:', 0.3));
+  yield* all(codeLines[3].opacity(1, 0.2), codeLines[3].text('        s = nums[l] + nums[r]', 0.3));
+  yield* all(codeLines[4].opacity(1, 0.2), codeLines[4].text('        if s == target:', 0.3));
+  yield* all(codeLines[5].opacity(1, 0.2), codeLines[5].text('            return [l+1, r+1]', 0.3));
+  yield* all(codeLines[6].opacity(1, 0.2), codeLines[6].text('        elif s < target: l += 1', 0.3));
+  yield* all(codeLines[7].opacity(1, 0.2), codeLines[7].text('        else: r -= 1', 0.3));
 
   yield* tip().opacity(1, 0.5);
   yield* waitFor(2);
