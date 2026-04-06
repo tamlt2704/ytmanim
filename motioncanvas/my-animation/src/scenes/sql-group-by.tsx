@@ -18,14 +18,14 @@ export default makeScene2D(function* (view) {
       <Txt ref={lines} text={''} fill={ACCENT_COLOR} fontFamily={CODE_FONT} fontSize={24} x={-410} y={-40} offsetX={-1} opacity={0} />
     </Rect>
   );
-  view.add(<Txt ref={tip} text={'\n'} fill={'#8b949e'} fontFamily={CODE_FONT} fontSize={30} y={550} textAlign={'center'} lineHeight={50} opacity={0} />);
+  view.add(<Txt ref={tip} text={'COUNT, SUM, AVG, MIN, MAX\naggregate functions 📊'} fill={'#8b949e'} fontFamily={CODE_FONT} fontSize={30} y={550} textAlign={'center'} lineHeight={50} opacity={0} />);
 
   yield* all(badge().opacity(1, 0.3), badge().scale(1, 0.5, easeOutCubic));
   yield* all(title().opacity(1, 0.4), title().y(-580, 0.5, easeOutCubic));
   yield* subtitle().opacity(1, 0.4); yield* waitFor(0.2);
   yield* all(terminal().opacity(1, 0.4), terminal().scale(1, 0.5, easeOutCubic));
-  yield* all(lines[0].opacity(1, 0.3), lines[0].text('SELECT dept, COUNT(*) as total|FROM employees|GROUP BY dept;', 0.4));
-  yield* all(lines[1].opacity(1, 0.3), lines[1].text('Groups rows and applies\naggregate functions 📊', 0.4));
-  yield* all(lines[2].opacity(1, 0.3), lines[2].text('COUNT, SUM, AVG, MIN, MAX', 0.4));
+  yield* all(lines[0].opacity(1, 0.3), lines[0].text('SELECT dept, COUNT(*)', 0.4));
+  yield* all(lines[1].opacity(1, 0.3), lines[1].text('FROM employees', 0.4));
+  yield* all(lines[2].opacity(1, 0.3), lines[2].text('GROUP BY dept;', 0.4));
   yield* tip().opacity(1, 0.5); yield* waitFor(2);
 });

@@ -29,7 +29,7 @@ export default makeScene2D(function* (view) {
     );
   }
 
-  view.add(<Txt ref={tip} text={'The dot command is Vim\'s\nsuperpower — learn it! ⚡'} fill={'#8b949e'} fontFamily={CODE_FONT} fontSize={30} y={550} textAlign={'center'} lineHeight={50} opacity={0} />);
+  view.add(<Txt ref={tip} text={"The dot command is Vim's\nsuperpower — learn it! ⚡"} fill={'#8b949e'} fontFamily={CODE_FONT} fontSize={30} y={550} textAlign={'center'} lineHeight={50} opacity={0} />);
 
   yield* all(badge().opacity(1, 0.3), badge().scale(1, 0.5, easeOutCubic));
   yield* all(title().opacity(1, 0.4), title().y(-580, 0.5, easeOutCubic));

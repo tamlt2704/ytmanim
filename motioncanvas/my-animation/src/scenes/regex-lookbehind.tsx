@@ -7,21 +7,26 @@ export default makeScene2D(function* (view) {
   const title = createRef<Txt>(); const subtitle = createRef<Txt>(); const badge = createRef<Rect>(); const cards = createRefArray<Rect>();
 
   view.add(<Rect ref={badge} x={0} y={-750} width={300} height={100} radius={50} fill={ACCENT_COLOR} opacity={0} scale={0}><Txt text={'#8'} fill={'#fff'} fontFamily={TITLE_FONT} fontSize={50} fontWeight={800} /></Rect>);
-  view.add(<Txt ref={title} text={'(?<=)'} fill={PURPLE} fontFamily={CODE_FONT} fontSize={90} fontWeight={800} y={-580} opacity={0} />);
+  view.add(<Txt ref={title} text={'(?<=)'} fill={PURPLE} fontFamily={CODE_FONT} fontSize={80} fontWeight={800} y={-580} opacity={0} />);
   view.add(<Txt ref={subtitle} text={'Lookbehind'} fill={TEXT_COLOR} fontFamily={TITLE_FONT} fontSize={44} y={-490} opacity={0} />);
-  
-      <Rect ref={cards} width={750} height={120} y={-220} radius={16} fill={TERMINAL_BG} stroke={PURPLE} lineWidth={3} opacity={0} scale={0.8}>
-        <Txt text={'(?<=\\$)\\d+'} fill={PURPLE} fontFamily={CODE_FONT} fontSize={36} fontWeight={800} x={-220} />
-        <Txt text={'Digits after $'} fill={TEXT_COLOR} fontFamily={CODE_FONT} fontSize={24} x={80} />
-      </Rect>
-      <Rect ref={cards} width={750} height={120} y={-70} radius={16} fill={TERMINAL_BG} stroke={RED} lineWidth={3} opacity={0} scale={0.8}>
-        <Txt text={'(?<!\\$)\\d+'} fill={RED} fontFamily={CODE_FONT} fontSize={36} fontWeight={800} x={-220} />
-        <Txt text={'Digits NOT after $'} fill={TEXT_COLOR} fontFamily={CODE_FONT} fontSize={24} x={80} />
-      </Rect>
-      <Rect ref={cards} width={750} height={120} y={80} radius={16} fill={TERMINAL_BG} stroke={ORANGE} lineWidth={3} opacity={0} scale={0.8}>
-        <Txt text={'Lookbehind'} fill={ORANGE} fontFamily={CODE_FONT} fontSize={36} fontWeight={800} x={-220} />
-        <Txt text={'Checks what came before'} fill={TEXT_COLOR} fontFamily={CODE_FONT} fontSize={24} x={80} />
-      </Rect>
+  view.add(
+    <Rect ref={cards} width={750} height={120} y={-220} radius={16} fill={TERMINAL_BG} stroke={PURPLE} lineWidth={3} opacity={0} scale={0.8}>
+      <Txt text={'(?<=\\$)\\d+'} fill={PURPLE} fontFamily={CODE_FONT} fontSize={32} fontWeight={800} x={-220} />
+      <Txt text={'Digits after $'} fill={TEXT_COLOR} fontFamily={CODE_FONT} fontSize={22} x={80} />
+    </Rect>
+  );
+  view.add(
+    <Rect ref={cards} width={750} height={120} y={-70} radius={16} fill={TERMINAL_BG} stroke={RED} lineWidth={3} opacity={0} scale={0.8}>
+      <Txt text={'(?<!\\$)\\d+'} fill={RED} fontFamily={CODE_FONT} fontSize={32} fontWeight={800} x={-220} />
+      <Txt text={'Digits NOT after $'} fill={TEXT_COLOR} fontFamily={CODE_FONT} fontSize={22} x={80} />
+    </Rect>
+  );
+  view.add(
+    <Rect ref={cards} width={750} height={120} y={80} radius={16} fill={TERMINAL_BG} stroke={ORANGE} lineWidth={3} opacity={0} scale={0.8}>
+      <Txt text={'Lookbehind'} fill={ORANGE} fontFamily={CODE_FONT} fontSize={32} fontWeight={800} x={-220} />
+      <Txt text={'Checks what came before'} fill={TEXT_COLOR} fontFamily={CODE_FONT} fontSize={22} x={80} />
+    </Rect>
+  );
 
   yield* all(badge().opacity(1, 0.3), badge().scale(1, 0.5, easeOutCubic));
   yield* all(title().opacity(1, 0.4), title().y(-580, 0.5, easeOutCubic));

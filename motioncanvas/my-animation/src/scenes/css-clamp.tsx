@@ -9,19 +9,24 @@ export default makeScene2D(function* (view) {
   view.add(<Rect ref={badge} x={0} y={-750} width={300} height={100} radius={50} fill={ACCENT_COLOR} opacity={0} scale={0}><Txt text={'#3'} fill={'#fff'} fontFamily={TITLE_FONT} fontSize={50} fontWeight={800} /></Rect>);
   view.add(<Txt ref={title} text={'clamp()'} fill={ORANGE} fontFamily={CODE_FONT} fontSize={80} fontWeight={800} y={-580} opacity={0} />);
   view.add(<Txt ref={subtitle} text={'Responsive Values'} fill={TEXT_COLOR} fontFamily={TITLE_FONT} fontSize={44} y={-490} opacity={0} />);
-  
-      <Rect ref={cards} width={750} height={120} y={-220} radius={16} fill={TERMINAL_BG} stroke={ORANGE} lineWidth={3} opacity={0} scale={0.8}>
-        <Txt text={'clamp(1rem,3vw,2rem)'} fill={ORANGE} fontFamily={CODE_FONT} fontSize={32} fontWeight={800} x={-220} />
-        <Txt text={'Min, preferred, max'} fill={TEXT_COLOR} fontFamily={CODE_FONT} fontSize={22} x={80} />
-      </Rect>
-      <Rect ref={cards} width={750} height={120} y={-70} radius={16} fill={TERMINAL_BG} stroke={GREEN} lineWidth={3} opacity={0} scale={0.8}>
-        <Txt text={'font-size'} fill={GREEN} fontFamily={CODE_FONT} fontSize={32} fontWeight={800} x={-220} />
-        <Txt text={'Fluid typography'} fill={TEXT_COLOR} fontFamily={CODE_FONT} fontSize={22} x={80} />
-      </Rect>
-      <Rect ref={cards} width={750} height={120} y={80} radius={16} fill={TERMINAL_BG} stroke={ACCENT_COLOR} lineWidth={3} opacity={0} scale={0.8}>
-        <Txt text={'width'} fill={ACCENT_COLOR} fontFamily={CODE_FONT} fontSize={32} fontWeight={800} x={-220} />
-        <Txt text={'Fluid sizing'} fill={TEXT_COLOR} fontFamily={CODE_FONT} fontSize={22} x={80} />
-      </Rect>
+  view.add(
+    <Rect ref={cards} width={750} height={120} y={-220} radius={16} fill={TERMINAL_BG} stroke={ORANGE} lineWidth={3} opacity={0} scale={0.8}>
+      <Txt text={'clamp(1rem,3vw,2rem)'} fill={ORANGE} fontFamily={CODE_FONT} fontSize={32} fontWeight={800} x={-220} />
+      <Txt text={'Min, preferred, max'} fill={TEXT_COLOR} fontFamily={CODE_FONT} fontSize={22} x={80} />
+    </Rect>
+  );
+  view.add(
+    <Rect ref={cards} width={750} height={120} y={-70} radius={16} fill={TERMINAL_BG} stroke={GREEN} lineWidth={3} opacity={0} scale={0.8}>
+      <Txt text={'font-size'} fill={GREEN} fontFamily={CODE_FONT} fontSize={32} fontWeight={800} x={-220} />
+      <Txt text={'Fluid typography'} fill={TEXT_COLOR} fontFamily={CODE_FONT} fontSize={22} x={80} />
+    </Rect>
+  );
+  view.add(
+    <Rect ref={cards} width={750} height={120} y={80} radius={16} fill={TERMINAL_BG} stroke={ACCENT_COLOR} lineWidth={3} opacity={0} scale={0.8}>
+      <Txt text={'width'} fill={ACCENT_COLOR} fontFamily={CODE_FONT} fontSize={32} fontWeight={800} x={-220} />
+      <Txt text={'Fluid sizing'} fill={TEXT_COLOR} fontFamily={CODE_FONT} fontSize={22} x={80} />
+    </Rect>
+  );
 
   yield* all(badge().opacity(1, 0.3), badge().scale(1, 0.5, easeOutCubic));
   yield* all(title().opacity(1, 0.4), title().y(-580, 0.5, easeOutCubic));
