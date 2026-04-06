@@ -173,6 +173,51 @@ import bsSearchRotated from './scenes/bs-search-rotated?scene';
 import bsTimeMap from './scenes/bs-time-map?scene';
 import bsMedianTwo from './scenes/bs-median-two?scene';
 
+// LeetCode: Linked List
+import llReverse from './scenes/ll-reverse?scene';
+import llMergeTwo from './scenes/ll-merge-two?scene';
+import llReorder from './scenes/ll-reorder?scene';
+import llRemoveNth from './scenes/ll-remove-nth?scene';
+import llCopyRandom from './scenes/ll-copy-random?scene';
+import llAddTwo from './scenes/ll-add-two?scene';
+import llHasCycle from './scenes/ll-has-cycle?scene';
+
+// LeetCode: Trees
+import trInvert from './scenes/tr-invert?scene';
+import trMaxDepth from './scenes/tr-max-depth?scene';
+import trSameTree from './scenes/tr-same-tree?scene';
+import trLevelOrder from './scenes/tr-level-order?scene';
+import trSubtree from './scenes/tr-subtree?scene';
+import trLcaBst from './scenes/tr-lca-bst?scene';
+import trValidBst from './scenes/tr-valid-bst?scene';
+
+// LeetCode: Stack
+import stValidParens from './scenes/st-valid-parens?scene';
+import stMinStack from './scenes/st-min-stack?scene';
+import stEvalRpn from './scenes/st-eval-rpn?scene';
+import stDailyTemps from './scenes/st-daily-temps?scene';
+import stCarFleet from './scenes/st-car-fleet?scene';
+import stLargestRect from './scenes/st-largest-rect?scene';
+import stGenParens from './scenes/st-gen-parens?scene';
+
+// LeetCode: Heap / Priority Queue
+import hpKthLargest from './scenes/hp-kth-largest?scene';
+import hpLastStone from './scenes/hp-last-stone?scene';
+import hpKClosest from './scenes/hp-k-closest?scene';
+import hpTaskSched from './scenes/hp-task-sched?scene';
+import hpMergeK from './scenes/hp-merge-k?scene';
+import hpFindMedian from './scenes/hp-find-median?scene';
+import hpTopKFreq from './scenes/hp-top-k-freq?scene';
+
+// LeetCode: Backtracking
+import btSubsets from './scenes/bt-subsets?scene';
+import btComboSum from './scenes/bt-combo-sum?scene';
+import btPermutations from './scenes/bt-permutations?scene';
+import btWordSearch from './scenes/bt-word-search?scene';
+import btNQueens from './scenes/bt-n-queens?scene';
+import btPalindromePart from './scenes/bt-palindrome-part?scene';
+import btLetterCombos from './scenes/bt-letter-combos?scene';
+
 const git = [gitInit, gitClone, gitAddCommit, gitPushPull, gitBranch, gitMerge, gitStatusLog, gitStash, gitBisect, gitReflog, gitCherryPick, gitBlame, gitWorktree];
 const tmux = [tmuxCheatsheet];
 const docker = [dockerRun, dockerBuild, dockerPs, dockerExec, dockerLogs, dockerStop, dockerRm, dockerImages, dockerVolumes, dockerCompose];
@@ -189,6 +234,11 @@ const twoPointers = [tpTwoSum, tpPalindrome, tpThreeSum, tpContainerWater, tpTra
 const slidingWindow = [swBuySell, swLongestSubstr, swCharReplace, swMinWindow, swMaxSumK, swPermutation, swWindowMax];
 const hashMap = [hmTwoSum, hmGroupAnagrams, hmValidAnagram, hmContainsDup, hmTopKFreq, hmLongestConsec, hmEncodeDecode];
 const binarySearch = [bsSearchSorted, bsSearchMatrix, bsKokoBananas, bsMinRotated, bsSearchRotated, bsTimeMap, bsMedianTwo];
+const linkedList = [llReverse, llMergeTwo, llReorder, llRemoveNth, llCopyRandom, llAddTwo, llHasCycle];
+const trees = [trInvert, trMaxDepth, trSameTree, trLevelOrder, trSubtree, trLcaBst, trValidBst];
+const stack = [stValidParens, stMinStack, stEvalRpn, stDailyTemps, stCarFleet, stLargestRect, stGenParens];
+const heap = [hpKthLargest, hpLastStone, hpKClosest, hpTaskSched, hpMergeK, hpFindMedian, hpTopKFreq];
+const backtracking = [btSubsets, btComboSum, btPermutations, btWordSearch, btNQueens, btPalindromePart, btLetterCombos];
 
 export default makeProject({
   // Swap the variable to render a different topic.
