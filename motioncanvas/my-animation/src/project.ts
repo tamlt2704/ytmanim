@@ -155,6 +155,15 @@ import swMaxSumK from './scenes/sw-max-sum-k?scene';
 import swPermutation from './scenes/sw-permutation?scene';
 import swWindowMax from './scenes/sw-window-max?scene';
 
+// LeetCode: HashMap / HashSet
+import hmTwoSum from './scenes/hm-two-sum?scene';
+import hmGroupAnagrams from './scenes/hm-group-anagrams?scene';
+import hmValidAnagram from './scenes/hm-valid-anagram?scene';
+import hmContainsDup from './scenes/hm-contains-dup?scene';
+import hmTopKFreq from './scenes/hm-top-k-freq?scene';
+import hmLongestConsec from './scenes/hm-longest-consec?scene';
+import hmEncodeDecode from './scenes/hm-encode-decode?scene';
+
 const git = [gitInit, gitClone, gitAddCommit, gitPushPull, gitBranch, gitMerge, gitStatusLog, gitStash, gitBisect, gitReflog, gitCherryPick, gitBlame, gitWorktree];
 const tmux = [tmuxCheatsheet];
 const docker = [dockerRun, dockerBuild, dockerPs, dockerExec, dockerLogs, dockerStop, dockerRm, dockerImages, dockerVolumes, dockerCompose];
@@ -169,6 +178,7 @@ const aws = [awsEc2, awsS3, awsLambda, awsDynamodb, awsSqs, awsSns, awsCloudfron
 const networking = [netIp, netTcpUdp, netDns, netPorts, netHttp, netLatency, netLoadBalancer, netCdn, netFirewall, netCors];
 const twoPointers = [tpTwoSum, tpPalindrome, tpThreeSum, tpContainerWater, tpTrappingRain, tpMoveZeroes, tpSortColors];
 const slidingWindow = [swBuySell, swLongestSubstr, swCharReplace, swMinWindow, swMaxSumK, swPermutation, swWindowMax];
+const hashMap = [hmTwoSum, hmGroupAnagrams, hmValidAnagram, hmContainsDup, hmTopKFreq, hmLongestConsec, hmEncodeDecode];
 
 export default makeProject({
   // Swap the variable to render a different topic.
