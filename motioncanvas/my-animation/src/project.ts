@@ -218,6 +218,56 @@ import btNQueens from './scenes/bt-n-queens?scene';
 import btPalindromePart from './scenes/bt-palindrome-part?scene';
 import btLetterCombos from './scenes/bt-letter-combos?scene';
 
+// LeetCode: Dynamic Programming 1D
+import dpClimbStairs from './scenes/dp-climb-stairs?scene';
+import dpHouseRobber from './scenes/dp-house-robber?scene';
+import dpCoinChange from './scenes/dp-coin-change?scene';
+import dpLis from './scenes/dp-lis?scene';
+import dpWordBreak from './scenes/dp-word-break?scene';
+import dpDecodeWays from './scenes/dp-decode-ways?scene';
+import dpMaxProduct from './scenes/dp-max-product?scene';
+
+// LeetCode: Dynamic Programming 2D
+import d2UniquePaths from './scenes/d2-unique-paths?scene';
+import d2Lcs from './scenes/d2-lcs?scene';
+import d2EditDist from './scenes/d2-edit-dist?scene';
+import d2LongestPalin from './scenes/d2-longest-palin?scene';
+import d2Interleave from './scenes/d2-interleave?scene';
+import d2TargetSum from './scenes/d2-target-sum?scene';
+import d2BurstBalloons from './scenes/d2-burst-balloons?scene';
+
+// LeetCode: Greedy
+import grMaxSubarray from './scenes/gr-max-subarray?scene';
+import grJumpGame from './scenes/gr-jump-game?scene';
+import grJumpGame2 from './scenes/gr-jump-game2?scene';
+import grGasStation from './scenes/gr-gas-station?scene';
+import grHandStraights from './scenes/gr-hand-straights?scene';
+import grMergeTriplets from './scenes/gr-merge-triplets?scene';
+import grPartitionLabels from './scenes/gr-partition-labels?scene';
+
+// LeetCode: Trie
+import tiImplement from './scenes/ti-implement?scene';
+import tiAddSearch from './scenes/ti-add-search?scene';
+import tiWordSearch2 from './scenes/ti-word-search2?scene';
+
+// LeetCode: Intervals
+import ivInsert from './scenes/iv-insert?scene';
+import ivMerge from './scenes/iv-merge?scene';
+import ivNonOverlap from './scenes/iv-non-overlap?scene';
+import ivMeetingRooms from './scenes/iv-meeting-rooms?scene';
+import ivMeetingRooms2 from './scenes/iv-meeting-rooms2?scene';
+import ivMinArrows from './scenes/iv-min-arrows?scene';
+import ivIntersections from './scenes/iv-intersections?scene';
+
+// LeetCode: Bit Manipulation
+import bmSingleNum from './scenes/bm-single-num?scene';
+import bmCountBits from './scenes/bm-count-bits?scene';
+import bmCountingBits from './scenes/bm-counting-bits?scene';
+import bmReverseBits from './scenes/bm-reverse-bits?scene';
+import bmMissingNum from './scenes/bm-missing-num?scene';
+import bmSumTwo from './scenes/bm-sum-two?scene';
+import bmReverseInt from './scenes/bm-reverse-int?scene';
+
 const git = [gitInit, gitClone, gitAddCommit, gitPushPull, gitBranch, gitMerge, gitStatusLog, gitStash, gitBisect, gitReflog, gitCherryPick, gitBlame, gitWorktree];
 const tmux = [tmuxCheatsheet];
 const docker = [dockerRun, dockerBuild, dockerPs, dockerExec, dockerLogs, dockerStop, dockerRm, dockerImages, dockerVolumes, dockerCompose];
@@ -239,6 +289,12 @@ const trees = [trInvert, trMaxDepth, trSameTree, trLevelOrder, trSubtree, trLcaB
 const stack = [stValidParens, stMinStack, stEvalRpn, stDailyTemps, stCarFleet, stLargestRect, stGenParens];
 const heap = [hpKthLargest, hpLastStone, hpKClosest, hpTaskSched, hpMergeK, hpFindMedian, hpTopKFreq];
 const backtracking = [btSubsets, btComboSum, btPermutations, btWordSearch, btNQueens, btPalindromePart, btLetterCombos];
+const dp1d = [dpClimbStairs, dpHouseRobber, dpCoinChange, dpLis, dpWordBreak, dpDecodeWays, dpMaxProduct];
+const dp2d = [d2UniquePaths, d2Lcs, d2EditDist, d2LongestPalin, d2Interleave, d2TargetSum, d2BurstBalloons];
+const greedy = [grMaxSubarray, grJumpGame, grJumpGame2, grGasStation, grHandStraights, grMergeTriplets, grPartitionLabels];
+const trie = [tiImplement, tiAddSearch, tiWordSearch2];
+const intervals = [ivInsert, ivMerge, ivNonOverlap, ivMeetingRooms, ivMeetingRooms2, ivMinArrows, ivIntersections];
+const bitManip = [bmSingleNum, bmCountBits, bmCountingBits, bmReverseBits, bmMissingNum, bmSumTwo, bmReverseInt];
 
 export default makeProject({
   // Swap the variable to render a different topic.
