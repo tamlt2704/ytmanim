@@ -242,7 +242,7 @@ export function* showSphere(sphere: SphereRefs, duration = 0.6) {
 export function* spinSphere(sphere: SphereRefs, duration = 2) {
   const steps = 60;
   const stepDur = duration / steps;
-  const r = sphere.body.size() / 2;
+  const r = (sphere.body.size() as any as number) / 2;
   for (let i = 0; i <= steps; i++) {
     const angle = (i / steps) * Math.PI * 2;
     sphere.highlight.x(Math.cos(angle) * r * 0.3);

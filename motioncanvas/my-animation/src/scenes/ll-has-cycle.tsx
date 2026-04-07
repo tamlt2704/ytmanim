@@ -56,7 +56,7 @@ export default makeScene2D(function* (view) {
     </Rect>
   );
   const tip = createRef<Txt>();
-  view.add(<Txt ref={tip} text={'Floyd's Tortoise & Hare\nO(n) time, O(1) space 🐢🐇'} fill={'#8b949e'} fontFamily={CODE_FONT} fontSize={28} y={640} textAlign={'center'} lineHeight={46} opacity={0} />);
+  view.add(<Txt ref={tip} text={"Floyd's Tortoise & Hare\nO(n) time, O(1) space 🐢🐇"} fill={'#8b949e'} fontFamily={CODE_FONT} fontSize={28} y={640} textAlign={'center'} lineHeight={46} opacity={0} />);
 
   yield* all(badge().opacity(1, 0.3), badge().scale(1, 0.5, easeOutCubic));
   yield* all(title().opacity(1, 0.4), title().y(-580, 0.5, easeOutCubic));

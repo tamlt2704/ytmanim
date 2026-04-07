@@ -7,7 +7,7 @@ export default makeScene2D(function* (view) {
   const badge = createRef<Rect>(); const title = createRef<Txt>(); const subtitle = createRef<Txt>(); const difficulty = createRef<Rect>();
   view.add(<Rect ref={badge} x={0} y={-750} width={300} height={100} radius={50} fill={ACCENT_COLOR} opacity={0} scale={0}><Txt text={'#1'} fill={'#fff'} fontFamily={TITLE_FONT} fontSize={56} fontWeight={800} /></Rect>);
   view.add(<Txt ref={title} text={'Max Subarray'} fill={ORANGE} fontFamily={CODE_FONT} fontSize={80} fontWeight={800} y={-580} opacity={0} />);
-  view.add(<Txt ref={subtitle} text={'Kadane's Algorithm'} fill={TEXT_COLOR} fontFamily={TITLE_FONT} fontSize={44} y={-490} opacity={0} />);
+  view.add(<Txt ref={subtitle} text={"Kadane's Algorithm"} fill={TEXT_COLOR} fontFamily={TITLE_FONT} fontSize={44} y={-490} opacity={0} />);
   view.add(<Rect ref={difficulty} x={0} y={-430} width={180} height={44} radius={22} fill={ORANGE} opacity={0} scale={0}><Txt text={'Medium'} fill={'#fff'} fontFamily={CODE_FONT} fontSize={24} fontWeight={700} /></Rect>);
   const boxes = createRefArray<Rect>();
   const boxSize = 62; const gap = 6;
@@ -74,7 +74,7 @@ export default makeScene2D(function* (view) {
     </Rect>
   );
   const tip = createRef<Txt>();
-  view.add(<Txt ref={tip} text={'O(n) Kadane's — extend or restart\nGreedy: drop negative prefix 📈'} fill={'#8b949e'} fontFamily={CODE_FONT} fontSize={28} y={640} textAlign={'center'} lineHeight={46} opacity={0} />);
+  view.add(<Txt ref={tip} text={"O(n) Kadane's — extend or restart\nGreedy: drop negative prefix 📈"} fill={'#8b949e'} fontFamily={CODE_FONT} fontSize={28} y={640} textAlign={'center'} lineHeight={46} opacity={0} />);
 
   yield* all(badge().opacity(1, 0.3), badge().scale(1, 0.5, easeOutCubic));
   yield* all(title().opacity(1, 0.4), title().y(-580, 0.5, easeOutCubic));
