@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: job-engine
+  threads:
+    virtual:
+      enabled: true
+  main:
+    allow-bean-definition-overriding: false
