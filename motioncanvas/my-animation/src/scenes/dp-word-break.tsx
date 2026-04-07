@@ -89,7 +89,7 @@ export default makeScene2D(function* (view) {
   yield* waitFor(0.4);
   yield* statusTxt().text('dp[4]=True (leet), dp[8]=True (code)', 0.3);
   yield* waitFor(0.4);
-  yield* statusTxt().text(''leetcode' → True ✅', 0.3);
+  yield* statusTxt().text("'leetcode' → True ✅", 0.3);
   yield* statusTxt().fill(GREEN, 0.2);
   yield* waitFor(0.5);
 

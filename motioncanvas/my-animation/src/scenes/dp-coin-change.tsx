@@ -69,13 +69,13 @@ export default makeScene2D(function* (view) {
 
   yield* all(codeBox().opacity(1, 0.4), codeBox().scale(1, 0.5, easeOutCubic));
   yield* all(codeLines[0].opacity(1, 0.12), codeLines[0].text('def coinChange(coins, amount):', 0.2));
-  yield* all(codeLines[1].opacity(1, 0.12), codeLines[1].text('    dp = [float('inf')] * (amount + 1)', 0.2));
+  yield* all(codeLines[1].opacity(1, 0.12), codeLines[1].text("    dp = [float('inf')] * (amount + 1)", 0.2));
   yield* all(codeLines[2].opacity(1, 0.12), codeLines[2].text('    dp[0] = 0', 0.2));
   yield* all(codeLines[3].opacity(1, 0.12), codeLines[3].text('    for i in range(1, amount + 1):', 0.2));
   yield* all(codeLines[4].opacity(1, 0.12), codeLines[4].text('        for c in coins:', 0.2));
   yield* all(codeLines[5].opacity(1, 0.12), codeLines[5].text('            if c <= i:', 0.2));
   yield* all(codeLines[6].opacity(1, 0.12), codeLines[6].text('                dp[i] = min(dp[i], dp[i-c] + 1)', 0.2));
-  yield* all(codeLines[7].opacity(1, 0.12), codeLines[7].text('    return dp[amount] if dp[amount] != float('inf') else -1', 0.2));
+  yield* all(codeLines[7].opacity(1, 0.12), codeLines[7].text("    return dp[amount] if dp[amount] != float('inf') else -1", 0.2));
 
   yield* tip().opacity(1, 0.5);
   yield* waitFor(2);

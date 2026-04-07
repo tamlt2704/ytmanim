@@ -85,7 +85,7 @@ export default makeScene2D(function* (view) {
   yield* all(codeBox().opacity(1, 0.4), codeBox().scale(1, 0.5, easeOutCubic));
   yield* all(codeLines[0].opacity(1, 0.12), codeLines[0].text('def isValid(s):', 0.2));
   yield* all(codeLines[1].opacity(1, 0.12), codeLines[1].text('    stack = []', 0.2));
-  yield* all(codeLines[2].opacity(1, 0.12), codeLines[2].text('    pairs = {'(':')', '[':']', '{':'}'}', 0.2));
+  yield* all(codeLines[2].opacity(1, 0.12), codeLines[2].text("    pairs = {'(':')', '[':']', '{':'}'}", 0.2));
   yield* all(codeLines[3].opacity(1, 0.12), codeLines[3].text('    for c in s:', 0.2));
   yield* all(codeLines[4].opacity(1, 0.12), codeLines[4].text('        if c in pairs: stack.append(c)', 0.2));
   yield* all(codeLines[5].opacity(1, 0.12), codeLines[5].text('        elif not stack or pairs[stack.pop()]!=c:', 0.2));

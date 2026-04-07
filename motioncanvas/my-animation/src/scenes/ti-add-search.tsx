@@ -67,11 +67,11 @@ export default makeScene2D(function* (view) {
     yield* all(boxes[i].opacity(1, 0.08), boxes[i].scale(1, 0.15, easeOutCubic));
   }
   yield* statusTxt().opacity(1, 0.2);
-  yield* statusTxt().text('Trie + DFS for wildcard '.'', 0.3);
+  yield* statusTxt().text("Trie + DFS for wildcard '.'", 0.3);
   yield* waitFor(0.4);
   yield* statusTxt().text('add: normal trie insert', 0.3);
   yield* waitFor(0.4);
-  yield* statusTxt().text('search '.ad': try ALL children at '.'', 0.3);
+  yield* statusTxt().text("search '.ad': try ALL children at '.'", 0.3);
   yield* waitFor(0.4);
   yield* statusTxt().text('Matches bad, dad, mad ✅', 0.3);
   yield* statusTxt().fill(GREEN, 0.2);
@@ -84,13 +84,13 @@ export default makeScene2D(function* (view) {
   yield* all(codeLines[3].opacity(1, 0.12), codeLines[3].text('        node = self.root', 0.2));
   yield* all(codeLines[4].opacity(1, 0.12), codeLines[4].text('        for c in word:', 0.2));
   yield* all(codeLines[5].opacity(1, 0.12), codeLines[5].text('            node = node.setdefault(c, {})', 0.2));
-  yield* all(codeLines[6].opacity(1, 0.12), codeLines[6].text('        node['$'] = True', 0.2));
+  yield* all(codeLines[6].opacity(1, 0.12), codeLines[6].text("        node['$'] = True", 0.2));
   yield* all(codeLines[7].opacity(1, 0.12), codeLines[7].text('    def search(self, word):', 0.2));
   yield* all(codeLines[8].opacity(1, 0.12), codeLines[8].text('        def dfs(i, node):', 0.2));
-  yield* all(codeLines[9].opacity(1, 0.12), codeLines[9].text('            if i == len(word): return '$' in node', 0.2));
-  yield* all(codeLines[10].opacity(1, 0.12), codeLines[10].text('            if word[i] == '.':', 0.2));
+  yield* all(codeLines[9].opacity(1, 0.12), codeLines[9].text("            if i == len(word): return '$' in node", 0.2));
+  yield* all(codeLines[10].opacity(1, 0.12), codeLines[10].text("            if word[i] == '.':", 0.2));
   yield* all(codeLines[11].opacity(1, 0.12), codeLines[11].text('                return any(dfs(i+1,node[c])', 0.2));
-  yield* all(codeLines[12].opacity(1, 0.12), codeLines[12].text('                    for c in node if c!='$')', 0.2));
+  yield* all(codeLines[12].opacity(1, 0.12), codeLines[12].text("                    for c in node if c!='$')", 0.2));
 
   yield* tip().opacity(1, 0.5);
   yield* waitFor(2);

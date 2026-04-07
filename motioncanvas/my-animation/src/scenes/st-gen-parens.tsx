@@ -83,9 +83,9 @@ export default makeScene2D(function* (view) {
   yield* all(codeLines[2].opacity(1, 0.12), codeLines[2].text('    def bt(s, open, close):', 0.2));
   yield* all(codeLines[3].opacity(1, 0.12), codeLines[3].text('        if len(s) == 2 * n:', 0.2));
   yield* all(codeLines[4].opacity(1, 0.12), codeLines[4].text('            res.append(s); return', 0.2));
-  yield* all(codeLines[5].opacity(1, 0.12), codeLines[5].text('        if open < n: bt(s+'(', open+1, close)', 0.2));
-  yield* all(codeLines[6].opacity(1, 0.12), codeLines[6].text('        if close < open: bt(s+')', open, close+1)', 0.2));
-  yield* all(codeLines[7].opacity(1, 0.12), codeLines[7].text('    bt('', 0, 0); return res', 0.2));
+  yield* all(codeLines[5].opacity(1, 0.12), codeLines[5].text("        if open < n: bt(s+'(', open+1, close)", 0.2));
+  yield* all(codeLines[6].opacity(1, 0.12), codeLines[6].text("        if close < open: bt(s+')', open, close+1)", 0.2));
+  yield* all(codeLines[7].opacity(1, 0.12), codeLines[7].text("    bt('', 0, 0); return res", 0.2));
 
   yield* tip().opacity(1, 0.5);
   yield* waitFor(2);

@@ -97,7 +97,7 @@ export default makeScene2D(function* (view) {
   promptTxt().text(cmd);
   yield* waitFor(0.3);
 
-  yield* all(outputLines[0].opacity(1, 0.2), outputLines[0].text('Cloning into \'repo\'...', 0.4));
+  yield* all(outputLines[0].opacity(1, 0.2), outputLines[0].text("Cloning into \'repo\'...", 0.4));
   yield* all(outputLines[1].opacity(1, 0.2), outputLines[1].text('remote: Counting objects: 142', 0.4));
   yield* all(outputLines[2].opacity(1, 0.2), outputLines[2].text('Receiving objects: 100% ✓', 0.4));
 

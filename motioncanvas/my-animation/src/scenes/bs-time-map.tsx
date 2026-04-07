@@ -95,7 +95,7 @@ export default makeScene2D(function* (view) {
   yield* all(codeLines[5].opacity(1, 0.12), codeLines[5].text('    def get(self, key, t):', 0.2));
   yield* all(codeLines[6].opacity(1, 0.12), codeLines[6].text('        vals = self.store[key]', 0.2));
   yield* all(codeLines[7].opacity(1, 0.12), codeLines[7].text('        i = bisect_right(vals, (t, chr(127)))', 0.2));
-  yield* all(codeLines[8].opacity(1, 0.12), codeLines[8].text('        return vals[i-1][1] if i else ''', 0.2));
+  yield* all(codeLines[8].opacity(1, 0.12), codeLines[8].text("        return vals[i-1][1] if i else ''", 0.2));
 
   yield* tip().opacity(1, 0.5);
   yield* waitFor(2);

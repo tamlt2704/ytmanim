@@ -68,17 +68,17 @@ export default makeScene2D(function* (view) {
   yield* waitFor(0.4);
   yield* statusTxt().text('2-digit: valid if 10-26', 0.3);
   yield* waitFor(0.4);
-  yield* statusTxt().text(''1226' → 3 ways ✅', 0.3);
+  yield* statusTxt().text("'1226' → 3 ways ✅", 0.3);
   yield* statusTxt().fill(GREEN, 0.2);
   yield* waitFor(0.5);
 
   yield* all(codeBox().opacity(1, 0.4), codeBox().scale(1, 0.5, easeOutCubic));
   yield* all(codeLines[0].opacity(1, 0.12), codeLines[0].text('def numDecodings(s):', 0.2));
-  yield* all(codeLines[1].opacity(1, 0.12), codeLines[1].text('    if not s or s[0] == '0': return 0', 0.2));
+  yield* all(codeLines[1].opacity(1, 0.12), codeLines[1].text("    if not s or s[0] == '0': return 0", 0.2));
   yield* all(codeLines[2].opacity(1, 0.12), codeLines[2].text('    dp = [0] * (len(s) + 1)', 0.2));
   yield* all(codeLines[3].opacity(1, 0.12), codeLines[3].text('    dp[0] = dp[1] = 1', 0.2));
   yield* all(codeLines[4].opacity(1, 0.12), codeLines[4].text('    for i in range(2, len(s) + 1):', 0.2));
-  yield* all(codeLines[5].opacity(1, 0.12), codeLines[5].text('        if s[i-1] != '0': dp[i] += dp[i-1]', 0.2));
+  yield* all(codeLines[5].opacity(1, 0.12), codeLines[5].text("        if s[i-1] != '0': dp[i] += dp[i-1]", 0.2));
   yield* all(codeLines[6].opacity(1, 0.12), codeLines[6].text('        two = int(s[i-2:i])', 0.2));
   yield* all(codeLines[7].opacity(1, 0.12), codeLines[7].text('        if 10 <= two <= 26: dp[i] += dp[i-2]', 0.2));
 

@@ -86,11 +86,11 @@ export default makeScene2D(function* (view) {
 
   yield* statusTxt().text('Sort each word as key', 0.3);
   yield* waitFor(0.4);
-  yield* statusTxt().text(''aet' → [eat, tea, ate]', 0.3);
+  yield* statusTxt().text("'aet' → [eat, tea, ate]", 0.3);
   yield* waitFor(0.4);
-  yield* statusTxt().text(''ant' → [tan, nat]', 0.3);
+  yield* statusTxt().text("'ant' → [tan, nat]", 0.3);
   yield* waitFor(0.4);
-  yield* statusTxt().text(''abt' → [bat] ✅', 0.3);
+  yield* statusTxt().text("'abt' → [bat] ✅", 0.3);
   yield* statusTxt().fill(GREEN, 0.2);
   yield* waitFor(0.5);
 

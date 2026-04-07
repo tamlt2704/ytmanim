@@ -78,7 +78,7 @@ export default makeScene2D(function* (view) {
   yield* all(codeLines[0].opacity(1, 0.12), codeLines[0].text('def eraseOverlapIntervals(intervals):', 0.2));
   yield* all(codeLines[1].opacity(1, 0.12), codeLines[1].text('    intervals.sort(key=lambda x: x[1])', 0.2));
   yield* all(codeLines[2].opacity(1, 0.12), codeLines[2].text('    count = 0', 0.2));
-  yield* all(codeLines[3].opacity(1, 0.12), codeLines[3].text('    prev_end = float('-inf')', 0.2));
+  yield* all(codeLines[3].opacity(1, 0.12), codeLines[3].text("    prev_end = float('-inf')", 0.2));
   yield* all(codeLines[4].opacity(1, 0.12), codeLines[4].text('    for start, end in intervals:', 0.2));
   yield* all(codeLines[5].opacity(1, 0.12), codeLines[5].text('        if start >= prev_end:', 0.2));
   yield* all(codeLines[6].opacity(1, 0.12), codeLines[6].text('            prev_end = end', 0.2));

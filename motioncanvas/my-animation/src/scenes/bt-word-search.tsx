@@ -65,7 +65,7 @@ export default makeScene2D(function* (view) {
   yield* waitFor(0.4);
   yield* statusTxt().text('Backtrack: unmark on return', 0.3);
   yield* waitFor(0.4);
-  yield* statusTxt().text(''ABCCED' found ✅', 0.3);
+  yield* statusTxt().text("'ABCCED' found ✅", 0.3);
   yield* statusTxt().fill(GREEN, 0.2);
   yield* waitFor(0.5);
 
@@ -76,7 +76,7 @@ export default makeScene2D(function* (view) {
   yield* all(codeLines[3].opacity(1, 0.12), codeLines[3].text('        if (r<0 or c<0 or r>=R or c>=C', 0.2));
   yield* all(codeLines[4].opacity(1, 0.12), codeLines[4].text('            or board[r][c] != word[k]):', 0.2));
   yield* all(codeLines[5].opacity(1, 0.12), codeLines[5].text('            return False', 0.2));
-  yield* all(codeLines[6].opacity(1, 0.12), codeLines[6].text('        board[r][c] = '#'  # mark visited', 0.2));
+  yield* all(codeLines[6].opacity(1, 0.12), codeLines[6].text("        board[r][c] = '#'  # mark visited", 0.2));
   yield* all(codeLines[7].opacity(1, 0.12), codeLines[7].text('        found = any(dfs(r+dr,c+dc,k+1)', 0.2));
   yield* all(codeLines[8].opacity(1, 0.12), codeLines[8].text('            for dr,dc in dirs)', 0.2));
   yield* all(codeLines[9].opacity(1, 0.12), codeLines[9].text('        board[r][c] = word[k]  # backtrack', 0.2));

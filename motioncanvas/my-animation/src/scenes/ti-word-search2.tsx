@@ -83,14 +83,14 @@ export default makeScene2D(function* (view) {
   yield* all(codeLines[2].opacity(1, 0.12), codeLines[2].text('    for w in words:', 0.2));
   yield* all(codeLines[3].opacity(1, 0.12), codeLines[3].text('        node = trie', 0.2));
   yield* all(codeLines[4].opacity(1, 0.12), codeLines[4].text('        for c in w: node = node.setdefault(c, {})', 0.2));
-  yield* all(codeLines[5].opacity(1, 0.12), codeLines[5].text('        node['$'] = w', 0.2));
+  yield* all(codeLines[5].opacity(1, 0.12), codeLines[5].text("        node['$'] = w", 0.2));
   yield* all(codeLines[6].opacity(1, 0.12), codeLines[6].text('    res = []', 0.2));
   yield* all(codeLines[7].opacity(1, 0.12), codeLines[7].text('    def dfs(r, c, node):', 0.2));
-  yield* all(codeLines[8].opacity(1, 0.12), codeLines[8].text('        if '$' in node: res.append(node.pop('$'))', 0.2));
+  yield* all(codeLines[8].opacity(1, 0.12), codeLines[8].text("        if '$' in node: res.append(node.pop('$'))", 0.2));
   yield* all(codeLines[9].opacity(1, 0.12), codeLines[9].text('        if r<0 or c<0 or r>=R or c>=C: return', 0.2));
   yield* all(codeLines[10].opacity(1, 0.12), codeLines[10].text('        ch = board[r][c]', 0.2));
   yield* all(codeLines[11].opacity(1, 0.12), codeLines[11].text('        if ch not in node: return', 0.2));
-  yield* all(codeLines[12].opacity(1, 0.12), codeLines[12].text('        board[r][c]='#'; # dfs 4 dirs; restore', 0.2));
+  yield* all(codeLines[12].opacity(1, 0.12), codeLines[12].text("        board[r][c]='#'; # dfs 4 dirs; restore", 0.2));
 
   yield* tip().opacity(1, 0.5);
   yield* waitFor(2);

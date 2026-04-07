@@ -54,7 +54,7 @@ export default makeScene2D(function* (view) {
     yield* all(boxes[i].opacity(1, 0.08), boxes[i].scale(1, 0.15, easeOutCubic));
   }
   yield* statusTxt().opacity(1, 0.2);
-  yield* statusTxt().text('digits='23' → map each to letters', 0.3);
+  yield* statusTxt().text("digits='23' → map each to letters", 0.3);
   yield* waitFor(0.4);
   yield* statusTxt().text('2→[a,b,c] × 3→[d,e,f]', 0.3);
   yield* waitFor(0.4);
@@ -67,9 +67,9 @@ export default makeScene2D(function* (view) {
   yield* all(codeBox().opacity(1, 0.4), codeBox().scale(1, 0.5, easeOutCubic));
   yield* all(codeLines[0].opacity(1, 0.12), codeLines[0].text('def letterCombinations(digits):', 0.2));
   yield* all(codeLines[1].opacity(1, 0.12), codeLines[1].text('    if not digits: return []', 0.2));
-  yield* all(codeLines[2].opacity(1, 0.12), codeLines[2].text('    phone = {'2':'abc','3':'def','4':'ghi',', 0.2));
-  yield* all(codeLines[3].opacity(1, 0.12), codeLines[3].text('            '5':'jkl','6':'mno','7':'pqrs',', 0.2));
-  yield* all(codeLines[4].opacity(1, 0.12), codeLines[4].text('            '8':'tuv','9':'wxyz'}', 0.2));
+  yield* all(codeLines[2].opacity(1, 0.12), codeLines[2].text("    phone = {'2':'abc','3':'def','4':'ghi',", 0.2));
+  yield* all(codeLines[3].opacity(1, 0.12), codeLines[3].text("            '5':'jkl','6':'mno','7':'pqrs',", 0.2));
+  yield* all(codeLines[4].opacity(1, 0.12), codeLines[4].text("            '8':'tuv','9':'wxyz'}", 0.2));
   yield* all(codeLines[5].opacity(1, 0.12), codeLines[5].text('    res = []', 0.2));
   yield* all(codeLines[6].opacity(1, 0.12), codeLines[6].text('    def bt(i, curr):', 0.2));
   yield* all(codeLines[7].opacity(1, 0.12), codeLines[7].text('        if i == len(digits): res.append(curr); return', 0.2));

@@ -94,7 +94,7 @@ export default makeScene2D(function* (view) {
 
   // fast=1: nums[1]=1≠0, swap → slow moves
   yield* statusTxt().text('fast→1: non-zero! swap & advance slow', 0.3);
-  yield* all(numTxts[0].text('1', 0.2), numTxts[1].text('0', 0.2), numTxts[0].fill(TEXT_COLOR, 0.2), numTxts[1].fill('#8b949e', 0.2));
+  yield* all(numTxts[0].text("1', 0.2), numTxts[1].text('0', 0.2), numTxts[0].fill(TEXT_COLOR, 0.2), numTxts[1].fill('#8b949e", 0.2));
   yield* slowPtr().x(startX + 1 * (boxSize + gap), 0.3, easeInOutCubic);
   yield* fastPtr().x(startX + 2 * (boxSize + gap), 0.3, easeInOutCubic);
   yield* waitFor(0.3);
@@ -105,7 +105,7 @@ export default makeScene2D(function* (view) {
 
   // fast=3: swap
   yield* statusTxt().text('fast→3: swap!', 0.3);
-  yield* all(numTxts[1].text('3', 0.2), numTxts[3].text('0', 0.2), numTxts[1].fill(TEXT_COLOR, 0.2), numTxts[3].fill('#8b949e', 0.2));
+  yield* all(numTxts[1].text("3', 0.2), numTxts[3].text('0', 0.2), numTxts[1].fill(TEXT_COLOR, 0.2), numTxts[3].fill('#8b949e", 0.2));
   yield* slowPtr().x(startX + 2 * (boxSize + gap), 0.3, easeInOutCubic);
   yield* fastPtr().x(startX + 4 * (boxSize + gap), 0.3, easeInOutCubic);
   yield* waitFor(0.2);

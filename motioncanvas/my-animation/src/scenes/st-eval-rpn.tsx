@@ -81,9 +81,9 @@ export default makeScene2D(function* (view) {
   yield* all(codeLines[0].opacity(1, 0.12), codeLines[0].text('def evalRPN(tokens):', 0.2));
   yield* all(codeLines[1].opacity(1, 0.12), codeLines[1].text('    stack = []', 0.2));
   yield* all(codeLines[2].opacity(1, 0.12), codeLines[2].text('    for t in tokens:', 0.2));
-  yield* all(codeLines[3].opacity(1, 0.12), codeLines[3].text('        if t in '+-*/':', 0.2));
+  yield* all(codeLines[3].opacity(1, 0.12), codeLines[3].text("        if t in '+-*/':", 0.2));
   yield* all(codeLines[4].opacity(1, 0.12), codeLines[4].text('            b, a = stack.pop(), stack.pop()', 0.2));
-  yield* all(codeLines[5].opacity(1, 0.12), codeLines[5].text('            stack.append(int(eval(f'{a}{t}{b}')))', 0.2));
+  yield* all(codeLines[5].opacity(1, 0.12), codeLines[5].text("            stack.append(int(eval(f'{a}{t}{b}')))", 0.2));
   yield* all(codeLines[6].opacity(1, 0.12), codeLines[6].text('        else:', 0.2));
   yield* all(codeLines[7].opacity(1, 0.12), codeLines[7].text('            stack.append(int(t))', 0.2));
 

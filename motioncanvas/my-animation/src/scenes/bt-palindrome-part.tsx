@@ -62,11 +62,11 @@ export default makeScene2D(function* (view) {
   yield* statusTxt().opacity(1, 0.2);
   yield* statusTxt().text('Try every prefix that is a palindrome', 0.3);
   yield* waitFor(0.4);
-  yield* statusTxt().text(''a' ✓ → recurse on 'ab'', 0.3);
+  yield* statusTxt().text("'a' ✓ → recurse on 'ab'", 0.3);
   yield* waitFor(0.4);
-  yield* statusTxt().text(''aa' ✓ → recurse on 'b'', 0.3);
+  yield* statusTxt().text("'aa' ✓ → recurse on 'b'", 0.3);
   yield* waitFor(0.4);
-  yield* statusTxt().text('[['a','a','b'], ['aa','b']] ✅', 0.3);
+  yield* statusTxt().text("[['a','a','b'], ['aa','b']] ✅", 0.3);
   yield* statusTxt().fill(GREEN, 0.2);
   yield* waitFor(0.5);
 

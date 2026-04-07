@@ -78,14 +78,14 @@ export default makeScene2D(function* (view) {
   yield* all(codeBox().opacity(1, 0.4), codeBox().scale(1, 0.5, easeOutCubic));
   yield* all(codeLines[0].opacity(1, 0.12), codeLines[0].text('def solveNQueens(n):', 0.2));
   yield* all(codeLines[1].opacity(1, 0.12), codeLines[1].text('    cols, diag, anti = set(), set(), set()', 0.2));
-  yield* all(codeLines[2].opacity(1, 0.12), codeLines[2].text('    res, board = [], [['.']*n for _ in range(n)]', 0.2));
+  yield* all(codeLines[2].opacity(1, 0.12), codeLines[2].text("    res, board = [], [['.']*n for _ in range(n)]", 0.2));
   yield* all(codeLines[3].opacity(1, 0.12), codeLines[3].text('    def bt(r):', 0.2));
   yield* all(codeLines[4].opacity(1, 0.12), codeLines[4].text('        if r == n: res.append([...board]); return', 0.2));
   yield* all(codeLines[5].opacity(1, 0.12), codeLines[5].text('        for c in range(n):', 0.2));
   yield* all(codeLines[6].opacity(1, 0.12), codeLines[6].text('            if c in cols or r-c in diag or r+c in anti:', 0.2));
   yield* all(codeLines[7].opacity(1, 0.12), codeLines[7].text('                continue', 0.2));
   yield* all(codeLines[8].opacity(1, 0.12), codeLines[8].text('            cols.add(c); diag.add(r-c); anti.add(r+c)', 0.2));
-  yield* all(codeLines[9].opacity(1, 0.12), codeLines[9].text('            board[r][c]='Q'; bt(r+1); board[r][c]='.'', 0.2));
+  yield* all(codeLines[9].opacity(1, 0.12), codeLines[9].text("            board[r][c]='Q'; bt(r+1); board[r][c]='.'", 0.2));
   yield* all(codeLines[10].opacity(1, 0.12), codeLines[10].text('            cols.remove(c); diag.remove(r-c); anti.remove(r+c)', 0.2));
 
   yield* tip().opacity(1, 0.5);
