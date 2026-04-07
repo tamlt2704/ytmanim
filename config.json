@@ -128,6 +128,15 @@
       "visibility": "public",
       "language": "en",
       "scenes": ["net-ip", "net-tcp-udp", "net-dns", "net-ports", "net-http", "net-latency", "net-load-balancer", "net-cdn", "net-firewall", "net-cors"]
+    },
+    "tmux-cheatsheet": {
+      "title": "tmux Cheatsheet in 60 Seconds ⌨️ (Animated)",
+      "description": "Terminal multiplexer essentials — animated.\n\n⏱️ Timestamps:\n00:00 Sessions\n00:15 Windows & Panes\n00:30 Shortcuts\n00:45 Pro Tips\n\n👉 Follow for more animated dev tutorials!\n\n#tmux #terminal #linux #devops #coding #shorts",
+      "tags": ["tmux", "terminal", "linux", "multiplexer", "devops", "programming", "coding", "shorts"],
+      "category": "Science & Technology",
+      "visibility": "public",
+      "language": "en",
+      "scenes": ["tmux-cheatsheet"]
     }
   }
 }
