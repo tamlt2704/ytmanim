@@ -184,6 +184,14 @@ import http500 from './scenes/http/http-500?scene';
 import http503 from './scenes/http/http-503?scene';
 const http = [http200, http201, http301, http400, http401, http403, http404, http429, http500, http503];
 
+// illusions
+import illusionChecker from './scenes/illusions/illusion-checker?scene';
+import illusionEbbinghaus from './scenes/illusions/illusion-ebbinghaus?scene';
+import illusionIntro from './scenes/illusions/illusion-intro?scene';
+import illusionMuller from './scenes/illusions/illusion-muller?scene';
+import illusionOutro from './scenes/illusions/illusion-outro?scene';
+const illusions = [illusionIntro, illusionChecker, illusionEbbinghaus, illusionMuller, illusionOutro];
+
 // Intervals
 import ivInsert from './scenes/intervals/iv-insert?scene';
 import ivIntersections from './scenes/intervals/iv-intersections?scene';
@@ -242,6 +250,18 @@ import netLoadBalancer from './scenes/networking/net-load-balancer?scene';
 import netPorts from './scenes/networking/net-ports?scene';
 import netTcpUdp from './scenes/networking/net-tcp-udp?scene';
 const networking = [netCdn, netCors, netDns, netFirewall, netHttp, netIp, netLatency, netLoadBalancer, netPorts, netTcpUdp];
+
+// Paradoxes
+import pxAchilles from './scenes/paradoxes/px-achilles?scene';
+import pxBootstrap from './scenes/paradoxes/px-bootstrap?scene';
+import pxCta from './scenes/paradoxes/px-cta?scene';
+import pxFermi from './scenes/paradoxes/px-fermi?scene';
+import pxGrandfather from './scenes/paradoxes/px-grandfather?scene';
+import pxShipTheseus from './scenes/paradoxes/px-ship-theseus?scene';
+import pxSorites from './scenes/paradoxes/px-sorites?scene';
+import pxTwin from './scenes/paradoxes/px-twin?scene';
+import pxZenoArrow from './scenes/paradoxes/px-zeno-arrow?scene';
+const paradoxes = [pxShipTheseus, pxZenoArrow, pxBootstrap, pxGrandfather, pxFermi, pxTwin, pxSorites, pxAchilles, pxCta];
 
 // Probability
 import probBayes from './scenes/probability/prob-bayes?scene';
@@ -357,14 +377,6 @@ import vimSplits from './scenes/vim/vim-splits?scene';
 import vimSubstitute from './scenes/vim/vim-substitute?scene';
 import vimYankPaste from './scenes/vim/vim-yank-paste?scene';
 const vim = [vimCiw, vimDd, vimDot, vimMacros, vimModes, vimSaveQuit, vimSearch, vimSplits, vimSubstitute, vimYankPaste];
-
-// Optical Illusions
-import illusionIntro from './scenes/illusions/illusion-intro?scene';
-import illusionMuller from './scenes/illusions/illusion-muller?scene';
-import illusionEbbinghaus from './scenes/illusions/illusion-ebbinghaus?scene';
-import illusionChecker from './scenes/illusions/illusion-checker?scene';
-import illusionOutro from './scenes/illusions/illusion-outro?scene';
-const illusions = [illusionIntro, illusionMuller, illusionEbbinghaus, illusionChecker, illusionOutro];
 
 export default makeProject({
   scenes: illusions,
