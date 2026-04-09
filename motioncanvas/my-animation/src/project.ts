@@ -233,6 +233,16 @@ import googleCombo from './scenes/google/google-combo?scene';
 import googleOutro from './scenes/google/google-outro?scene';
 const google = [googleThumbnail, googleExact, googleExclude, googleSite, googleFiletype, googleTime, googleOr, googleWildcard, googleIntitle, googleRelated, googleCombo, googleOutro];
 
+// Evolution of Programming Languages
+import evoThumbnail from './scenes/prog-evolution/evo-thumbnail?scene';
+import evo1950s from './scenes/prog-evolution/evo-1950s?scene';
+import evo1970s from './scenes/prog-evolution/evo-1970s?scene';
+import evo1990s from './scenes/prog-evolution/evo-1990s?scene';
+import evo2000s from './scenes/prog-evolution/evo-2000s?scene';
+import evo2010s from './scenes/prog-evolution/evo-2010s?scene';
+import evoOutro from './scenes/prog-evolution/evo-outro?scene';
+const progEvolution = [evoThumbnail, evo1950s, evo1970s, evo1990s, evo2000s, evo2010s, evoOutro];
+
 // Intervals
 import ivInsert from './scenes/intervals/iv-insert?scene';
 import ivIntersections from './scenes/intervals/iv-intersections?scene';
@@ -420,5 +430,5 @@ import vimYankPaste from './scenes/vim/vim-yank-paste?scene';
 const vim = [vimCiw, vimDd, vimDot, vimMacros, vimModes, vimSaveQuit, vimSearch, vimSplits, vimSubstitute, vimYankPaste];
 
 export default makeProject({
-  scenes: google,
+  scenes: progEvolution,
 });
