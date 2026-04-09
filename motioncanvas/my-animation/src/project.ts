@@ -218,6 +218,21 @@ import sortCompare from './scenes/sorting/sort-compare?scene';
 import sortOutro from './scenes/sorting/sort-outro?scene';
 const sorting = [sortThumbnail, sortBubble, sortSelection, sortInsertion, sortMerge, sortQuick, sortCompare, sortOutro];
 
+// Google Tricks
+import googleThumbnail from './scenes/google/google-thumbnail?scene';
+import googleExact from './scenes/google/google-exact?scene';
+import googleExclude from './scenes/google/google-exclude?scene';
+import googleSite from './scenes/google/google-site?scene';
+import googleFiletype from './scenes/google/google-filetype?scene';
+import googleTime from './scenes/google/google-time?scene';
+import googleOr from './scenes/google/google-or?scene';
+import googleWildcard from './scenes/google/google-wildcard?scene';
+import googleIntitle from './scenes/google/google-intitle?scene';
+import googleRelated from './scenes/google/google-related?scene';
+import googleCombo from './scenes/google/google-combo?scene';
+import googleOutro from './scenes/google/google-outro?scene';
+const google = [googleThumbnail, googleExact, googleExclude, googleSite, googleFiletype, googleTime, googleOr, googleWildcard, googleIntitle, googleRelated, googleCombo, googleOutro];
+
 // Intervals
 import ivInsert from './scenes/intervals/iv-insert?scene';
 import ivIntersections from './scenes/intervals/iv-intersections?scene';
@@ -405,5 +420,5 @@ import vimYankPaste from './scenes/vim/vim-yank-paste?scene';
 const vim = [vimCiw, vimDd, vimDot, vimMacros, vimModes, vimSaveQuit, vimSearch, vimSplits, vimSubstitute, vimYankPaste];
 
 export default makeProject({
-  scenes: sorting,
+  scenes: google,
 });
