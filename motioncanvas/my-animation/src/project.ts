@@ -192,6 +192,21 @@ import illusionMuller from './scenes/illusions/illusion-muller?scene';
 import illusionOutro from './scenes/illusions/illusion-outro?scene';
 const illusions = [illusionIntro, illusionChecker, illusionEbbinghaus, illusionMuller, illusionOutro];
 
+// Memory Tricks
+import memoryThumbnail from './scenes/memory/memory-thumbnail?scene';
+import memoryChunking from './scenes/memory/memory-chunking?scene';
+import memoryLoci from './scenes/memory/memory-loci?scene';
+import memorySpaced from './scenes/memory/memory-spaced?scene';
+import memoryAcronyms from './scenes/memory/memory-acronyms?scene';
+import memoryStory from './scenes/memory/memory-story?scene';
+import memoryVisual from './scenes/memory/memory-visual?scene';
+import memoryRecall from './scenes/memory/memory-recall?scene';
+import memorySleep from './scenes/memory/memory-sleep?scene';
+import memoryTeach from './scenes/memory/memory-teach?scene';
+import memoryDual from './scenes/memory/memory-dual?scene';
+import memoryOutro from './scenes/memory/memory-outro?scene';
+const memory = [memoryThumbnail, memoryChunking, memoryLoci, memorySpaced, memoryAcronyms, memoryStory, memoryVisual, memoryRecall, memorySleep, memoryTeach, memoryDual, memoryOutro];
+
 // Intervals
 import ivInsert from './scenes/intervals/iv-insert?scene';
 import ivIntersections from './scenes/intervals/iv-intersections?scene';
@@ -379,5 +394,5 @@ import vimYankPaste from './scenes/vim/vim-yank-paste?scene';
 const vim = [vimCiw, vimDd, vimDot, vimMacros, vimModes, vimSaveQuit, vimSearch, vimSplits, vimSubstitute, vimYankPaste];
 
 export default makeProject({
-  scenes: illusions,
+  scenes: memory,
 });
