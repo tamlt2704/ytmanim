@@ -358,6 +358,14 @@ import vimSubstitute from './scenes/vim/vim-substitute?scene';
 import vimYankPaste from './scenes/vim/vim-yank-paste?scene';
 const vim = [vimCiw, vimDd, vimDot, vimMacros, vimModes, vimSaveQuit, vimSearch, vimSplits, vimSubstitute, vimYankPaste];
 
+// Optical Illusions
+import illusionIntro from './scenes/illusions/illusion-intro?scene';
+import illusionMuller from './scenes/illusions/illusion-muller?scene';
+import illusionEbbinghaus from './scenes/illusions/illusion-ebbinghaus?scene';
+import illusionChecker from './scenes/illusions/illusion-checker?scene';
+import illusionOutro from './scenes/illusions/illusion-outro?scene';
+const illusions = [illusionIntro, illusionMuller, illusionEbbinghaus, illusionChecker, illusionOutro];
+
 export default makeProject({
-  scenes: geometry,
+  scenes: illusions,
 });
