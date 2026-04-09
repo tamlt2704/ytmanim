@@ -268,6 +268,18 @@ import osData from './scenes/one-second/os-data?scene';
 import osOutro from './scenes/one-second/os-outro?scene';
 const oneSecond = [osThumbnail, osGoogle, osEmail, osYoutube, osAmazon, osTiktok, osWhatsapp, osInstagram, osData, osOutro];
 
+// CEO Pay Per Second
+import ceoThumbnail from './scenes/ceo-pay/ceo-thumbnail?scene';
+import ceoCook from './scenes/ceo-pay/ceo-cook?scene';
+import ceoPichai from './scenes/ceo-pay/ceo-pichai?scene';
+import ceoJassy from './scenes/ceo-pay/ceo-jassy?scene';
+import ceoNadella from './scenes/ceo-pay/ceo-nadella?scene';
+import ceoTan from './scenes/ceo-pay/ceo-tan?scene';
+import ceoWorker from './scenes/ceo-pay/ceo-worker?scene';
+import ceoRace from './scenes/ceo-pay/ceo-race?scene';
+import ceoOutro from './scenes/ceo-pay/ceo-outro?scene';
+const ceoPay = [ceoThumbnail, ceoCook, ceoPichai, ceoJassy, ceoNadella, ceoTan, ceoWorker, ceoRace, ceoOutro];
+
 // Intervals
 import ivInsert from './scenes/intervals/iv-insert?scene';
 import ivIntersections from './scenes/intervals/iv-intersections?scene';
@@ -455,5 +467,5 @@ import vimYankPaste from './scenes/vim/vim-yank-paste?scene';
 const vim = [vimCiw, vimDd, vimDot, vimMacros, vimModes, vimSaveQuit, vimSearch, vimSplits, vimSubstitute, vimYankPaste];
 
 export default makeProject({
-  scenes: oneSecond,
+  scenes: ceoPay,
 });
