@@ -255,6 +255,19 @@ import apolloSummary from './scenes/apollo/apollo-summary?scene';
 import apolloOutro from './scenes/apollo/apollo-outro?scene';
 const apollo = [apolloThumbnail, apolloRam, apolloCpu, apolloStorage, apolloWeight, apolloPower, apolloPrice, apolloSummary, apolloOutro];
 
+// 1 Second on the Internet
+import osThumbnail from './scenes/one-second/os-thumbnail?scene';
+import osGoogle from './scenes/one-second/os-google?scene';
+import osEmail from './scenes/one-second/os-email?scene';
+import osYoutube from './scenes/one-second/os-youtube?scene';
+import osAmazon from './scenes/one-second/os-amazon?scene';
+import osTiktok from './scenes/one-second/os-tiktok?scene';
+import osWhatsapp from './scenes/one-second/os-whatsapp?scene';
+import osInstagram from './scenes/one-second/os-instagram?scene';
+import osData from './scenes/one-second/os-data?scene';
+import osOutro from './scenes/one-second/os-outro?scene';
+const oneSecond = [osThumbnail, osGoogle, osEmail, osYoutube, osAmazon, osTiktok, osWhatsapp, osInstagram, osData, osOutro];
+
 // Intervals
 import ivInsert from './scenes/intervals/iv-insert?scene';
 import ivIntersections from './scenes/intervals/iv-intersections?scene';
@@ -442,5 +455,5 @@ import vimYankPaste from './scenes/vim/vim-yank-paste?scene';
 const vim = [vimCiw, vimDd, vimDot, vimMacros, vimModes, vimSaveQuit, vimSearch, vimSplits, vimSubstitute, vimYankPaste];
 
 export default makeProject({
-  scenes: apollo,
+  scenes: oneSecond,
 });

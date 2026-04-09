@@ -1,0 +1,55 @@
+import {Rect, Txt, makeScene2D} from '@motion-canvas/2d';
+import {createRef, all, waitFor, easeOutBack} from '@motion-canvas/core';
+import {BG_COLOR, TEXT_COLOR, ACCENT_COLOR, GREEN, RED, ORANGE, PURPLE, CODE_FONT, TITLE_FONT} from '../../styles';
+import {fadeInUp, fadeIn, pulse} from '../../lib/animations';
+
+export default makeScene2D(function* (view) {
+  view.fill(BG_COLOR);
+
+  const emoji = createRef<Txt>();
+  view.add(<Txt ref={emoji} text={'📧'} fontSize={180} y={-700} opacity={0} scale={0} />);
+  yield* all(emoji().opacity(1, 0.3), emoji().scale(1, 0.4, easeOutBack));
+
+  const label = createRef<Txt>();
+  view.add(<Txt ref={label} text={'Emails Sent'} fill={GREEN} fontFamily={TITLE_FONT} fontSize={60} fontWeight={900} y={-530} opacity={0} />);
+  yield* fadeIn(label(), 0.3);
+
+  const counter = createRef<Txt>();
+  view.add(<Txt ref={counter} text={'0'} fill={TEXT_COLOR} fontFamily={CODE_FONT} fontSize={110} fontWeight={900} y={-380} opacity={0} />);
+  yield* counter().opacity(1, 0.2);
+
+  const steps = [50000, 200000, 600000, 1200000, 2000000, 2800000, 3200000, 3400000];
+  for (const n of steps) {
+    counter().text(n.toLocaleString());
+    yield* waitFor(0.12);
+  }
+  yield* counter().fill(GREEN, 0.2);
+  yield* pulse(counter() as any, 1.08, 0.3);
+
+  const perSec = createRef<Txt>();
+  view.add(<Txt ref={perSec} text={'every single second'} fill={'#8b949e'} fontFamily={CODE_FONT} fontSize={30} y={-280} opacity={0} />);
+  yield* fadeIn(perSec(), 0.3);
+  yield* waitFor(0.5);
+
+  const ctx1 = createRef<Rect>();
+  view.add(
+    <Rect ref={ctx1} width={440} height={70} radius={16} fill={GREEN + '15'} y={-160} opacity={0}>
+      <Txt text={'📅 306 billion per day'} fill={TEXT_COLOR} fontFamily={CODE_FONT} fontSize={26} fontWeight={700} />
+    </Rect>,
+  );
+  yield* ctx1().opacity(1, 0.3);
+
+  const ctx2 = createRef<Rect>();
+  view.add(
+    <Rect ref={ctx2} width={440} height={70} radius={16} fill={GREEN + '15'} y={-70} opacity={0}>
+      <Txt text={'🗑️ 45% of them are spam'} fill={TEXT_COLOR} fontFamily={CODE_FONT} fontSize={26} fontWeight={700} />
+    </Rect>,
+  );
+  yield* ctx2().opacity(1, 0.3);
+
+  const fun = createRef<Txt>();
+  view.add(<Txt ref={fun} text={"That's 40 emails for every\nhuman on Earth... daily"} fill={ORANGE} fontFamily={CODE_FONT} fontSize={26} fontWeight={700} y={70} textAlign={'center'} lineHeight={40} opacity={0} />);
+  yield* fadeInUp(fun(), 20, 0.3);
+
+  yield* waitFor(2.5);
+});
