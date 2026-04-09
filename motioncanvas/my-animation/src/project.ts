@@ -123,7 +123,7 @@ import geoPi from './scenes/geometry/geo-pi?scene';
 import geoPythagoras from './scenes/geometry/geo-pythagoras?scene';
 import geoTriangle180 from './scenes/geometry/geo-triangle-180?scene';
 import geoTriangleArea from './scenes/geometry/geo-triangle-area?scene';
-const geometry = [geoCircleArea, geoEuler, geoExteriorAngles, geoGoldenRatio, geoInscribedAngle, geoInteriorSum, geoPi, geoPythagoras, geoTriangle180, geoTriangleArea];
+const geometry = [geoPi, geoTriangle180, geoEuler, geoPythagoras, geoCircleArea, geoGoldenRatio, geoExteriorAngles, geoInscribedAngle, geoInteriorSum, geoTriangleArea];
 
 // Git
 import gitAddCommit from './scenes/git/git-add-commit?scene';
