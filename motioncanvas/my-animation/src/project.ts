@@ -243,6 +243,18 @@ import evo2010s from './scenes/prog-evolution/evo-2010s?scene';
 import evoOutro from './scenes/prog-evolution/evo-outro?scene';
 const progEvolution = [evoThumbnail, evo1950s, evo1970s, evo1990s, evo2000s, evo2010s, evoOutro];
 
+// Apollo vs Phone
+import apolloThumbnail from './scenes/apollo/apollo-thumbnail?scene';
+import apolloRam from './scenes/apollo/apollo-ram?scene';
+import apolloCpu from './scenes/apollo/apollo-cpu?scene';
+import apolloStorage from './scenes/apollo/apollo-storage?scene';
+import apolloWeight from './scenes/apollo/apollo-weight?scene';
+import apolloPower from './scenes/apollo/apollo-power?scene';
+import apolloPrice from './scenes/apollo/apollo-price?scene';
+import apolloSummary from './scenes/apollo/apollo-summary?scene';
+import apolloOutro from './scenes/apollo/apollo-outro?scene';
+const apollo = [apolloThumbnail, apolloRam, apolloCpu, apolloStorage, apolloWeight, apolloPower, apolloPrice, apolloSummary, apolloOutro];
+
 // Intervals
 import ivInsert from './scenes/intervals/iv-insert?scene';
 import ivIntersections from './scenes/intervals/iv-intersections?scene';
@@ -430,5 +442,5 @@ import vimYankPaste from './scenes/vim/vim-yank-paste?scene';
 const vim = [vimCiw, vimDd, vimDot, vimMacros, vimModes, vimSaveQuit, vimSearch, vimSplits, vimSubstitute, vimYankPaste];
 
 export default makeProject({
-  scenes: progEvolution,
+  scenes: apollo,
 });
