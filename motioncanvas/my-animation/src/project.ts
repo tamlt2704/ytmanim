@@ -292,6 +292,18 @@ import e100Wealth from './scenes/earth100/e100-wealth?scene';
 import e100Outro from './scenes/earth100/e100-outro?scene';
 const earth100 = [e100Thumbnail, e100Continent, e100Age, e100Language, e100Religion, e100Literacy, e100Water, e100Wealth, e100Outro];
 
+// How QR Codes Work
+import qrThumbnail from './scenes/qr-codes/qr-thumbnail?scene';
+import qrAnatomy from './scenes/qr-codes/qr-anatomy?scene';
+import qrFinders from './scenes/qr-codes/qr-finders?scene';
+import qrTiming from './scenes/qr-codes/qr-timing?scene';
+import qrData from './scenes/qr-codes/qr-data?scene';
+import qrError from './scenes/qr-codes/qr-error?scene';
+import qrScanning from './scenes/qr-codes/qr-scanning?scene';
+import qrFacts from './scenes/qr-codes/qr-facts?scene';
+import qrOutro from './scenes/qr-codes/qr-outro?scene';
+const qrCodes = [qrThumbnail, qrAnatomy, qrFinders, qrTiming, qrData, qrError, qrScanning, qrFacts, qrOutro];
+
 // Intervals
 import ivInsert from './scenes/intervals/iv-insert?scene';
 import ivIntersections from './scenes/intervals/iv-intersections?scene';
@@ -479,5 +491,5 @@ import vimYankPaste from './scenes/vim/vim-yank-paste?scene';
 const vim = [vimCiw, vimDd, vimDot, vimMacros, vimModes, vimSaveQuit, vimSearch, vimSplits, vimSubstitute, vimYankPaste];
 
 export default makeProject({
-  scenes: earth100,
+  scenes: qrCodes,
 });
