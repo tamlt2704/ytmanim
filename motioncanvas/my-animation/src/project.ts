@@ -207,6 +207,17 @@ import memoryDual from './scenes/memory/memory-dual?scene';
 import memoryOutro from './scenes/memory/memory-outro?scene';
 const memory = [memoryThumbnail, memoryChunking, memoryLoci, memorySpaced, memoryAcronyms, memoryStory, memoryVisual, memoryRecall, memorySleep, memoryTeach, memoryDual, memoryOutro];
 
+// Sorting Algorithms
+import sortThumbnail from './scenes/sorting/sort-thumbnail?scene';
+import sortBubble from './scenes/sorting/sort-bubble?scene';
+import sortSelection from './scenes/sorting/sort-selection?scene';
+import sortInsertion from './scenes/sorting/sort-insertion?scene';
+import sortMerge from './scenes/sorting/sort-merge?scene';
+import sortQuick from './scenes/sorting/sort-quick?scene';
+import sortCompare from './scenes/sorting/sort-compare?scene';
+import sortOutro from './scenes/sorting/sort-outro?scene';
+const sorting = [sortThumbnail, sortBubble, sortSelection, sortInsertion, sortMerge, sortQuick, sortCompare, sortOutro];
+
 // Intervals
 import ivInsert from './scenes/intervals/iv-insert?scene';
 import ivIntersections from './scenes/intervals/iv-intersections?scene';
@@ -394,5 +405,5 @@ import vimYankPaste from './scenes/vim/vim-yank-paste?scene';
 const vim = [vimCiw, vimDd, vimDot, vimMacros, vimModes, vimSaveQuit, vimSearch, vimSplits, vimSubstitute, vimYankPaste];
 
 export default makeProject({
-  scenes: memory,
+  scenes: sorting,
 });
