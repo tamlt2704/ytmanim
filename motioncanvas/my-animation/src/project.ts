@@ -280,6 +280,18 @@ import ceoRace from './scenes/ceo-pay/ceo-race?scene';
 import ceoOutro from './scenes/ceo-pay/ceo-outro?scene';
 const ceoPay = [ceoThumbnail, ceoCook, ceoPichai, ceoJassy, ceoNadella, ceoTan, ceoWorker, ceoRace, ceoOutro];
 
+// If Earth Had 100 People
+import e100Thumbnail from './scenes/earth100/e100-thumbnail?scene';
+import e100Continent from './scenes/earth100/e100-continent?scene';
+import e100Age from './scenes/earth100/e100-age?scene';
+import e100Language from './scenes/earth100/e100-language?scene';
+import e100Religion from './scenes/earth100/e100-religion?scene';
+import e100Literacy from './scenes/earth100/e100-literacy?scene';
+import e100Water from './scenes/earth100/e100-water?scene';
+import e100Wealth from './scenes/earth100/e100-wealth?scene';
+import e100Outro from './scenes/earth100/e100-outro?scene';
+const earth100 = [e100Thumbnail, e100Continent, e100Age, e100Language, e100Religion, e100Literacy, e100Water, e100Wealth, e100Outro];
+
 // Intervals
 import ivInsert from './scenes/intervals/iv-insert?scene';
 import ivIntersections from './scenes/intervals/iv-intersections?scene';
@@ -467,5 +479,5 @@ import vimYankPaste from './scenes/vim/vim-yank-paste?scene';
 const vim = [vimCiw, vimDd, vimDot, vimMacros, vimModes, vimSaveQuit, vimSearch, vimSplits, vimSubstitute, vimYankPaste];
 
 export default makeProject({
-  scenes: ceoPay,
+  scenes: earth100,
 });
