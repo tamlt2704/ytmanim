@@ -316,6 +316,20 @@ import mazeFacts from './scenes/maze/maze-facts?scene';
 import mazeOutro from './scenes/maze/maze-outro?scene';
 const maze = [mazeThumbnail, mazeIntro, mazeDfsExplain, mazeGenerate, mazeBfsExplain, mazeSolve, mazeCompare, mazeFacts, mazeOutro];
 
+// Scale of the Universe
+import scaleThumbnail from './scenes/scale/scale-thumbnail?scene';
+import scaleIntro from './scenes/scale/scale-intro?scene';
+import scaleAtom from './scenes/scale/scale-atom?scene';
+import scaleCell from './scenes/scale/scale-cell?scene';
+import scaleHuman from './scenes/scale/scale-human?scene';
+import scaleEarth from './scenes/scale/scale-earth?scene';
+import scaleSolar from './scenes/scale/scale-solar?scene';
+import scaleGalaxy from './scenes/scale/scale-galaxy?scene';
+import scaleUniverse from './scenes/scale/scale-universe?scene';
+import scaleSummary from './scenes/scale/scale-summary?scene';
+import scaleOutro from './scenes/scale/scale-outro?scene';
+const scale = [scaleThumbnail, scaleIntro, scaleAtom, scaleCell, scaleHuman, scaleEarth, scaleSolar, scaleGalaxy, scaleUniverse, scaleSummary, scaleOutro];
+
 // Intervals
 import ivInsert from './scenes/intervals/iv-insert?scene';
 import ivIntersections from './scenes/intervals/iv-intersections?scene';
@@ -503,5 +517,5 @@ import vimYankPaste from './scenes/vim/vim-yank-paste?scene';
 const vim = [vimCiw, vimDd, vimDot, vimMacros, vimModes, vimSaveQuit, vimSearch, vimSplits, vimSubstitute, vimYankPaste];
 
 export default makeProject({
-  scenes: maze,
+  scenes: scale,
 });
