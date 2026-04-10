@@ -304,6 +304,18 @@ import qrFacts from './scenes/qr-codes/qr-facts?scene';
 import qrOutro from './scenes/qr-codes/qr-outro?scene';
 const qrCodes = [qrThumbnail, qrAnatomy, qrFinders, qrTiming, qrData, qrError, qrScanning, qrFacts, qrOutro];
 
+// Maze Generator & Solver
+import mazeThumbnail from './scenes/maze/maze-thumbnail?scene';
+import mazeIntro from './scenes/maze/maze-intro?scene';
+import mazeDfsExplain from './scenes/maze/maze-dfs-explain?scene';
+import mazeGenerate from './scenes/maze/maze-generate?scene';
+import mazeBfsExplain from './scenes/maze/maze-bfs-explain?scene';
+import mazeSolve from './scenes/maze/maze-solve?scene';
+import mazeCompare from './scenes/maze/maze-compare?scene';
+import mazeFacts from './scenes/maze/maze-facts?scene';
+import mazeOutro from './scenes/maze/maze-outro?scene';
+const maze = [mazeThumbnail, mazeIntro, mazeDfsExplain, mazeGenerate, mazeBfsExplain, mazeSolve, mazeCompare, mazeFacts, mazeOutro];
+
 // Intervals
 import ivInsert from './scenes/intervals/iv-insert?scene';
 import ivIntersections from './scenes/intervals/iv-intersections?scene';
@@ -491,5 +503,5 @@ import vimYankPaste from './scenes/vim/vim-yank-paste?scene';
 const vim = [vimCiw, vimDd, vimDot, vimMacros, vimModes, vimSaveQuit, vimSearch, vimSplits, vimSubstitute, vimYankPaste];
 
 export default makeProject({
-  scenes: qrCodes,
+  scenes: maze,
 });
