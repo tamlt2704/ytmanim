@@ -23,8 +23,8 @@ export default makeScene2D(function* (view) {
     const outer = createRef<Rect>();
     const mid = createRef<Rect>();
     const inner = createRef<Rect>();
-    view.add(<Rect ref={outer} x={cx} y={cy} width={160} height={160} radius={8} fill={'none'} stroke={TEXT_COLOR} lineWidth={6} opacity={0} />);
-    view.add(<Rect ref={mid} x={cx} y={cy} width={110} height={110} radius={6} fill={'none'} stroke={BG_COLOR} lineWidth={6} opacity={0} />);
+    view.add(<Rect ref={outer} x={cx} y={cy} width={160} height={160} radius={8} fill={null} stroke={TEXT_COLOR} lineWidth={6} opacity={0} />);
+    view.add(<Rect ref={mid} x={cx} y={cy} width={110} height={110} radius={6} fill={null} stroke={BG_COLOR} lineWidth={6} opacity={0} />);
     view.add(<Rect ref={inner} x={cx} y={cy} width={65} height={65} radius={4} fill={TEXT_COLOR} opacity={0} />);
     return {outer, mid, inner};
   };
@@ -43,24 +43,24 @@ export default makeScene2D(function* (view) {
 
   // Labels
   const labelTL = createRef<Txt>();
-  view.add(<Txt ref={labelTL} text={'Top Left'} fill={RED} fontFamily={CODE_FONT} fontSize={22} fontWeight={800} x={-140} y={-340} opacity={0} />);
+  view.add(<Txt ref={labelTL} text={'Top Left'} fill={RED} fontFamily={CODE_FONT} fontSize={34} fontWeight={800} x={-140} y={-340} opacity={0} />);
   const labelTR = createRef<Txt>();
-  view.add(<Txt ref={labelTR} text={'Top Right'} fill={RED} fontFamily={CODE_FONT} fontSize={22} fontWeight={800} x={140} y={-340} opacity={0} />);
+  view.add(<Txt ref={labelTR} text={'Top Right'} fill={RED} fontFamily={CODE_FONT} fontSize={34} fontWeight={800} x={140} y={-340} opacity={0} />);
   const labelBL = createRef<Txt>();
-  view.add(<Txt ref={labelBL} text={'Bottom Left'} fill={RED} fontFamily={CODE_FONT} fontSize={22} fontWeight={800} x={-140} y={-60} opacity={0} />);
+  view.add(<Txt ref={labelBL} text={'Bottom Left'} fill={RED} fontFamily={CODE_FONT} fontSize={34} fontWeight={800} x={-140} y={-60} opacity={0} />);
   yield* all(labelTL().opacity(1, 0.2), labelTR().opacity(1, 0.2), labelBL().opacity(1, 0.2));
 
   // Missing corner
   const missing = createRef<Rect>();
   view.add(
     <Rect ref={missing} x={140} y={-170} width={160} height={160} radius={8}
-      fill={'none'} stroke={'#30363d'} lineWidth={4} lineDash={[12, 8]} opacity={0}
+      fill={null} stroke={'#30363d'} lineWidth={4} lineDash={[12, 8]} opacity={0}
     />,
   );
   yield* missing().opacity(1, 0.3);
 
   const noCorner = createRef<Txt>();
-  view.add(<Txt ref={noCorner} text={'No 4th corner!'} fill={ORANGE} fontFamily={CODE_FONT} fontSize={22} fontWeight={800} x={140} y={-60} opacity={0} />);
+  view.add(<Txt ref={noCorner} text={'No 4th corner!'} fill={ORANGE} fontFamily={CODE_FONT} fontSize={34} fontWeight={800} x={140} y={-60} opacity={0} />);
   yield* fadeIn(noCorner(), 0.2);
   yield* waitFor(0.5);
 
@@ -70,8 +70,8 @@ export default makeScene2D(function* (view) {
     <Txt ref={explain}
       text={'3 corners tell\nyour camera the\nQR code orientation'}
       fill={TEXT_COLOR} fontFamily={TITLE_FONT}
-      fontSize={48} fontWeight={800}
-      y={80} textAlign={'center'} lineHeight={66}
+      fontSize={64} fontWeight={800}
+      y={80} textAlign={'center'} lineHeight={80}
       opacity={0}
     />,
   );
@@ -82,8 +82,8 @@ export default makeScene2D(function* (view) {
     <Txt ref={detail}
       text={'The 1:1:3:1:1 ratio of\nblack-white-black-white-black\nis unique and scannable\nfrom any angle'}
       fill={'#8b949e'} fontFamily={CODE_FONT}
-      fontSize={24} y={300}
-      textAlign={'center'} lineHeight={38}
+      fontSize={36} y={340}
+      textAlign={'center'} lineHeight={50}
       opacity={0}
     />,
   );

@@ -57,14 +57,14 @@ export default makeScene2D(function* (view) {
     const card = createRef<Rect>();
     view.add(
       <Rect ref={card}
-        width={440} height={80} radius={16}
+        width={560} height={110} radius={16}
         fill={p.color + '12'} stroke={p.color} lineWidth={2}
-        y={-80 + i * 95}
+        y={-80 + i * 125}
         opacity={0} scale={0}
       >
-        <Txt text={p.emoji} fontSize={34} x={-180} />
-        <Txt text={p.name} fill={p.color} fontFamily={CODE_FONT} fontSize={24} fontWeight={900} x={-30} y={-12} />
-        <Txt text={p.desc} fill={'#8b949e'} fontFamily={CODE_FONT} fontSize={18} x={-30} y={16} />
+        <Txt text={p.emoji} fontSize={44} x={-230} />
+        <Txt text={p.name} fill={p.color} fontFamily={CODE_FONT} fontSize={36} fontWeight={900} x={-20} y={-16} />
+        <Txt text={p.desc} fill={'#8b949e'} fontFamily={CODE_FONT} fontSize={28} x={-20} y={22} />
       </Rect>,
     );
     yield* all(card().opacity(1, 0.2), card().scale(1, 0.3, easeOutBack));

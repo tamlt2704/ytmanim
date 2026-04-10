@@ -20,7 +20,7 @@ export default makeScene2D(function* (view) {
 
   // Step 1: Text
   const step1Label = createRef<Txt>();
-  view.add(<Txt ref={step1Label} text={'① Your text'} fill={GREEN} fontFamily={CODE_FONT} fontSize={30} fontWeight={800} y={-610} opacity={0} />);
+  view.add(<Txt ref={step1Label} text={'① Your text'} fill={GREEN} fontFamily={CODE_FONT} fontSize={40} fontWeight={800} y={-610} opacity={0} />);
   yield* fadeIn(step1Label(), 0.2);
 
   const textBox = createRef<Rect>();
@@ -39,7 +39,7 @@ export default makeScene2D(function* (view) {
 
   // Step 2: ASCII
   const step2Label = createRef<Txt>();
-  view.add(<Txt ref={step2Label} text={'② ASCII numbers'} fill={ORANGE} fontFamily={CODE_FONT} fontSize={30} fontWeight={800} y={-440} opacity={0} />);
+  view.add(<Txt ref={step2Label} text={'② ASCII numbers'} fill={ORANGE} fontFamily={CODE_FONT} fontSize={40} fontWeight={800} y={-440} opacity={0} />);
   yield* fadeIn(step2Label(), 0.2);
 
   const asciiBox = createRef<Rect>();
@@ -58,13 +58,13 @@ export default makeScene2D(function* (view) {
 
   // Step 3: Binary
   const step3Label = createRef<Txt>();
-  view.add(<Txt ref={step3Label} text={'③ Binary'} fill={PURPLE} fontFamily={CODE_FONT} fontSize={30} fontWeight={800} y={-270} opacity={0} />);
+  view.add(<Txt ref={step3Label} text={'③ Binary'} fill={PURPLE} fontFamily={CODE_FONT} fontSize={40} fontWeight={800} y={-270} opacity={0} />);
   yield* fadeIn(step3Label(), 0.2);
 
   const binBox = createRef<Rect>();
   view.add(
     <Rect ref={binBox} width={440} height={70} radius={16} fill={PURPLE + '15'} stroke={PURPLE} lineWidth={3} y={-200} opacity={0} scale={0}>
-      <Txt text={'01001000 01101001 00100001'} fill={PURPLE} fontFamily={CODE_FONT} fontSize={24} fontWeight={900} />
+      <Txt text={'01001000 01101001 00100001'} fill={PURPLE} fontFamily={CODE_FONT} fontSize={32} fontWeight={900} />
     </Rect>,
   );
   yield* all(binBox().opacity(1, 0.2), binBox().scale(1, 0.3, easeOutBack));
@@ -77,7 +77,7 @@ export default makeScene2D(function* (view) {
 
   // Step 4: Modules (pixels)
   const step4Label = createRef<Txt>();
-  view.add(<Txt ref={step4Label} text={'④ Black & white modules'} fill={ACCENT_COLOR} fontFamily={CODE_FONT} fontSize={30} fontWeight={800} y={-100} opacity={0} />);
+  view.add(<Txt ref={step4Label} text={'④ Black & white modules'} fill={ACCENT_COLOR} fontFamily={CODE_FONT} fontSize={40} fontWeight={800} y={-100} opacity={0} />);
   yield* fadeIn(step4Label(), 0.2);
 
   // Show binary as colored squares

@@ -44,14 +44,14 @@ export default makeScene2D(function* (view) {
     const card = createRef<Rect>();
     view.add(
       <Rect ref={card}
-        width={420} height={90} radius={18}
+        width={540} height={120} radius={18}
         fill={l.color + '12'} stroke={l.color} lineWidth={3}
-        y={-380 + i * 110}
+        y={-400 + i * 145}
         opacity={0} scale={0}
       >
-        <Txt text={l.level} fill={l.color} fontFamily={TITLE_FONT} fontSize={48} fontWeight={900} x={-160} />
-        <Txt text={l.pct} fill={TEXT_COLOR} fontFamily={CODE_FONT} fontSize={40} fontWeight={900} x={-50} />
-        <Txt text={`${l.desc}\ncan be damaged`} fill={'#8b949e'} fontFamily={CODE_FONT} fontSize={18} x={90} textAlign={'center'} lineHeight={24} />
+        <Txt text={l.level} fill={l.color} fontFamily={TITLE_FONT} fontSize={56} fontWeight={900} x={-200} />
+        <Txt text={l.pct} fill={TEXT_COLOR} fontFamily={CODE_FONT} fontSize={48} fontWeight={900} x={-80} />
+        <Txt text={`${l.desc}\ncan be damaged`} fill={'#8b949e'} fontFamily={CODE_FONT} fontSize={28} x={100} textAlign={'center'} lineHeight={36} />
       </Rect>,
     );
     yield* all(card().opacity(1, 0.2), card().scale(1, 0.3, easeOutBack));
@@ -66,7 +66,7 @@ export default makeScene2D(function* (view) {
       text={"That's why logos\ncan go in the center!"}
       fill={GREEN} fontFamily={TITLE_FONT}
       fontSize={46} fontWeight={800}
-      y={120} textAlign={'center'} lineHeight={64}
+      y={220} textAlign={'center'} lineHeight={64}
       opacity={0}
     />,
   );
@@ -78,7 +78,7 @@ export default makeScene2D(function* (view) {
     <Txt ref={detail}
       text={'Uses Reed-Solomon\nalgorithm to rebuild\nmissing data'}
       fill={'#8b949e'} fontFamily={CODE_FONT}
-      fontSize={24} y={280}
+      fontSize={36} y={420}
       textAlign={'center'} lineHeight={38}
       opacity={0}
     />,

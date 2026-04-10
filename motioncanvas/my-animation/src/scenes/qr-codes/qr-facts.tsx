@@ -30,13 +30,13 @@ export default makeScene2D(function* (view) {
     const card = createRef<Rect>();
     view.add(
       <Rect ref={card}
-        width={440} height={120} radius={18}
+        width={560} height={150} radius={18}
         fill={f.color + '12'} stroke={f.color} lineWidth={2}
-        y={-580 + i * 145}
+        y={-620 + i * 175}
         opacity={0} scale={0}
       >
-        <Txt text={f.emoji} fontSize={44} x={-175} />
-        <Txt text={f.text} fill={TEXT_COLOR} fontFamily={CODE_FONT} fontSize={22} fontWeight={700} x={20} textAlign={'center'} lineHeight={30} />
+        <Txt text={f.emoji} fontSize={56} x={-220} />
+        <Txt text={f.text} fill={TEXT_COLOR} fontFamily={CODE_FONT} fontSize={32} fontWeight={700} x={20} textAlign={'center'} lineHeight={42} />
       </Rect>,
     );
     yield* all(card().opacity(1, 0.2), card().scale(1, 0.3, easeOutBack));
@@ -49,7 +49,7 @@ export default makeScene2D(function* (view) {
       text={'Free, open, and\neverywhere 🤯'}
       fill={ACCENT_COLOR} fontFamily={TITLE_FONT}
       fontSize={44} fontWeight={800}
-      y={200} textAlign={'center'} lineHeight={62}
+      y={320} textAlign={'center'} lineHeight={62}
       opacity={0}
     />,
   );

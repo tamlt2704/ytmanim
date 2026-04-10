@@ -31,10 +31,10 @@ export default makeScene2D(function* (view) {
   view.add(<Txt ref={bell} text={'🔔'} fontSize={70} x={100} y={0} opacity={0} />);
 
   const recap = createRef<Txt>();
-  view.add(<Txt ref={recap} text={'Now you know how QR codes work!'} fill={ACCENT_COLOR} fontFamily={CODE_FONT} fontSize={28} fontWeight={700} y={120} opacity={0} />);
+  view.add(<Txt ref={recap} text={'Now you know how QR codes work!'} fill={ACCENT_COLOR} fontFamily={CODE_FONT} fontSize={38} fontWeight={700} y={120} opacity={0} />);
 
   const topics = createRef<Txt>();
-  view.add(<Txt ref={topics} text={'🔲 Finders  📏 Timing  📐 Alignment\n💾 Data Encoding  🛡️ Error Correction\n⚡ All in under 0.1 seconds'} fill={TEXT_COLOR} fontFamily={CODE_FONT} fontSize={22} y={260} textAlign={'center'} lineHeight={42} opacity={0} />);
+  view.add(<Txt ref={topics} text={'🔲 Finders  📏 Timing  📐 Alignment\n💾 Data Encoding  🛡️ Error Correction\n⚡ All in under 0.1 seconds'} fill={TEXT_COLOR} fontFamily={CODE_FONT} fontSize={32} y={260} textAlign={'center'} lineHeight={50} opacity={0} />);
 
   const follow = createRef<Txt>();
   view.add(<Txt ref={follow} text={'More tech explained! 🔥'} fill={ORANGE} fontFamily={TITLE_FONT} fontSize={36} y={420} opacity={0} />);

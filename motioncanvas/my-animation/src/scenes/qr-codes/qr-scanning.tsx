@@ -29,18 +29,18 @@ export default makeScene2D(function* (view) {
 
   for (let i = 0; i < steps.length; i++) {
     const s = steps[i];
-    const y = -570 + i * 130;
+    const y = -600 + i * 150;
 
     const card = createRef<Rect>();
     view.add(
       <Rect ref={card}
-        width={440} height={100} radius={18}
+        width={560} height={120} radius={18}
         fill={s.color + '12'} stroke={s.color} lineWidth={2}
         y={y} opacity={0} scale={0}
       >
-        <Txt text={s.emoji} fontSize={40} x={-175} />
-        <Txt text={s.num} fill={s.color} fontFamily={TITLE_FONT} fontSize={36} fontWeight={900} x={-115} />
-        <Txt text={s.text} fill={TEXT_COLOR} fontFamily={CODE_FONT} fontSize={22} fontWeight={700} x={30} textAlign={'center'} lineHeight={30} />
+        <Txt text={s.emoji} fontSize={52} x={-220} />
+        <Txt text={s.num} fill={s.color} fontFamily={TITLE_FONT} fontSize={44} fontWeight={900} x={-150} />
+        <Txt text={s.text} fill={TEXT_COLOR} fontFamily={CODE_FONT} fontSize={32} fontWeight={700} x={30} textAlign={'center'} lineHeight={42} />
       </Rect>,
     );
     yield* all(card().opacity(1, 0.2), card().scale(1, 0.3, easeOutBack));
@@ -60,7 +60,7 @@ export default makeScene2D(function* (view) {
       text={'All 6 steps happen\nin under 0.1 seconds ⚡'}
       fill={ACCENT_COLOR} fontFamily={TITLE_FONT}
       fontSize={38} fontWeight={800}
-      y={280} textAlign={'center'} lineHeight={54}
+      y={380} textAlign={'center'} lineHeight={54}
       opacity={0}
     />,
   );

@@ -24,7 +24,7 @@ export default makeScene2D(function* (view) {
     <Txt ref={timingLabel}
       text={'📏 Timing Pattern'}
       fill={GREEN} fontFamily={CODE_FONT}
-      fontSize={36} fontWeight={900}
+      fontSize={48} fontWeight={900}
       y={-600} opacity={0}
     />,
   );
@@ -50,8 +50,8 @@ export default makeScene2D(function* (view) {
     <Txt ref={timingDesc}
       text={'Alternating black & white\nHelps scanner count\nrows and columns'}
       fill={TEXT_COLOR} fontFamily={CODE_FONT}
-      fontSize={30} fontWeight={700}
-      y={-390} textAlign={'center'} lineHeight={44}
+      fontSize={42} fontWeight={700}
+      y={-390} textAlign={'center'} lineHeight={58}
       opacity={0}
     />,
   );
@@ -64,7 +64,7 @@ export default makeScene2D(function* (view) {
     <Txt ref={alignLabel}
       text={'📐 Alignment Pattern'}
       fill={ORANGE} fontFamily={CODE_FONT}
-      fontSize={36} fontWeight={900}
+      fontSize={48} fontWeight={900}
       y={-230} opacity={0}
     />,
   );
@@ -76,8 +76,8 @@ export default makeScene2D(function* (view) {
   const aOuter = createRef<Rect>();
   const aMid = createRef<Rect>();
   const aInner = createRef<Rect>();
-  view.add(<Rect ref={aOuter} x={ax} y={ay} width={100} height={100} radius={6} fill={'none'} stroke={TEXT_COLOR} lineWidth={5} opacity={0} />);
-  view.add(<Rect ref={aMid} x={ax} y={ay} width={65} height={65} radius={4} fill={'none'} stroke={BG_COLOR} lineWidth={5} opacity={0} />);
+  view.add(<Rect ref={aOuter} x={ax} y={ay} width={100} height={100} radius={6} fill={null} stroke={TEXT_COLOR} lineWidth={5} opacity={0} />);
+  view.add(<Rect ref={aMid} x={ax} y={ay} width={65} height={65} radius={4} fill={null} stroke={BG_COLOR} lineWidth={5} opacity={0} />);
   view.add(<Rect ref={aInner} x={ax} y={ay} width={30} height={30} radius={3} fill={TEXT_COLOR} opacity={0} />);
   yield* all(aOuter().opacity(1, 0.3), aMid().opacity(1, 0.3), aInner().opacity(1, 0.3));
 
@@ -86,8 +86,8 @@ export default makeScene2D(function* (view) {
     <Txt ref={alignDesc}
       text={'Fixes warping when\nQR code is curved\nor at an angle'}
       fill={TEXT_COLOR} fontFamily={CODE_FONT}
-      fontSize={30} fontWeight={700}
-      y={30} textAlign={'center'} lineHeight={44}
+      fontSize={42} fontWeight={700}
+      y={30} textAlign={'center'} lineHeight={58}
       opacity={0}
     />,
   );
@@ -98,8 +98,8 @@ export default makeScene2D(function* (view) {
     <Txt ref={tip}
       text={'Bigger QR codes have\nmore alignment patterns'}
       fill={'#8b949e'} fontFamily={CODE_FONT}
-      fontSize={26} y={180}
-      textAlign={'center'} lineHeight={40}
+      fontSize={38} y={210}
+      textAlign={'center'} lineHeight={52}
       opacity={0}
     />,
   );
