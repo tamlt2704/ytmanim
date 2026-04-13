@@ -304,6 +304,16 @@ import qrFacts from './scenes/qr-codes/qr-facts?scene';
 import qrOutro from './scenes/qr-codes/qr-outro?scene';
 const qrCodes = [qrThumbnail, qrAnatomy, qrFinders, qrTiming, qrData, qrError, qrScanning, qrFacts, qrOutro];
 
+// Rotating Snakes Illusion
+import rsThumbnail from './scenes/rotating-snakes/rs-thumbnail?scene';
+import rs1Snakes from './scenes/rotating-snakes/rs-1-snakes?scene';
+import rs2Pulse from './scenes/rotating-snakes/rs-2-pulse?scene';
+import rs3Grid from './scenes/rotating-snakes/rs-3-grid?scene';
+import rs4Wave from './scenes/rotating-snakes/rs-4-wave?scene';
+import rs5Drift from './scenes/rotating-snakes/rs-5-drift?scene';
+import rsOutro from './scenes/rotating-snakes/rs-outro?scene';
+const rotatingSnakes = [rsThumbnail, rs1Snakes, rs2Pulse, rs3Grid, rs4Wave, rs5Drift, rsOutro];
+
 // Maze Generator & Solver
 import mazeThumbnail from './scenes/maze/maze-thumbnail?scene';
 import mazeIntro from './scenes/maze/maze-intro?scene';
@@ -517,5 +527,5 @@ import vimYankPaste from './scenes/vim/vim-yank-paste?scene';
 const vim = [vimCiw, vimDd, vimDot, vimMacros, vimModes, vimSaveQuit, vimSearch, vimSplits, vimSubstitute, vimYankPaste];
 
 export default makeProject({
-  scenes: scale,
+  scenes: rotatingSnakes,
 });

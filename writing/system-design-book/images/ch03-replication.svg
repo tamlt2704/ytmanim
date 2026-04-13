@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 250">
+  <defs>
+    <style>
+      .label { font-family: Arial, sans-serif; font-size: 12px; font-weight: bold; }
+      .detail { font-family: monospace; font-size: 10px; }
+    </style>
+    <marker id="a5" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#333"/>
+    </marker>
+  </defs>
+  <rect width="600" height="250" fill="#fafafa" rx="10"/>
+  <text x="300" y="25" text-anchor="middle" class="label" font-size="15" fill="#333">Leader-Follower Replication</text>
+  <!-- Client -->
+  <rect x="20" y="90" width="70" height="40" fill="#ecf0f1" stroke="#bdc3c7" stroke-width="2" rx="6"/>
+  <text x="55" y="115" text-anchor="middle" class="label" fill="#333">Client</text>
+  <!-- Leader -->
+  <rect x="160" y="70" width="130" height="80" fill="#3498db" stroke="#2980b9" stroke-width="2" rx="8"/>
+  <text x="225" y="100" text-anchor="middle" class="label" fill="#fff">Leader</text>
+  <text x="225" y="118" text-anchor="middle" class="detail" fill="#cce5ff">MemTable + WAL</text>
+  <text x="225" y="135" text-anchor="middle" class="detail" fill="#cce5ff">reads + writes</text>
+  <!-- Follower 1 -->
+  <rect x="370" y="40" width="130" height="60" fill="#2ecc71" stroke="#27ae60" stroke-width="2" rx="8"/>
+  <text x="435" y="65" text-anchor="middle" class="label" fill="#fff">Follower 1</text>
+  <text x="435" y="82" text-anchor="middle" class="detail" fill="#d5f5e3">reads only</text>
+  <!-- Follower 2 -->
+  <rect x="370" y="120" width="130" height="60" fill="#2ecc71" stroke="#27ae60" stroke-width="2" rx="8"/>
+  <text x="435" y="145" text-anchor="middle" class="label" fill="#fff">Follower 2</text>
+  <text x="435" y="162" text-anchor="middle" class="detail" fill="#d5f5e3">reads only</text>
+  <!-- Arrows -->
+  <line x1="90" y1="110" x2="155" y2="110" stroke="#333" stroke-width="2" marker-end="url(#a5)"/>
+  <text x="122" y="103" text-anchor="middle" class="detail" fill="#333">write</text>
+  <line x1="290" y1="90" x2="365" y2="70" stroke="#2ecc71" stroke-width="2" marker-end="url(#a5)"/>
+  <line x1="290" y1="130" x2="365" y2="150" stroke="#2ecc71" stroke-width="2" marker-end="url(#a5)"/>
+  <text x="330" y="85" text-anchor="middle" class="detail" fill="#2ecc71">replicate</text>
+  <text x="330" y="155" text-anchor="middle" class="detail" fill="#2ecc71">replicate</text>
+  <!-- Failover note -->
+  <rect x="160" y="190" width="340" height="40" fill="#f5f5f5" stroke="#ddd" stroke-width="1" rx="6"/>
+  <text x="330" y="210" text-anchor="middle" class="detail" fill="#888">If leader dies → follower promoted to leader</text>
+  <text x="330" y="222" text-anchor="middle" class="detail" fill="#888">No data loss (WAL replicated)</text>
+</svg>
